@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _02_ProductosDefectuosos.Vistas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +21,12 @@ namespace _02_ProductosDefectuosos
         private void ayudaToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void registrarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormRegistroProductos formRegistro = new FormRegistroProductos();
+            formRegistro.ShowDialog();
         }
     }
 }
