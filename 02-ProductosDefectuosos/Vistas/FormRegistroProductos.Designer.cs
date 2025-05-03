@@ -32,28 +32,29 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.btnAgregarPaso = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtAgregarPaso = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.label12 = new System.Windows.Forms.Label();
             this.numericUpDownCostoManoObra = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownCostoPerdidaMateriaPrima = new System.Windows.Forms.NumericUpDown();
             this.label11 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBoxEstadoProducto = new System.Windows.Forms.ComboBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.numericUpDownColumna = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownNivelEstante = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownEstante = new System.Windows.Forms.NumericUpDown();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxDepositoAlmacenado = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtCantidadProductosDañada = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.txtGastoGenerado = new System.Windows.Forms.TextBox();
-            this.txtCostoProducto = new System.Windows.Forms.TextBox();
             this.txtNombreProducto = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -64,7 +65,8 @@
             this.txtPersonaResponsable = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnTerminarCarga = new System.Windows.Forms.Button();
+            this.txtCostoProducto = new System.Windows.Forms.TextBox();
             this.tabPage4.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCostoManoObra)).BeginInit();
@@ -85,7 +87,7 @@
             this.tabPage4.Controls.Add(this.listBox1);
             this.tabPage4.Controls.Add(this.btnAgregarPaso);
             this.tabPage4.Controls.Add(this.label13);
-            this.tabPage4.Controls.Add(this.textBox1);
+            this.tabPage4.Controls.Add(this.txtAgregarPaso);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Size = new System.Drawing.Size(768, 371);
@@ -109,6 +111,7 @@
             this.btnAgregarPaso.TabIndex = 3;
             this.btnAgregarPaso.Text = "Agregar";
             this.btnAgregarPaso.UseVisualStyleBackColor = true;
+            this.btnAgregarPaso.Click += new System.EventHandler(this.btnAgregarPaso_Click);
             // 
             // label13
             // 
@@ -119,13 +122,13 @@
             this.label13.TabIndex = 2;
             this.label13.Text = "Agregar pasos al siguiemiento";
             // 
-            // textBox1
+            // txtAgregarPaso
             // 
-            this.textBox1.Location = new System.Drawing.Point(28, 240);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(727, 64);
-            this.textBox1.TabIndex = 1;
+            this.txtAgregarPaso.Location = new System.Drawing.Point(28, 240);
+            this.txtAgregarPaso.Multiline = true;
+            this.txtAgregarPaso.Name = "txtAgregarPaso";
+            this.txtAgregarPaso.Size = new System.Drawing.Size(727, 64);
+            this.txtAgregarPaso.TabIndex = 1;
             // 
             // tabPage3
             // 
@@ -134,7 +137,7 @@
             this.tabPage3.Controls.Add(this.numericUpDownCostoPerdidaMateriaPrima);
             this.tabPage3.Controls.Add(this.label11);
             this.tabPage3.Controls.Add(this.label6);
-            this.tabPage3.Controls.Add(this.comboBox2);
+            this.tabPage3.Controls.Add(this.comboBoxEstadoProducto);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(768, 371);
@@ -185,17 +188,17 @@
             this.label6.TabIndex = 1;
             this.label6.Text = "Estado del producto";
             // 
-            // comboBox2
+            // comboBoxEstadoProducto
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.comboBoxEstadoProducto.FormattingEnabled = true;
+            this.comboBoxEstadoProducto.Items.AddRange(new object[] {
             "Reacondicionable",
             "Desechado"});
-            this.comboBox2.Location = new System.Drawing.Point(215, 36);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 0;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            this.comboBoxEstadoProducto.Location = new System.Drawing.Point(215, 36);
+            this.comboBoxEstadoProducto.Name = "comboBoxEstadoProducto";
+            this.comboBoxEstadoProducto.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxEstadoProducto.TabIndex = 0;
+            this.comboBoxEstadoProducto.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // tabPage2
             // 
@@ -213,7 +216,7 @@
             this.panel2.Controls.Add(this.numericUpDownColumna);
             this.panel2.Controls.Add(this.numericUpDownNivelEstante);
             this.panel2.Controls.Add(this.numericUpDownEstante);
-            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.comboBoxDepositoAlmacenado);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label9);
@@ -244,17 +247,17 @@
             this.numericUpDownEstante.Size = new System.Drawing.Size(120, 20);
             this.numericUpDownEstante.TabIndex = 21;
             // 
-            // comboBox1
+            // comboBoxDepositoAlmacenado
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboBoxDepositoAlmacenado.FormattingEnabled = true;
+            this.comboBoxDepositoAlmacenado.Items.AddRange(new object[] {
             "Deposito1",
             "Deposito2",
             "Deposito3"});
-            this.comboBox1.Location = new System.Drawing.Point(183, 7);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 20;
+            this.comboBoxDepositoAlmacenado.Location = new System.Drawing.Point(183, 7);
+            this.comboBoxDepositoAlmacenado.Name = "comboBoxDepositoAlmacenado";
+            this.comboBoxDepositoAlmacenado.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxDepositoAlmacenado.TabIndex = 20;
             // 
             // label7
             // 
@@ -305,6 +308,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.txtCantidadProductosDañada);
+            this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.txtGastoGenerado);
             this.panel1.Controls.Add(this.txtCostoProducto);
             this.panel1.Controls.Add(this.txtNombreProducto);
@@ -317,8 +322,25 @@
             this.panel1.Controls.Add(this.txtPersonaResponsable);
             this.panel1.Location = new System.Drawing.Point(21, 38);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(426, 293);
+            this.panel1.Size = new System.Drawing.Size(741, 293);
             this.panel1.TabIndex = 10;
+            // 
+            // txtCantidadProductosDañada
+            // 
+            this.txtCantidadProductosDañada.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.FileSystem;
+            this.txtCantidadProductosDañada.Location = new System.Drawing.Point(611, 11);
+            this.txtCantidadProductosDañada.Name = "txtCantidadProductosDañada";
+            this.txtCantidadProductosDañada.Size = new System.Drawing.Size(100, 20);
+            this.txtCantidadProductosDañada.TabIndex = 21;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(347, 14);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(153, 13);
+            this.label14.TabIndex = 20;
+            this.label14.Text = "Cantidad de productos dañada";
             // 
             // txtGastoGenerado
             // 
@@ -326,13 +348,6 @@
             this.txtGastoGenerado.Name = "txtGastoGenerado";
             this.txtGastoGenerado.Size = new System.Drawing.Size(100, 20);
             this.txtGastoGenerado.TabIndex = 19;
-            // 
-            // txtCostoProducto
-            // 
-            this.txtCostoProducto.Location = new System.Drawing.Point(183, 181);
-            this.txtCostoProducto.Name = "txtCostoProducto";
-            this.txtCostoProducto.Size = new System.Drawing.Size(100, 20);
-            this.txtCostoProducto.TabIndex = 18;
             // 
             // txtNombreProducto
             // 
@@ -415,7 +430,7 @@
             // 
             // tabPage5
             // 
-            this.tabPage5.Controls.Add(this.button1);
+            this.tabPage5.Controls.Add(this.btnTerminarCarga);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Size = new System.Drawing.Size(768, 371);
@@ -423,14 +438,22 @@
             this.tabPage5.Text = "Finalizar formulario";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnTerminarCarga
             // 
-            this.button1.Location = new System.Drawing.Point(209, 123);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(221, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Terminar carga";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnTerminarCarga.Location = new System.Drawing.Point(242, 193);
+            this.btnTerminarCarga.Name = "btnTerminarCarga";
+            this.btnTerminarCarga.Size = new System.Drawing.Size(245, 23);
+            this.btnTerminarCarga.TabIndex = 0;
+            this.btnTerminarCarga.Text = "Terminar carga";
+            this.btnTerminarCarga.UseVisualStyleBackColor = true;
+            this.btnTerminarCarga.Click += new System.EventHandler(this.btnTerminarCarga_Click);
+            // 
+            // txtCostoProducto
+            // 
+            this.txtCostoProducto.Location = new System.Drawing.Point(183, 181);
+            this.txtCostoProducto.Name = "txtCostoProducto";
+            this.txtCostoProducto.Size = new System.Drawing.Size(100, 20);
+            this.txtCostoProducto.TabIndex = 18;
             // 
             // FormRegistroProductos
             // 
@@ -467,20 +490,20 @@
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Button btnAgregarPaso;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtAgregarPaso;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.NumericUpDown numericUpDownCostoManoObra;
         private System.Windows.Forms.NumericUpDown numericUpDownCostoPerdidaMateriaPrima;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBoxEstadoProducto;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.NumericUpDown numericUpDownColumna;
         private System.Windows.Forms.NumericUpDown numericUpDownNivelEstante;
         private System.Windows.Forms.NumericUpDown numericUpDownEstante;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxDepositoAlmacenado;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
@@ -488,7 +511,6 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtGastoGenerado;
-        private System.Windows.Forms.TextBox txtCostoProducto;
         private System.Windows.Forms.TextBox txtNombreProducto;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -500,6 +522,9 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.TabPage tabPage5;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnTerminarCarga;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox txtCantidadProductosDañada;
+        private System.Windows.Forms.TextBox txtCostoProducto;
     }
 }

@@ -28,5 +28,11 @@ namespace _02_ProductosDefectuosos
             FormRegistroProductos formRegistro = new FormRegistroProductos();
             formRegistro.ShowDialog();
         }
+
+        private void listadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormListadoProductos formListado = new FormListadoProductos();
+            formListado.ShowDialog();
+        }
     }
 }

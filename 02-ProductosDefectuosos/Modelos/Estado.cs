@@ -32,7 +32,10 @@ namespace _02_ProductosDefectuosos.Modelos
             set { costoManoObra = value; }
         }
 
-
+        public EstadoProducto(int costoPerdida)
+        {
+           this.costoPerdida = Convert.ToInt32(costoPerdida);
+        }
 
     }
 }

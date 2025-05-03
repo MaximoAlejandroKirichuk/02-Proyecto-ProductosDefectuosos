@@ -52,11 +52,18 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modelos\ListadoProductoDefectuosos.cs" />
     <Compile Include="Modelos\Estado.cs" />
     <Compile Include="Modelos\Producto.cs" />
     <Compile Include="Modelos\Ubicacion.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vistas\FormListadoProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FormListadoProductos.Designer.cs">
+      <DependentUpon>FormListadoProductos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\FormRegistroProductos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +94,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Vistas\FormListadoProductos.resx">
+      <DependentUpon>FormListadoProductos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\FormRegistroProductos.resx">
       <DependentUpon>FormRegistroProductos.cs</DependentUpon>
     </EmbeddedResource>
