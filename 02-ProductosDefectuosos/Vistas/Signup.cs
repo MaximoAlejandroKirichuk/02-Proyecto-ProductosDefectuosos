@@ -20,7 +20,12 @@ namespace _02_ProductosDefectuosos.Vistas
         private void button1_Click(object sender, EventArgs e)
         {
             Login formLogin = new Login();
-            formLogin.ShowDialog(); 
+            formLogin.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
