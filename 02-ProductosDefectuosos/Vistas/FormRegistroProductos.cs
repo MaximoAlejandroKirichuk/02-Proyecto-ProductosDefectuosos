@@ -78,6 +78,7 @@ namespace _02_ProductosDefectuosos.Vistas
                 MessageBox.Show("Se creo un nuevo Producto Defectuoso con exito");
                
                 ListaProductos.agregarProducto(nuevoProductoDefectuoso);
+                Close(); // Cierra el formulario 
             }
             catch (Exception ex)
             {
