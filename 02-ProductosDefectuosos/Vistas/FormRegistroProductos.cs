@@ -90,5 +90,10 @@ namespace _02_ProductosDefectuosos.Vistas
         {
             listBox1.Items.Add(txtAgregarPaso.Text);
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
