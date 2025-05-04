@@ -21,7 +21,17 @@ namespace _02_ProductosDefectuosos.Vistas
         {
             // Mostrar el formulario como una ventana modal (bloquea el anterior hasta cerrarse)
             Signup formSignup = new Signup();
-            formSignup.ShowDialog(); 
+            formSignup.ShowDialog();
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
 
         }
     }
