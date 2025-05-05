@@ -1,4 +1,5 @@
-﻿using _02_ProductosDefectuosos.Vistas;
+﻿using _02_ProductosDefectuosos.Modelos;
+using _02_ProductosDefectuosos.Vistas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -33,6 +34,16 @@ namespace _02_ProductosDefectuosos
         {
             FormListadoProductos formListado = new FormListadoProductos();
             formListado.ShowDialog();
+        }
+        private void actualizarLista()
+        {
+            dataGridViewListadoProductosDefectuosos.DataSource = null;
+            dataGridViewListadoProductosDefectuosos.DataSource = ListadoProductoDefectuosos.Instancia.ProductosDefectuosos;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            actualizarLista();
         }
     }
 }

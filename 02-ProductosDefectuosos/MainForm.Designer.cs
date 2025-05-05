@@ -35,11 +35,16 @@
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dataGridViewListadoProductosDefectuosos = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListadoProductosDefectuosos)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.DarkGray;
+            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuToolStripMenuItem,
             this.registrarToolStripMenuItem,
@@ -49,74 +54,98 @@
             this.ayudaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1055, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // menuToolStripMenuItem
             // 
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
-            this.menuToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
+            this.menuToolStripMenuItem.Size = new System.Drawing.Size(58, 24);
             this.menuToolStripMenuItem.Text = "Menu";
             // 
             // registrarToolStripMenuItem
             // 
             this.registrarToolStripMenuItem.Name = "registrarToolStripMenuItem";
-            this.registrarToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.registrarToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
             this.registrarToolStripMenuItem.Text = "Registrar";
             this.registrarToolStripMenuItem.Click += new System.EventHandler(this.registrarToolStripMenuItem_Click);
             // 
             // seguimientoToolStripMenuItem
             // 
             this.seguimientoToolStripMenuItem.Name = "seguimientoToolStripMenuItem";
-            this.seguimientoToolStripMenuItem.Size = new System.Drawing.Size(86, 20);
+            this.seguimientoToolStripMenuItem.Size = new System.Drawing.Size(105, 24);
             this.seguimientoToolStripMenuItem.Text = "Seguimiento";
             // 
             // reportesToolStripMenuItem
             // 
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
-            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
             this.reportesToolStripMenuItem.Text = "Reportes";
             // 
             // listadoToolStripMenuItem
             // 
             this.listadoToolStripMenuItem.Name = "listadoToolStripMenuItem";
-            this.listadoToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.listadoToolStripMenuItem.Size = new System.Drawing.Size(69, 24);
             this.listadoToolStripMenuItem.Text = "Listado";
             this.listadoToolStripMenuItem.Click += new System.EventHandler(this.listadoToolStripMenuItem_Click);
             // 
             // ayudaToolStripMenuItem
             // 
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
-            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(63, 24);
             this.ayudaToolStripMenuItem.Text = "Ayuda";
             this.ayudaToolStripMenuItem.Click += new System.EventHandler(this.ayudaToolStripMenuItem_Click);
+            // 
+            // dataGridViewListadoProductosDefectuosos
+            // 
+            this.dataGridViewListadoProductosDefectuosos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewListadoProductosDefectuosos.Location = new System.Drawing.Point(12, 55);
+            this.dataGridViewListadoProductosDefectuosos.Name = "dataGridViewListadoProductosDefectuosos";
+            this.dataGridViewListadoProductosDefectuosos.Size = new System.Drawing.Size(1031, 309);
+            this.dataGridViewListadoProductosDefectuosos.TabIndex = 1;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(481, 394);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(98, 43);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "actualizar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.Gray;
+            this.ClientSize = new System.Drawing.Size(1055, 470);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.dataGridViewListadoProductosDefectuosos);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.Text = "Form1";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListadoProductosDefectuosos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registrarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listadoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem seguimientoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.DataGridView dataGridViewListadoProductosDefectuosos;
+        private System.Windows.Forms.Button button1;
     }
 }
 
