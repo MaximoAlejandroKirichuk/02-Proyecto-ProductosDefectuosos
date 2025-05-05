@@ -28,7 +28,6 @@ namespace _02_ProductosDefectuosos.Vistas
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //TODO: MEJORAR ESTO
             string respuesta = comboBoxEstadoProducto.SelectedItem.ToString();
 
             if(respuesta == "Desechado")
@@ -53,8 +52,10 @@ namespace _02_ProductosDefectuosos.Vistas
                 string codigoProducto = txtCodigoProducto.Text;
                 string nombreProducto = txtNombreProducto.Text;
                 decimal costoProducto = Convert.ToDecimal(txtCostoProducto.Text);
+                int gastoGeneradoAntesDefectuoso = Convert.ToInt32(txtGastoGenerado.Text);
                 int cantidadProductoDañada = Convert.ToInt32(txtCantidadProductosDañada.Text);
-                
+                string problemaEntrada = comboBoxProblemaEntrada.SelectedItem.ToString();
+
                 //Generar ubicación
                 string depositoAlmacenado = comboBoxDepositoAlmacenado.SelectedItem.ToString();
                 int nroEstante = Convert.ToInt32(numericUpDownEstante.Value);
@@ -66,15 +67,26 @@ namespace _02_ProductosDefectuosos.Vistas
                 List<string> seguimiento = new List<string>();
                 
                 //Generar estado
-
-                //falta hacer si no es desechado
                 string estado = comboBoxEstadoProducto.SelectedItem.ToString();
-                int costoPerdida = Convert.ToInt32(numericUpDownCostoPerdidaMateriaPrima.Value);
-                EstadoProducto estadoProducto = new EstadoProducto(costoPerdida);
+                EstadoProducto estadoProducto = null; //declaro null
 
+                if (estado == "Desechado")
+                {
+                    int costoPerdida = Convert.ToInt32(numericUpDownCostoPerdidaMateriaPrima.Value);
+                    estadoProducto = new EstadoProducto(costoPerdida,EstadoProducto.TipoCosto.Perdida );
+                }
+                else if(estado == "Reacondicionable")
+                {
+                    int costoManoObra = Convert.ToInt32(numericUpDownCostoManoObra.Value);
+                    estadoProducto = new EstadoProducto(costoManoObra,EstadoProducto.TipoCosto.ManoObra);
+                }
+                else
+                {
+                    MessageBox.Show("Ocurrio un error con el estado del producto");
+                }
 
                 //Generar producto Defectuoso
-                Producto nuevoProductoDefectuoso = new Producto(codigoProducto, nombreProducto, costoProducto, cantidadProductoDañada, personaResponsable, ubicacionProducto, seguimiento);
+                Producto nuevoProductoDefectuoso = new Producto(codigoProducto, nombreProducto, costoProducto, gastoGeneradoAntesDefectuoso, cantidadProductoDañada, problemaEntrada, personaResponsable, ubicacionProducto, estadoProducto, seguimiento);
                 MessageBox.Show("Se creo un nuevo Producto Defectuoso con exito");
                
                 ListaProductos.agregarProducto(nuevoProductoDefectuoso);

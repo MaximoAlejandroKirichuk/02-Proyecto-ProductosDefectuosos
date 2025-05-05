@@ -8,8 +8,8 @@ namespace _02_ProductosDefectuosos.Modelos
 {
     public class ListadoProductoDefectuosos
     {
-        
-        private static ListadoProductoDefectuosos _instancia; //Constructor privado para aplicar patron singleton
+        //Clase Singleton
+        private static ListadoProductoDefectuosos _instancia; //significa que no pertenece a un objeto específico, sino que pertenece a toda la clase.
         public List<Producto> ProductosDefectuosos { get; private set; }
 
         // Constructor privado para que no se pueda crear desde fuera

@@ -38,7 +38,7 @@
             this.dataGridViewListadoProductosDefectuosos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewListadoProductosDefectuosos.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewListadoProductosDefectuosos.Name = "dataGridViewListadoProductosDefectuosos";
-            this.dataGridViewListadoProductosDefectuosos.Size = new System.Drawing.Size(798, 309);
+            this.dataGridViewListadoProductosDefectuosos.Size = new System.Drawing.Size(1297, 309);
             this.dataGridViewListadoProductosDefectuosos.TabIndex = 0;
             // 
             // button1
@@ -55,7 +55,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1299, 450);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridViewListadoProductosDefectuosos);
             this.Name = "FormListadoProductos";

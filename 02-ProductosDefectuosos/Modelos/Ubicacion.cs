@@ -43,10 +43,11 @@ namespace _02_ProductosDefectuosos.Modelos
 
         public Ubicacion(string nroDeposito, int nroEstante, int nivelEstante, int nroColumna)
         {
-			this.depositoAlmacenado = nroDeposito;
-			this.numeroEstante = nroEstante;
-			this.nivelEstante = nivelEstante;
-			this.numeroColumna = nroColumna;
+			this.DepositoAlmacenado = nroDeposito;
+			this.NumeroColumna = nroEstante;
+			this.NivelEstante = nivelEstante;
+			this.NumeroColumna = nroColumna;
         }
+
     }
 }

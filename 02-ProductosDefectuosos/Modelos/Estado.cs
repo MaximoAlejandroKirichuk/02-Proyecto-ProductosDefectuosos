@@ -6,11 +6,15 @@ using System.Threading.Tasks;
 
 namespace _02_ProductosDefectuosos.Modelos
 {
+
     public class EstadoProducto
     {
+
         private string estado;
         private int costoManoObra;
         private int costoPerdida;
+
+
         public string Estado
 
         {
@@ -32,9 +36,25 @@ namespace _02_ProductosDefectuosos.Modelos
             set { costoManoObra = value; }
         }
 
-        public EstadoProducto(int costoPerdida)
+        public enum TipoCosto
         {
-           this.costoPerdida = Convert.ToInt32(costoPerdida);
+            Perdida,
+            ManoObra
+        }
+
+        public EstadoProducto(int costo, TipoCosto tipo)
+        {
+            switch (tipo)
+            {
+                case TipoCosto.Perdida:
+                    this.CostoPerdida = costoPerdida;
+                    Estado = "Desechado";
+                    break;
+                case TipoCosto.ManoObra:
+                    this.CostoManoObra = costoManoObra;
+                    Estado = "Reparado";
+                    break;
+            }
         }
 
     }

@@ -67,6 +67,8 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.btnTerminarCarga = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
+            this.comboBoxProblemaEntrada = new System.Windows.Forms.ComboBox();
             this.tabPage4.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCostoManoObra)).BeginInit();
@@ -89,9 +91,9 @@
             this.tabPage4.Controls.Add(this.btnAgregarPaso);
             this.tabPage4.Controls.Add(this.label13);
             this.tabPage4.Controls.Add(this.txtAgregarPaso);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(768, 371);
+            this.tabPage4.Size = new System.Drawing.Size(768, 368);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Seguimiento";
             // 
@@ -145,9 +147,9 @@
             this.tabPage3.Controls.Add(this.label11);
             this.tabPage3.Controls.Add(this.label6);
             this.tabPage3.Controls.Add(this.comboBoxEstadoProducto);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(768, 371);
+            this.tabPage3.Size = new System.Drawing.Size(768, 368);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Estado del producto";
             // 
@@ -336,6 +338,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.comboBoxProblemaEntrada);
+            this.panel1.Controls.Add(this.label15);
             this.panel1.Controls.Add(this.txtCantidadProductosDañada);
             this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.txtGastoGenerado);
@@ -499,6 +503,28 @@
             this.btnTerminarCarga.UseVisualStyleBackColor = false;
             this.btnTerminarCarga.Click += new System.EventHandler(this.btnTerminarCarga_Click);
             // 
+            // label15
+            // 
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.White;
+            this.label15.Location = new System.Drawing.Point(386, 111);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(159, 42);
+            this.label15.TabIndex = 22;
+            this.label15.Text = "Problema por el que llega";
+            // 
+            // comboBoxProblemaEntrada
+            // 
+            this.comboBoxProblemaEntrada.FormattingEnabled = true;
+            this.comboBoxProblemaEntrada.Items.AddRange(new object[] {
+            "Manufactura",
+            "Deteriodo de almacen",
+            "Accidente de tránsito"});
+            this.comboBoxProblemaEntrada.Location = new System.Drawing.Point(561, 111);
+            this.comboBoxProblemaEntrada.Name = "comboBoxProblemaEntrada";
+            this.comboBoxProblemaEntrada.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxProblemaEntrada.TabIndex = 23;
+            // 
             // FormRegistroProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -571,5 +597,7 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtCantidadProductosDañada;
         private System.Windows.Forms.TextBox txtCostoProducto;
+        private System.Windows.Forms.ComboBox comboBoxProblemaEntrada;
+        private System.Windows.Forms.Label label15;
     }
 }
