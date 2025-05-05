@@ -38,8 +38,8 @@ Este sistema permite a la empresa mejorar su trazabilidad interna, cuantificar p
 
 ## Tecnologías utilizadas
 
-- Lenguaje de programación: *(especificar, por ejemplo, C#, Python, etc.)*
+- Lenguaje de programación: *C# .NET FRAMEWORK*
 - Almacenamiento: Archivos CSV
-- Interfaz: *(si aplica, por ejemplo, Windows Forms, consola, etc.)*
+- Interfaz: *Aplicacioón de Windows Forms*
 
 
