@@ -52,6 +52,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.comboBoxProblemaEntrada = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.txtCantidadProductosDañada = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.txtGastoGenerado = new System.Windows.Forms.TextBox();
@@ -67,8 +69,6 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.btnTerminarCarga = new System.Windows.Forms.Button();
-            this.label15 = new System.Windows.Forms.Label();
-            this.comboBoxProblemaEntrada = new System.Windows.Forms.ComboBox();
             this.tabPage4.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCostoManoObra)).BeginInit();
@@ -93,7 +93,7 @@
             this.tabPage4.Controls.Add(this.txtAgregarPaso);
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(768, 368);
+            this.tabPage4.Size = new System.Drawing.Size(768, 382);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Seguimiento";
             // 
@@ -111,9 +111,9 @@
             // 
             // btnAgregarPaso
             // 
-            this.btnAgregarPaso.Location = new System.Drawing.Point(364, 333);
+            this.btnAgregarPaso.Location = new System.Drawing.Point(563, 338);
             this.btnAgregarPaso.Name = "btnAgregarPaso";
-            this.btnAgregarPaso.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregarPaso.Size = new System.Drawing.Size(75, 30);
             this.btnAgregarPaso.TabIndex = 3;
             this.btnAgregarPaso.Text = "Agregar";
             this.btnAgregarPaso.UseVisualStyleBackColor = true;
@@ -149,7 +149,7 @@
             this.tabPage3.Controls.Add(this.comboBoxEstadoProducto);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(768, 368);
+            this.tabPage3.Size = new System.Drawing.Size(768, 382);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Estado del producto";
             // 
@@ -170,7 +170,7 @@
             this.numericUpDownCostoManoObra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownCostoManoObra.Location = new System.Drawing.Point(382, 179);
             this.numericUpDownCostoManoObra.Name = "numericUpDownCostoManoObra";
-            this.numericUpDownCostoManoObra.Size = new System.Drawing.Size(120, 26);
+            this.numericUpDownCostoManoObra.Size = new System.Drawing.Size(160, 26);
             this.numericUpDownCostoManoObra.TabIndex = 4;
             // 
             // numericUpDownCostoPerdidaMateriaPrima
@@ -179,7 +179,7 @@
             this.numericUpDownCostoPerdidaMateriaPrima.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownCostoPerdidaMateriaPrima.Location = new System.Drawing.Point(382, 108);
             this.numericUpDownCostoPerdidaMateriaPrima.Name = "numericUpDownCostoPerdidaMateriaPrima";
-            this.numericUpDownCostoPerdidaMateriaPrima.Size = new System.Drawing.Size(120, 26);
+            this.numericUpDownCostoPerdidaMateriaPrima.Size = new System.Drawing.Size(160, 26);
             this.numericUpDownCostoPerdidaMateriaPrima.TabIndex = 3;
             // 
             // label11
@@ -213,7 +213,7 @@
             "Desechado"});
             this.comboBoxEstadoProducto.Location = new System.Drawing.Point(382, 40);
             this.comboBoxEstadoProducto.Name = "comboBoxEstadoProducto";
-            this.comboBoxEstadoProducto.Size = new System.Drawing.Size(121, 28);
+            this.comboBoxEstadoProducto.Size = new System.Drawing.Size(161, 28);
             this.comboBoxEstadoProducto.TabIndex = 0;
             this.comboBoxEstadoProducto.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
@@ -224,7 +224,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(768, 368);
+            this.tabPage2.Size = new System.Drawing.Size(768, 382);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Ubicación Geográfica";
             // 
@@ -249,7 +249,7 @@
             this.numericUpDownColumna.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownColumna.Location = new System.Drawing.Point(251, 229);
             this.numericUpDownColumna.Name = "numericUpDownColumna";
-            this.numericUpDownColumna.Size = new System.Drawing.Size(120, 22);
+            this.numericUpDownColumna.Size = new System.Drawing.Size(140, 22);
             this.numericUpDownColumna.TabIndex = 23;
             // 
             // numericUpDownNivelEstante
@@ -257,7 +257,7 @@
             this.numericUpDownNivelEstante.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownNivelEstante.Location = new System.Drawing.Point(251, 166);
             this.numericUpDownNivelEstante.Name = "numericUpDownNivelEstante";
-            this.numericUpDownNivelEstante.Size = new System.Drawing.Size(120, 22);
+            this.numericUpDownNivelEstante.Size = new System.Drawing.Size(140, 22);
             this.numericUpDownNivelEstante.TabIndex = 22;
             // 
             // numericUpDownEstante
@@ -265,7 +265,7 @@
             this.numericUpDownEstante.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownEstante.Location = new System.Drawing.Point(251, 98);
             this.numericUpDownEstante.Name = "numericUpDownEstante";
-            this.numericUpDownEstante.Size = new System.Drawing.Size(120, 22);
+            this.numericUpDownEstante.Size = new System.Drawing.Size(140, 22);
             this.numericUpDownEstante.TabIndex = 21;
             // 
             // comboBoxDepositoAlmacenado
@@ -278,7 +278,7 @@
             "Deposito3"});
             this.comboBoxDepositoAlmacenado.Location = new System.Drawing.Point(251, 41);
             this.comboBoxDepositoAlmacenado.Name = "comboBoxDepositoAlmacenado";
-            this.comboBoxDepositoAlmacenado.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxDepositoAlmacenado.Size = new System.Drawing.Size(140, 24);
             this.comboBoxDepositoAlmacenado.TabIndex = 20;
             // 
             // label7
@@ -332,7 +332,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(768, 368);
+            this.tabPage1.Size = new System.Drawing.Size(768, 382);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Datos del Producto";
             // 
@@ -352,18 +352,40 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.txtPersonaResponsable);
-            this.panel1.Location = new System.Drawing.Point(21, 38);
+            this.panel1.Location = new System.Drawing.Point(6, 36);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(741, 293);
+            this.panel1.Size = new System.Drawing.Size(741, 296);
             this.panel1.TabIndex = 10;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // comboBoxProblemaEntrada
+            // 
+            this.comboBoxProblemaEntrada.FormattingEnabled = true;
+            this.comboBoxProblemaEntrada.Items.AddRange(new object[] {
+            "Manufactura",
+            "Deteriodo de almacen",
+            "Accidente de tránsito"});
+            this.comboBoxProblemaEntrada.Location = new System.Drawing.Point(561, 93);
+            this.comboBoxProblemaEntrada.Name = "comboBoxProblemaEntrada";
+            this.comboBoxProblemaEntrada.Size = new System.Drawing.Size(142, 24);
+            this.comboBoxProblemaEntrada.TabIndex = 23;
+            // 
+            // label15
+            // 
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.White;
+            this.label15.Location = new System.Drawing.Point(386, 93);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(159, 42);
+            this.label15.TabIndex = 22;
+            this.label15.Text = "Problema por el que llega";
             // 
             // txtCantidadProductosDañada
             // 
             this.txtCantidadProductosDañada.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.FileSystem;
             this.txtCantidadProductosDañada.Location = new System.Drawing.Point(561, 30);
             this.txtCantidadProductosDañada.Name = "txtCantidadProductosDañada";
-            this.txtCantidadProductosDañada.Size = new System.Drawing.Size(100, 22);
+            this.txtCantidadProductosDañada.Size = new System.Drawing.Size(142, 22);
             this.txtCantidadProductosDañada.TabIndex = 21;
             // 
             // label14
@@ -473,20 +495,22 @@
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(12, 41);
+            this.tabControl1.Location = new System.Drawing.Point(12, 27);
+            this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(776, 397);
+            this.tabControl1.Size = new System.Drawing.Size(776, 411);
             this.tabControl1.TabIndex = 11;
             // 
             // tabPage5
             // 
             this.tabPage5.BackColor = System.Drawing.Color.DimGray;
             this.tabPage5.Controls.Add(this.btnTerminarCarga);
-            this.tabPage5.Location = new System.Drawing.Point(4, 25);
+            this.tabPage5.Location = new System.Drawing.Point(4, 27);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(768, 368);
+            this.tabPage5.Size = new System.Drawing.Size(768, 380);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Finalizar formulario";
             // 
@@ -502,28 +526,6 @@
             this.btnTerminarCarga.Text = "Terminar carga";
             this.btnTerminarCarga.UseVisualStyleBackColor = false;
             this.btnTerminarCarga.Click += new System.EventHandler(this.btnTerminarCarga_Click);
-            // 
-            // label15
-            // 
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(386, 111);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(159, 42);
-            this.label15.TabIndex = 22;
-            this.label15.Text = "Problema por el que llega";
-            // 
-            // comboBoxProblemaEntrada
-            // 
-            this.comboBoxProblemaEntrada.FormattingEnabled = true;
-            this.comboBoxProblemaEntrada.Items.AddRange(new object[] {
-            "Manufactura",
-            "Deteriodo de almacen",
-            "Accidente de tránsito"});
-            this.comboBoxProblemaEntrada.Location = new System.Drawing.Point(561, 111);
-            this.comboBoxProblemaEntrada.Name = "comboBoxProblemaEntrada";
-            this.comboBoxProblemaEntrada.Size = new System.Drawing.Size(121, 24);
-            this.comboBoxProblemaEntrada.TabIndex = 23;
             // 
             // FormRegistroProductos
             // 
