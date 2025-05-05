@@ -11,8 +11,8 @@ namespace _02_ProductosDefectuosos.Modelos
         private string codigoProducto;
         private string nombreProducto;
         private decimal costoProducto;
-        private int costoAcumuladoAntesDefecto;
-        private int gastoAdicionalAntesDefecto;
+        private decimal costoAcumuladoAntesDefecto;
+        private decimal gastoAdicionalAntesDefecto;
         private int cantidadDañada;
         private string problemaEntrada;
 
@@ -48,14 +48,14 @@ namespace _02_ProductosDefectuosos.Modelos
         }
 
         // Costo acumulado hasta el defecto
-        public int CostoAcumuladoAntesDefecto
+        public decimal CostoAcumuladoAntesDefecto
         {
             get { return costoAcumuladoAntesDefecto; }
             set { costoAcumuladoAntesDefecto = value; }
         }
 
         //Gasto adicional antes del defecto
-        public int GastoAdicionalAntesDefecto
+        public decimal GastoAdicionalAntesDefecto
         {
             get { return gastoAdicionalAntesDefecto; }
             set { gastoAdicionalAntesDefecto = value; }
@@ -121,6 +121,11 @@ namespace _02_ProductosDefectuosos.Modelos
             this.EstadoProducto = estadoProducto;
             this.Seguimiento = seguimiento;
             //this.GastoAdicionalAntesDefecto = gastoAdicionalAntesDefecto;
+        }
+
+        public Producto()
+        {
+                
         }
     }
 }
