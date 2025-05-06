@@ -138,6 +138,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridViewListadoProductosDefectuosos);
             this.Controls.Add(this.menuStrip1);
+            this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.Text = "Form1";
