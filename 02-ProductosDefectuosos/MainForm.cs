@@ -53,7 +53,12 @@ namespace _02_ProductosDefectuosos
         }
         private void CargarDatosDesdeArchivo()
         {
-            string rutaArchivo = @"E:\facultad 2025\POO\02-ProductosDefectuosos\02-ProductosDefectuosos\bin\Debug\productos_defectuosos.csv";
+            //PROBAR ESTO
+
+            //string rutaArchivo = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\datos\productos_defectuosos.csv");
+
+            //@"E:\facultad 2025\POO\02-ProductosDefectuosos\02-ProductosDefectuosos\bin\Debug\productos_defectuosos.csv";
+            string rutaArchivo = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "productos_defectuosos.csv");
 
             if (File.Exists(rutaArchivo))
             {
