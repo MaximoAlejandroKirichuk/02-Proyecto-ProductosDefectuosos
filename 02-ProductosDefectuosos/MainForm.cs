@@ -55,6 +55,9 @@ namespace _02_ProductosDefectuosos
         {
             string rutaArchivo = "productos_defectuosos.csv";
 
+
+            MessageBox.Show(rutaArchivo);
+
             if (File.Exists(rutaArchivo))
             {
                 try
