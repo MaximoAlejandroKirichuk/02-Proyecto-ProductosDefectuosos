@@ -16,6 +16,7 @@ namespace _02_ProductosDefectuosos.Vistas
         {
             InitializeComponent();
         }
+<<<<<<< HEAD
 
         private void FormAyuda_Load(object sender, EventArgs e)
         {
@@ -81,5 +82,7 @@ En la misma sección de registro:
         private void richTextBoxAyuda_TextChanged(object sender, EventArgs e)
         {
     }
+=======
+>>>>>>> 9a0d1e0378cf69b6e860839defc0e53900762f4d
     }
 }
