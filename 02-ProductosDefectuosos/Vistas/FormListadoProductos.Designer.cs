@@ -40,6 +40,7 @@
             this.dataGridViewListadoProductosDefectuosos.Name = "dataGridViewListadoProductosDefectuosos";
             this.dataGridViewListadoProductosDefectuosos.Size = new System.Drawing.Size(1297, 309);
             this.dataGridViewListadoProductosDefectuosos.TabIndex = 0;
+            this.dataGridViewListadoProductosDefectuosos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewListadoProductosDefectuosos_CellContentClick);
             // 
             // button1
             // 

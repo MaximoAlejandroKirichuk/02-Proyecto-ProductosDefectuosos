@@ -33,5 +33,10 @@ namespace _02_ProductosDefectuosos.Vistas
         {
             actualizarLista();
         }
+
+        private void dataGridViewListadoProductosDefectuosos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

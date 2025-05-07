@@ -21,7 +21,8 @@ namespace _02_ProductosDefectuosos
 
         private void ayudaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FormAyuda ventanaAyuda = new FormAyuda();
+            ventanaAyuda.ShowDialog();
         }
 
         private void registrarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -44,6 +45,11 @@ namespace _02_ProductosDefectuosos
         private void button1_Click(object sender, EventArgs e)
         {
             actualizarLista();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
