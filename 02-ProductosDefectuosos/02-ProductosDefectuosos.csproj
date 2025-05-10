@@ -52,13 +52,17 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modelos\actores\Admin.cs" />
+    <Compile Include="Modelos\actores\Empleado.cs" />
+    <Compile Include="Modelos\ListadoEmpleados.cs" />
     <Compile Include="Modelos\ListadoProductoDefectuosos.cs" />
     <Compile Include="Modelos\Estado.cs" />
     <Compile Include="Modelos\Producto.cs" />
+    <Compile Include="Modelos\RolEmpresa.cs" />
     <Compile Include="Modelos\Ubicacion.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="usuario.cs" />
+    <Compile Include="Modelos\actores\Usuario.cs" />
     <Compile Include="Vistas\FormAyuda.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +121,7 @@
       <DependentUpon>Signup.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Datos\productos_defectuosos.csv" />
+    <None Include="Datos\Usuario.csv" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

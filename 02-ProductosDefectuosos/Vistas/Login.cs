@@ -26,9 +26,9 @@ namespace _02_ProductosDefectuosos.Vistas
 
         }
 
-        public bool validarusuario(string username, string password)
+        public bool ValidarUsuario(string username, string password)
         {
-            string ruta = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"D:\github\02-Proyecto-ProductosDefectuosos\02-ProductosDefectuosos\bin\Debug\usuarios.csv");
+            string ruta = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "E:\\facultad 2025\\POO\\02-ProductosDefectuosos\\02-ProductosDefectuosos\\bin\\Debug\\Usuario.csv");
 
             //esto es por si funciona mal y no encuentra el excel
             if (!File.Exists(ruta))
@@ -54,12 +54,12 @@ namespace _02_ProductosDefectuosos.Vistas
                     string[] datos = linea.Split(',');
 
                     //esto creo que se fija en el archivo de registros si estan los 4 datos con los que habia que registrarse.
-                    if (datos.Length == 4)
+                    if (datos.Length == 5)
                     {
                         //aca guarda el usuario y la contraseña asi compara abajo si coinciden con lo que puso recien..
                         //en el inicio de sesion.
-                        string usuarioCSV = datos[1];
-                        string contraseñaCSV = datos[3];
+                        string usuarioCSV = datos[4];
+                        string contraseñaCSV = datos[2];
 
                         if (usuarioCSV == username && contraseñaCSV == password)
                         {
@@ -90,7 +90,7 @@ namespace _02_ProductosDefectuosos.Vistas
         private void button2_Click(object sender, EventArgs e)
         {
             string usuario = textBox1.Text.Trim();
-            string contraseña = textBox2.Text;
+            string contraseña = textBox2.Text.Trim();
 
             //esta funcion es media rara pero es facil. nada mas es para fijarse si esta vacio el txtbox.
             if (string.IsNullOrWhiteSpace(usuario) || string.IsNullOrWhiteSpace(contraseña))
@@ -99,7 +99,7 @@ namespace _02_ProductosDefectuosos.Vistas
                 return;
             }
 
-            bool loginExitoso = validarusuario(usuario, contraseña);
+            bool loginExitoso = ValidarUsuario(usuario, contraseña);
 
             if (loginExitoso)
             {

@@ -1,13 +1,16 @@
-﻿using System;
+﻿using _02_ProductosDefectuosos.Modelos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace _02_ProductosDefectuosos
 {
-    public class usuario
+    public abstract class Usuario
     {
+        
         private string fullname;
 
         public string Fullname
@@ -40,17 +43,26 @@ namespace _02_ProductosDefectuosos
             set { password = value; }
         }
 
-        public usuario(string fullName, string username, string mail, string password)
+        private string rol;
+
+        public string Rol
         {
-            Fullname = fullName;
-            Username = username;
-            Mail = mail;
-            Password = password;
+            get { return rol; }
+            set { rol = value; }
         }
 
+
+        // Método abstracto (obligatorio de implementar en las clases hijas)
+        public abstract void MostrarPermisos();
+        public void Saludar()
+        {
+            MessageBox.Show($"Hola soy {Fullname}");
+        }
+
+        //sobreescribir el metodo para guardarlo correctamente
         public override string ToString()
         {
-            return $"{Fullname},{Username},{Mail},{Password}";
+            return $"{Fullname},{Mail},{Password},{Rol},{Username}";
         }
 
     }
