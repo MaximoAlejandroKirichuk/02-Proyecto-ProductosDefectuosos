@@ -17,8 +17,8 @@ namespace _02_ProductosDefectuosos
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm()); //(esto es la app sin el Login)
-            //Application.Run(new Login());
+            //Application.Run(new MainForm()); //(esto es la app sin el Login)
+            Application.Run(new Login());
         }
     }
 }

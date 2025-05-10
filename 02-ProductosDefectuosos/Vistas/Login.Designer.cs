@@ -86,6 +86,7 @@
             // 
             this.textBox2.Location = new System.Drawing.Point(321, 275);
             this.textBox2.Name = "textBox2";
+            this.textBox2.PasswordChar = '*';
             this.textBox2.Size = new System.Drawing.Size(147, 20);
             this.textBox2.TabIndex = 5;
             // 
@@ -118,6 +119,7 @@
             this.button2.TabIndex = 8;
             this.button2.Text = "LOGIN";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Login
             // 
@@ -135,6 +137,7 @@
             this.Controls.Add(this.button1);
             this.Name = "Login";
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
