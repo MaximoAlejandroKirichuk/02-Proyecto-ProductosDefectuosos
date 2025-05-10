@@ -62,9 +62,7 @@
     <Compile Include="Modelos\Ubicacion.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-
     <Compile Include="Modelos\actores\Usuario.cs" />
-
     <Compile Include="Vistas\FormAyuda.cs">
       <SubType>Form</SubType>
     </Compile>

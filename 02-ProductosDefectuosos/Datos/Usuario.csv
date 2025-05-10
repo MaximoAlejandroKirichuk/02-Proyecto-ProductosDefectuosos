@@ -1,2 +1,2 @@
-﻿nombre,email,password,rol
-Admin,admin@mail.com,admin123,admin
+NombreCompleto,Email,Password,Rol, NombreCuenta
+lucas,123,123,Administrador,luki

@@ -28,7 +28,7 @@ namespace _02_ProductosDefectuosos.Vistas
 
         public bool ValidarUsuario(string username, string password)
         {
-            string ruta = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "E:\\facultad 2025\\POO\\02-ProductosDefectuosos\\02-ProductosDefectuosos\\bin\\Debug\\Usuario.csv");
+            string ruta = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\Datos\Usuario.csv");
 
             //esto es por si funciona mal y no encuentra el excel
             if (!File.Exists(ruta))

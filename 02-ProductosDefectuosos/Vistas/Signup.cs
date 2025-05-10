@@ -27,7 +27,9 @@ namespace _02_ProductosDefectuosos.Vistas
             //entra al archivo
             // lo unico que hace el PATH COMBINE es juntar el nombre del archivo asi no se tiene que buscar todo junto. jajaj
             //es medio dificil de explicar solo con palabras. si no se entiende le preguntan a luki, es facil.
-            string ruta =  "Usuario.csv";
+
+            string ruta = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\Datos\Usuario.csv");
+
             bool archivoExiste = File.Exists(ruta);
 
             using (StreamWriter sw = new StreamWriter(ruta, true))
@@ -45,7 +47,7 @@ namespace _02_ProductosDefectuosos.Vistas
         //esto lo hice para crear el CSV cuando no exista. asi cuando nos lo pasamos se crea y fue
         public void crearCSV()
         {
-            string ruta = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Usuario.csv");
+            string ruta = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\Datos\Usuario.csv");
 
             if (!File.Exists(ruta))
             {
