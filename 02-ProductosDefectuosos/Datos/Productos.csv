@@ -1,0 +1,4 @@
+Codigo Producto;Nombre Producto;Costo Producto;Gasto Adicional;Cantidad Dañada;Problema de entrada;Personal responsable;Deposito;Estante;Nivel;Columna;Estado Producto
+P001;arroz marolio;9000;5000;1;Manufactura;Lucas Molinari;Deposito1;0;3;4;Desechado
+P002;Caja gomitas;23000;0;1;Accidente de tránsito;Lucas Molinari;Deposito2;0;3;3;Desechado
+P003;Caja de cintas;44999.99;30000;1;Accidente de tránsito;Lucas Molinari;Deposito3;0;2;6;Reacondicionable

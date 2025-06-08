@@ -65,8 +65,7 @@
         #endregion
 
         private System.Windows.Forms.RichTextBox richTextBoxAyuda;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.RichTextBox richTextBox2;
+
 
     }
 }

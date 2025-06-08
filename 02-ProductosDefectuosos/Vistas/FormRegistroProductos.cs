@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,9 +14,6 @@ namespace _02_ProductosDefectuosos.Vistas
 {
     public partial class FormRegistroProductos : Form
     {
-        //Uso el singleton para acceder a la lista de productos defectuosos
-        ListadoProductoDefectuosos ListaProductos = ListadoProductoDefectuosos.Instancia;
-
         public FormRegistroProductos()
         {
             InitializeComponent();
@@ -23,7 +21,11 @@ namespace _02_ProductosDefectuosos.Vistas
 
         private void FormRegistroProductos_Load(object sender, EventArgs e)
         {
-            
+            comboBoxPersonaResponsable.DataSource = null;
+            comboBoxPersonaResponsable.DataSource = ListadoEmpleados.Instancia.Empleados;
+            comboBoxPersonaResponsable.DisplayMember = "NombreCompleto";
+
+
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -48,11 +50,12 @@ namespace _02_ProductosDefectuosos.Vistas
             try
             {
                 //Generar producto
-                string personaResponsable = txtPersonaResponsable.Text;
+                Usuario personaResponsable =(Usuario)comboBoxPersonaResponsable.SelectedItem;
                 string codigoProducto = txtCodigoProducto.Text;
                 string nombreProducto = txtNombreProducto.Text;
                 decimal costoProducto = Convert.ToDecimal(txtCostoProducto.Text);
-                int gastoGeneradoAntesDefectuoso = Convert.ToInt32(txtGastoGenerado.Text);
+                decimal gastoGeneradoAntesDefectuoso = Convert.ToInt32(txtGastoGenerado.Text);
+                
                 int cantidadProductoDañada = Convert.ToInt32(txtCantidadProductosDañada.Text);
                 string problemaEntrada = comboBoxProblemaEntrada.SelectedItem.ToString();
 
@@ -62,10 +65,12 @@ namespace _02_ProductosDefectuosos.Vistas
                 int nivelEstante = Convert.ToInt32(numericUpDownNivelEstante.Value);
                 int nroColumna = Convert.ToInt32(numericUpDownColumna.Value);
                 Ubicacion ubicacionProducto = new Ubicacion(depositoAlmacenado, nroEstante, nivelEstante, nroColumna);
-                
+
                 //Generar seguimiento
-                List<string> seguimiento = new List<string>();
-                
+
+                List<Seguimiento> seguimiento = listBox1.Items.Cast<Seguimiento>().ToList();
+
+
                 //Generar estado
                 string estado = comboBoxEstadoProducto.SelectedItem.ToString();
                 EstadoProducto estadoProducto = null; //declaro null
@@ -89,7 +94,7 @@ namespace _02_ProductosDefectuosos.Vistas
                 Producto nuevoProductoDefectuoso = new Producto(codigoProducto, nombreProducto, costoProducto, gastoGeneradoAntesDefectuoso, cantidadProductoDañada, problemaEntrada, personaResponsable, ubicacionProducto, estadoProducto, seguimiento);
                 MessageBox.Show("Se creo un nuevo Producto Defectuoso con exito");
                
-                ListaProductos.agregarProducto(nuevoProductoDefectuoso);
+                ListadoProductoDefectuosos.Instancia.agregarProducto(nuevoProductoDefectuoso);
                 Close(); // Cierra el formulario 
             }
             catch (Exception ex)
@@ -97,14 +102,26 @@ namespace _02_ProductosDefectuosos.Vistas
                 MessageBox.Show("Ocurrio un error al generar la carga" + ex.TargetSite);
             }
         }
-
+        
         private void btnAgregarPaso_Click(object sender, EventArgs e)
         {
-            listBox1.Items.Add(txtAgregarPaso.Text);
+            DateTime dia = dateTimePickerFecha.Value;
+            string mensaje = txtAgregarPaso.Text;
+            string creadorSeguimiento = SesionActiva.Instancia.UsuarioActivo.Fullname;
+            Seguimiento nuevo = new Seguimiento(dia,mensaje, creadorSeguimiento);
+            
+            listBox1.Items.Add(nuevo);
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
+
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+            
+            
 
         }
     }

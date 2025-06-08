@@ -13,18 +13,18 @@ namespace _02_ProductosDefectuosos.Modelos
         private decimal costoProducto;
         private decimal costoAcumuladoAntesDefecto;
         private decimal gastoAdicionalAntesDefecto;
-        private int cantidadDañada;
+        private int cantidadDaniada;
         private string problemaEntrada;
 
 
-        private string personaResponsable;
+        private Usuario personaResponsable;
         private Ubicacion ubicacionProducto;
         private EstadoProducto estadoProducto;
 
         
 
         //Es una lista del tipo string => se anota cada paso del producto
-        public List<string> Seguimiento { get; set; } = new List<string>();
+        public List<Seguimiento> Seguimiento { get; set; } = new List<Seguimiento>();
         
         public string CodigoProducto
         {
@@ -47,12 +47,7 @@ namespace _02_ProductosDefectuosos.Modelos
             set { costoProducto = value; }
         }
 
-        // Costo acumulado hasta el defecto
-        public decimal CostoAcumuladoAntesDefecto
-        {
-            get { return costoAcumuladoAntesDefecto; }
-            set { costoAcumuladoAntesDefecto = value; }
-        }
+
 
         //Gasto adicional antes del defecto
         public decimal GastoAdicionalAntesDefecto
@@ -62,10 +57,10 @@ namespace _02_ProductosDefectuosos.Modelos
         }
 
 
-        public int CantidadDañada
+        public int CantidadDaniada
         {
-            get { return cantidadDañada; }
-            set { cantidadDañada = value; }
+            get { return cantidadDaniada; }
+            set { cantidadDaniada = value; }
         }
 
 
@@ -74,7 +69,7 @@ namespace _02_ProductosDefectuosos.Modelos
             get { return problemaEntrada; }
             set { problemaEntrada = value; }
         }
-        public string PersonaResponsable
+        public Usuario PersonaResponsable
         {
             get { return personaResponsable; }
             set { personaResponsable = value; }
@@ -98,34 +93,38 @@ namespace _02_ProductosDefectuosos.Modelos
             string codigoProducto,
             string nombreProducto,
             decimal costoProducto,
-            int costoAcumuladoAntesDefecto,
-            int cantidadDañada,
+            decimal gastoAdicionalAntesDefecto,
+            int cantidadDaniada,
             string problemaEntrada,
-            string personaResponsable,
+            Usuario personaResponsable,
             Ubicacion ubicacionProducto,
             EstadoProducto estadoProducto,
-            List<string> seguimiento 
             // QUE HAGO CON ESTO
-            //int gastoAdicionalAntesDefecto
-
+            List<Seguimiento> seguimiento
             )
         {
             this.CodigoProducto = codigoProducto;
             this.NombreProducto = nombreProducto;
             this.CostoProducto = costoProducto;
-            this.CostoAcumuladoAntesDefecto = costoAcumuladoAntesDefecto;
-            this.CantidadDañada = cantidadDañada;
+            this.CantidadDaniada = cantidadDaniada;
             this.ProblemaEntrada = problemaEntrada;
             this.PersonaResponsable = personaResponsable;
             this.UbicacionProducto = ubicacionProducto;
             this.EstadoProducto = estadoProducto;
             this.Seguimiento = seguimiento;
-            //this.GastoAdicionalAntesDefecto = gastoAdicionalAntesDefecto;
+            this.GastoAdicionalAntesDefecto = gastoAdicionalAntesDefecto;
         }
 
-        public Producto()
+    
+
+        public override string ToString()
         {
-                
+            return $"{CodigoProducto};{NombreProducto};{CostoProducto};{GastoAdicionalAntesDefecto};{CantidadDaniada};{ProblemaEntrada};{PersonaResponsable.Fullname}";
         }
+        public List<Ubicacion> DevolverUbicacionProductos()
+        {
+            return new List<Ubicacion> { this.UbicacionProducto };
+        }
+
     }
 }

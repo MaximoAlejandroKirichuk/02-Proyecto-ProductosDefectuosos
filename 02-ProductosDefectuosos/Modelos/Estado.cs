@@ -41,21 +41,43 @@ namespace _02_ProductosDefectuosos.Modelos
             Perdida,
             ManoObra
         }
+        public enum TipoEstado
+        {
+            Reacondicionable,
+            Desechado
+        }
 
         public EstadoProducto(int costo, TipoCosto tipo)
         {
             switch (tipo)
             {
                 case TipoCosto.Perdida:
-                    this.CostoPerdida = costoPerdida;
+                    this.CostoPerdida = costo;
                     Estado = "Desechado";
                     break;
                 case TipoCosto.ManoObra:
-                    this.CostoManoObra = costoManoObra;
+                    this.CostoManoObra = costo;
+                    Estado = "ManoObra";
+                    break;
+            }
+        }
+        public EstadoProducto(TipoEstado tipo)
+        {
+            switch (tipo)
+            {
+                case TipoEstado.Desechado:
+                    Estado = "Desechado";
+                    break;
+                case TipoEstado.Reacondicionable:
                     Estado = "Reparado";
                     break;
             }
         }
+        public override string ToString()
+        {
+            return $"{Estado}";
+        }
+
 
     }
 }

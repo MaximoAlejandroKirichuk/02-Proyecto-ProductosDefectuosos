@@ -1,0 +1,8 @@
+# 02 Sistema de registro de productos defectuosos
+El sistema de registro de productos defectuosos se ocupará de la registración de cada uno de los productos que por algún problema de manufactura, deterioro en almacenes o accidente en tránsito ha quedado en condiciones de identificarse como defecto.
+ 
+El sistema de registro de productos defectuosos permitirá registrar cada vez la persona responsable del producto, el código del producto en cuestión, el nombre del producto en cuestión, el costo del producto en cuestión y el gasto que generó hasta ese momento antes de estar declarado como defectuoso. 
+
+El sistema de registración de productos defectuosos también deberá registrar por otro lado su localización geográfica eso quiere decir el depósito, el en el estante, nivel del estante, o columna y también la cantidad del producto dañado.
+
+El sistema de registración del producto defectuoso también debería indicar si el producto puede ser reacondicionado o sí debe ser desechado con la consiguiente pérdida de materia prima y gastos de mano de obra que hay que tener en cuenta para poder evaluar cuanto menos de utilidades tendrá la empresa El sistema permitirá hacer un seguimiento de los pasos que se han realizado desde la declaración hasta su destino final. Puede persistir datos en archivos CSV.

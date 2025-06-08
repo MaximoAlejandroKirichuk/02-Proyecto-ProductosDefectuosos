@@ -1,2 +1,3 @@
-NombreCompleto,Email,Password,Rol, NombreCuenta
-lucas,123,123,Administrador,luki
+NombreCompleto;Email;Password;Rol;NombreCuenta
+Lucas Molinari;123;123;Empleado;luki
+Maxi Kirichuk;maxi@;maxi;Administrador;maxi

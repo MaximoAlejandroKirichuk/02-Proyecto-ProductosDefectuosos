@@ -20,5 +20,9 @@ namespace _02_ProductosDefectuosos.Modelos
             this.Username = usuario;
             this.Rol = rol;
         }
+        public Empleado(string nombreCompleto)
+        {
+            this.Fullname = nombreCompleto;
+        }
     }
 }

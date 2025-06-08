@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.dateTimePickerFecha = new System.Windows.Forms.DateTimePicker();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.btnAgregarPaso = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
@@ -52,6 +54,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.comboBoxPersonaResponsable = new System.Windows.Forms.ComboBox();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.comboBoxProblemaEntrada = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
             this.txtCantidadProductosDañada = new System.Windows.Forms.TextBox();
@@ -65,7 +69,7 @@
             this.txtCodigoProducto = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtPersonaResponsable = new System.Windows.Forms.TextBox();
+            this.empleadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.btnTerminarCarga = new System.Windows.Forms.Button();
@@ -80,6 +84,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownEstante)).BeginInit();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empleadosBindingSource)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.SuspendLayout();
@@ -87,6 +93,7 @@
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.Color.DimGray;
+            this.tabPage4.Controls.Add(this.dateTimePickerFecha);
             this.tabPage4.Controls.Add(this.listBox1);
             this.tabPage4.Controls.Add(this.btnAgregarPaso);
             this.tabPage4.Controls.Add(this.label13);
@@ -96,6 +103,15 @@
             this.tabPage4.Size = new System.Drawing.Size(768, 382);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Seguimiento";
+            // 
+            // dateTimePickerFecha
+            // 
+            this.dateTimePickerFecha.Location = new System.Drawing.Point(153, 338);
+            this.dateTimePickerFecha.MaxDate = new System.DateTime(2040, 1, 1, 0, 0, 0, 0);
+            this.dateTimePickerFecha.MinDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
+            this.dateTimePickerFecha.Name = "dateTimePickerFecha";
+            this.dateTimePickerFecha.Size = new System.Drawing.Size(296, 22);
+            this.dateTimePickerFecha.TabIndex = 5;
             // 
             // listBox1
             // 
@@ -335,9 +351,11 @@
             this.tabPage1.Size = new System.Drawing.Size(768, 382);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Datos del Producto";
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.comboBoxPersonaResponsable);
             this.panel1.Controls.Add(this.comboBoxProblemaEntrada);
             this.panel1.Controls.Add(this.label15);
             this.panel1.Controls.Add(this.txtCantidadProductosDañada);
@@ -351,12 +369,24 @@
             this.panel1.Controls.Add(this.txtCodigoProducto);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.txtPersonaResponsable);
             this.panel1.Location = new System.Drawing.Point(6, 36);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(741, 296);
             this.panel1.TabIndex = 10;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // comboBoxPersonaResponsable
+            // 
+            this.comboBoxPersonaResponsable.DataSource = this.bindingSource1;
+            this.comboBoxPersonaResponsable.FormattingEnabled = true;
+            this.comboBoxPersonaResponsable.Location = new System.Drawing.Point(228, 30);
+            this.comboBoxPersonaResponsable.Name = "comboBoxPersonaResponsable";
+            this.comboBoxPersonaResponsable.Size = new System.Drawing.Size(142, 24);
+            this.comboBoxPersonaResponsable.TabIndex = 24;
+            // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataSource = typeof(_02_ProductosDefectuosos.Modelos.ListadoEmpleados);
             // 
             // comboBoxProblemaEntrada
             // 
@@ -481,12 +511,9 @@
             this.label1.TabIndex = 11;
             this.label1.Text = "Persona responsable";
             // 
-            // txtPersonaResponsable
+            // empleadosBindingSource
             // 
-            this.txtPersonaResponsable.Location = new System.Drawing.Point(248, 30);
-            this.txtPersonaResponsable.Name = "txtPersonaResponsable";
-            this.txtPersonaResponsable.Size = new System.Drawing.Size(100, 22);
-            this.txtPersonaResponsable.TabIndex = 10;
+            this.empleadosBindingSource.DataMember = "Empleados";
             // 
             // tabControl1
             // 
@@ -508,9 +535,9 @@
             // 
             this.tabPage5.BackColor = System.Drawing.Color.DimGray;
             this.tabPage5.Controls.Add(this.btnTerminarCarga);
-            this.tabPage5.Location = new System.Drawing.Point(4, 27);
+            this.tabPage5.Location = new System.Drawing.Point(4, 25);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(768, 380);
+            this.tabPage5.Size = new System.Drawing.Size(768, 382);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Finalizar formulario";
             // 
@@ -552,6 +579,8 @@
             this.tabPage1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empleadosBindingSource)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -591,7 +620,6 @@
         private System.Windows.Forms.TextBox txtCodigoProducto;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtPersonaResponsable;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.TabPage tabPage5;
@@ -601,5 +629,10 @@
         private System.Windows.Forms.TextBox txtCostoProducto;
         private System.Windows.Forms.ComboBox comboBoxProblemaEntrada;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.ComboBox comboBoxPersonaResponsable;
+        private System.Windows.Forms.BindingSource listadoEmpleadosBindingSource;
+        private System.Windows.Forms.BindingSource empleadosBindingSource;
+        private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.DateTimePicker dateTimePickerFecha;
     }
 }

@@ -76,10 +76,10 @@ En la misma sección de registro:
         }
 
 
-        
+
 
         private void richTextBoxAyuda_TextChanged(object sender, EventArgs e)
         {
-    }
+        }
     }
 }

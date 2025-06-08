@@ -7,10 +7,10 @@ using System.Windows.Forms;
 
 namespace _02_ProductosDefectuosos.Modelos
 {
-    internal class Admin : Usuario
+    internal class Administrador : Usuario
     {
         
-        public Admin(string nombreCompleto, string usuarioNombreCuenta, string mail, string password, string rol)
+        public Administrador(string nombreCompleto, string usuarioNombreCuenta, string mail, string password, string rol)
         {
             this.Username = usuarioNombreCuenta;
             this.Fullname = nombreCompleto;

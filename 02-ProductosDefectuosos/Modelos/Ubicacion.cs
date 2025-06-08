@@ -49,5 +49,9 @@ namespace _02_ProductosDefectuosos.Modelos
 			this.NumeroColumna = nroColumna;
         }
 
+        public override string ToString()
+        {
+            return $"{DepositoAlmacenado};{NumeroColumna};{NivelEstante};{NumeroEstante}";
+        }
     }
 }

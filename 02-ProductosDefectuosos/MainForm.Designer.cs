@@ -37,8 +37,12 @@
             this.dataGridViewListadoProductosDefectuosos = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
+            this.dataGridViewUbicacion = new System.Windows.Forms.DataGridView();
+            this.dataGridViewSeguimiento = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListadoProductosDefectuosos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUbicacion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSeguimiento)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -53,7 +57,7 @@
             this.ayudaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1055, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1179, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -97,11 +101,12 @@
             this.dataGridViewListadoProductosDefectuosos.Name = "dataGridViewListadoProductosDefectuosos";
             this.dataGridViewListadoProductosDefectuosos.Size = new System.Drawing.Size(1031, 309);
             this.dataGridViewListadoProductosDefectuosos.TabIndex = 1;
+            this.dataGridViewListadoProductosDefectuosos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewListadoProductosDefectuosos_CellClick);
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(481, 394);
+            this.button1.Location = new System.Drawing.Point(1049, 181);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(98, 43);
             this.button1.TabIndex = 2;
@@ -112,7 +117,7 @@
             // btnGuardar
             // 
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(643, 394);
+            this.btnGuardar.Location = new System.Drawing.Point(1049, 252);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(98, 43);
             this.btnGuardar.TabIndex = 3;
@@ -120,13 +125,32 @@
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
+            // dataGridViewUbicacion
+            // 
+            this.dataGridViewUbicacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewUbicacion.Location = new System.Drawing.Point(12, 383);
+            this.dataGridViewUbicacion.Name = "dataGridViewUbicacion";
+            this.dataGridViewUbicacion.Size = new System.Drawing.Size(447, 259);
+            this.dataGridViewUbicacion.TabIndex = 5;
+            this.dataGridViewUbicacion.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewUbicacion_CellContentClick);
+            // 
+            // dataGridViewSeguimiento
+            // 
+            this.dataGridViewSeguimiento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewSeguimiento.Location = new System.Drawing.Point(474, 383);
+            this.dataGridViewSeguimiento.Name = "dataGridViewSeguimiento";
+            this.dataGridViewSeguimiento.Size = new System.Drawing.Size(569, 259);
+            this.dataGridViewSeguimiento.TabIndex = 9;
+            // 
             // MainForm
             // 
             this.AcceptButton = this.btnGuardar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
-            this.ClientSize = new System.Drawing.Size(1055, 470);
+            this.ClientSize = new System.Drawing.Size(1179, 719);
+            this.Controls.Add(this.dataGridViewSeguimiento);
+            this.Controls.Add(this.dataGridViewUbicacion);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridViewListadoProductosDefectuosos);
@@ -134,14 +158,13 @@
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
-
-            this.Text = "Form1";
-
             this.Text = "Menu";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListadoProductosDefectuosos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUbicacion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSeguimiento)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -157,6 +180,8 @@
         private System.Windows.Forms.DataGridView dataGridViewListadoProductosDefectuosos;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.DataGridView dataGridViewUbicacion;
+        private System.Windows.Forms.DataGridView dataGridViewSeguimiento;
     }
 }
 

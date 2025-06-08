@@ -52,17 +52,20 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modelos\actores\Admin.cs" />
+    <Compile Include="Modelos\actores\Administrador.cs" />
     <Compile Include="Modelos\actores\Empleado.cs" />
     <Compile Include="Modelos\ListadoEmpleados.cs" />
     <Compile Include="Modelos\ListadoProductoDefectuosos.cs" />
     <Compile Include="Modelos\Estado.cs" />
     <Compile Include="Modelos\Producto.cs" />
     <Compile Include="Modelos\RolEmpresa.cs" />
+    <Compile Include="Modelos\Seguimiento.cs" />
+    <Compile Include="Modelos\SesionActiva.cs" />
     <Compile Include="Modelos\Ubicacion.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Modelos\actores\Usuario.cs" />
+    <Compile Include="Servicios\ServiciosCSV.cs" />
     <Compile Include="Vistas\FormAyuda.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +116,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\FormRegistroProductos.resx">
       <DependentUpon>FormRegistroProductos.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -120,8 +124,9 @@
     <EmbeddedResource Include="Vistas\Signup.resx">
       <DependentUpon>Signup.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Datos\productos_defectuosos.csv" />
+    <None Include="Datos\Productos.csv" />
     <None Include="Datos\Usuario.csv" />
+    <None Include="Properties\DataSources\_02_ProductosDefectuosos.Modelos.ListadoEmpleados.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -135,9 +140,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Servicios\" />
-    <Folder Include="Utilidades\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -41,8 +41,6 @@
             this.txtMail = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
-            this.comboBoxRol = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -159,35 +157,12 @@
             this.txtPassword.Size = new System.Drawing.Size(162, 20);
             this.txtPassword.TabIndex = 19;
             // 
-            // comboBoxRol
-            // 
-            this.comboBoxRol.FormattingEnabled = true;
-            this.comboBoxRol.Items.AddRange(new object[] {
-            "Administrador",
-            "Empleado"});
-            this.comboBoxRol.Location = new System.Drawing.Point(311, 397);
-            this.comboBoxRol.Name = "comboBoxRol";
-            this.comboBoxRol.Size = new System.Drawing.Size(162, 21);
-            this.comboBoxRol.TabIndex = 22;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(306, 376);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(145, 18);
-            this.label5.TabIndex = 23;
-            this.label5.Text = "Rol en la empresa";
-            // 
             // Signup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(779, 545);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.comboBoxRol);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label1);
@@ -223,7 +198,5 @@
         private System.Windows.Forms.TextBox txtMail;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.ComboBox comboBoxRol;
-        private System.Windows.Forms.Label label5;
     }
 }

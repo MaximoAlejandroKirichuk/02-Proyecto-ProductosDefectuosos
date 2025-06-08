@@ -8,25 +8,31 @@ namespace _02_ProductosDefectuosos.Modelos
 {
     public class ListadoEmpleados
     {
-        public List<Empleado> Empleados { get; private set; }
-        //clase singleton
-        private static ListadoEmpleados _instancia;
-
-        //constructor privado para que no se pueda crear desde fuera
+        private static ListadoEmpleados instancia = null;
         public static ListadoEmpleados Instancia
         {
             get
             {
-                if (_instancia == null)
-                    _instancia = new ListadoEmpleados();
-                return _instancia;
+                if (instancia == null)
+                    instancia = new ListadoEmpleados();
+                return instancia;
             }
         }
 
-        public void agregarEmpleado (Empleado nuevoEmpleado)
+        public List<Usuario> Empleados { get; set; }
+
+        private ListadoEmpleados()
+        {
+            Empleados = new List<Usuario>(); 
+        }
+
+
+
+        public void agregarEmpleado(Empleado nuevoEmpleado)
         {
             Empleados.Add(nuevoEmpleado);
         }
+
 
     }
 }

@@ -62,7 +62,7 @@ namespace _02_ProductosDefectuosos
         //sobreescribir el metodo para guardarlo correctamente
         public override string ToString()
         {
-            return $"{Fullname},{Mail},{Password},{Rol},{Username}";
+            return $"{Fullname}";
         }
 
     }
