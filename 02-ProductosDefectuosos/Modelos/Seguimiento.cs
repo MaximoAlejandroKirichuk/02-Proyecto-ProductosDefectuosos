@@ -14,7 +14,7 @@ namespace _02_ProductosDefectuosos.Modelos
         public DateTime FechaModificiacion { get; set; }
         public override string ToString()
         {
-            return $"Fecha Ingreso: {Fecha: yyyy-MM-dd};{Mensaje};{Responsable};Fecha modificacion: {FechaModificiacion: yyyy-MM-dd}";
+            return $"Fecha: {Fecha: yyyy-MM-dd};{Mensaje};{Responsable};Fecha modificacion: {FechaModificiacion: yyyy-MM-dd}";
         }
         public Seguimiento(DateTime fecha ,string mensaje, string responsbale)
         {

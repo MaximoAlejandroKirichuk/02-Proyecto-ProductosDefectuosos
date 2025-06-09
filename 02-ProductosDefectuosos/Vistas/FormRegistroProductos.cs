@@ -78,12 +78,12 @@ namespace _02_ProductosDefectuosos.Vistas
                 if (estado == "Desechado")
                 {
                     int costoPerdida = Convert.ToInt32(numericUpDownCostoPerdidaMateriaPrima.Value);
-                    estadoProducto = new EstadoProducto(costoPerdida,EstadoProducto.TipoCosto.Perdida );
+                    estadoProducto = new EstadoProducto(EstadoProducto.TipoEstado.Desechado);
                 }
                 else if(estado == "Reacondicionable")
                 {
                     int costoManoObra = Convert.ToInt32(numericUpDownCostoManoObra.Value);
-                    estadoProducto = new EstadoProducto(costoManoObra,EstadoProducto.TipoCosto.ManoObra);
+                    estadoProducto = new EstadoProducto(EstadoProducto.TipoEstado.Reacondicionable);
                 }
                 else
                 {

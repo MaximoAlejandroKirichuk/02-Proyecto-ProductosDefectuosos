@@ -2,3 +2,5 @@ Codigo Producto;Nombre Producto;Costo Producto;Gasto Adicional;Cantidad Dañada;
 P001;arroz marolio;9000;5000;1;Manufactura;Lucas Molinari;Deposito1;0;3;4;Desechado
 P002;Caja gomitas;23000;0;1;Accidente de tránsito;Lucas Molinari;Deposito2;0;3;3;Desechado
 P003;Caja de cintas;44999.99;30000;1;Accidente de tránsito;Lucas Molinari;Deposito3;0;2;6;Reacondicionable
+P004;Caja de fideos;55000;30000;1;Deteriodo de almacen;alan mili;Deposito3;0;3;4;Reacondicionable
+P005;Sobre de jugo tang;1000;100;4;Accidente de tránsito;Lucas Molinari;Deposito2;0;1;1;Reacondicionable

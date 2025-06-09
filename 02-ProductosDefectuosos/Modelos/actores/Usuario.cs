@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace _02_ProductosDefectuosos
 {
@@ -63,6 +64,11 @@ namespace _02_ProductosDefectuosos
         public override string ToString()
         {
             return $"{Fullname}";
+        }
+        public string DameUsuarioString()
+        {
+            //NombreCompleto; Email; Password; Rol; NombreCuenta
+            return $"{Fullname};{Mail};{Password};{Rol};{Username}";
         }
 
     }

@@ -157,7 +157,7 @@ namespace _02_ProductosDefectuosos.Servicios
                     sw.WriteLine("NombreCompleto;Email;Password;Rol;NombreCuenta");
                 }
 
-                sw.WriteLine(usuario.ToString());
+                sw.WriteLine(usuario.DameUsuarioString());
             }
         }
 

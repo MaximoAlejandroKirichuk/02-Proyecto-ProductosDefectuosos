@@ -69,7 +69,7 @@ namespace _02_ProductosDefectuosos.Modelos
                     Estado = "Desechado";
                     break;
                 case TipoEstado.Reacondicionable:
-                    Estado = "Reparado";
+                    Estado = "Reacondicionable";
                     break;
             }
         }
