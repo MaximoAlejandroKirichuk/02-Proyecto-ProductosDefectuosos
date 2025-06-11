@@ -44,9 +44,9 @@ namespace _02_ProductosDefectuosos.Modelos
         public Ubicacion(string nroDeposito, int nroEstante, int nivelEstante, int nroColumna)
         {
 			this.DepositoAlmacenado = nroDeposito;
-			this.NumeroColumna = nroEstante;
+			this.NumeroColumna = nroColumna ;
 			this.NivelEstante = nivelEstante;
-			this.NumeroColumna = nroColumna;
+			this.numeroEstante = nroEstante;
         }
 
         public override string ToString()
