@@ -214,5 +214,14 @@ namespace _02_ProductosDefectuosos
         {
 
         }
+
+        private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SesionActiva.Instancia.CerrarSesion();
+            MessageBox.Show("Se cerro sesión");
+            Close();
+            Form form = new Login();
+            form.Show();
+        }
     }
 }

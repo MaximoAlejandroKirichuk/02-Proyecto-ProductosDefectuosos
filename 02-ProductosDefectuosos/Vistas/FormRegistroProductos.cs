@@ -54,7 +54,7 @@ namespace _02_ProductosDefectuosos.Vistas
                 string codigoProducto = txtCodigoProducto.Text;
                 string nombreProducto = txtNombreProducto.Text;
                 decimal costoProducto = Convert.ToDecimal(txtCostoProducto.Text);
-                decimal gastoGeneradoAntesDefectuoso = Convert.ToInt32(txtGastoGenerado.Text);
+                decimal gastoGeneradoAntesDefectuoso = Convert.ToDecimal(txtGastoGenerado.Text);
                 
                 int cantidadProductoDañada = Convert.ToInt32(txtCantidadProductosDañada.Text);
                 string problemaEntrada = comboBoxProblemaEntrada.SelectedItem.ToString();
