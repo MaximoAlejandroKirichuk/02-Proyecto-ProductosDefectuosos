@@ -32,14 +32,14 @@
             this.registrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.seguimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ModificarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridViewListadoProductosDefectuosos = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.dataGridViewUbicacion = new System.Windows.Forms.DataGridView();
             this.dataGridViewSeguimiento = new System.Windows.Forms.DataGridView();
-            this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListadoProductosDefectuosos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUbicacion)).BeginInit();
@@ -54,7 +54,7 @@
             this.registrarToolStripMenuItem,
             this.seguimientoToolStripMenuItem,
             this.reportesToolStripMenuItem,
-            this.listadoToolStripMenuItem,
+            this.ModificarToolStripMenuItem,
             this.ayudaToolStripMenuItem,
             this.cerrarSesiónToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -81,13 +81,14 @@
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
             this.reportesToolStripMenuItem.Text = "Reportes";
+            this.reportesToolStripMenuItem.Click += new System.EventHandler(this.reportesToolStripMenuItem_Click);
             // 
-            // listadoToolStripMenuItem
+            // ModificarToolStripMenuItem
             // 
-            this.listadoToolStripMenuItem.Name = "listadoToolStripMenuItem";
-            this.listadoToolStripMenuItem.Size = new System.Drawing.Size(69, 24);
-            this.listadoToolStripMenuItem.Text = "Listado";
-            this.listadoToolStripMenuItem.Click += new System.EventHandler(this.listadoToolStripMenuItem_Click);
+            this.ModificarToolStripMenuItem.Name = "ModificarToolStripMenuItem";
+            this.ModificarToolStripMenuItem.Size = new System.Drawing.Size(155, 24);
+            this.ModificarToolStripMenuItem.Text = "Modificar Productos";
+            this.ModificarToolStripMenuItem.Click += new System.EventHandler(this.listadoToolStripMenuItem_Click);
             // 
             // ayudaToolStripMenuItem
             // 
@@ -95,6 +96,13 @@
             this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(63, 24);
             this.ayudaToolStripMenuItem.Text = "Ayuda";
             this.ayudaToolStripMenuItem.Click += new System.EventHandler(this.ayudaToolStripMenuItem_Click);
+            // 
+            // cerrarSesiónToolStripMenuItem
+            // 
+            this.cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
+            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(108, 24);
+            this.cerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión";
+            this.cerrarSesiónToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesiónToolStripMenuItem_Click);
             // 
             // dataGridViewListadoProductosDefectuosos
             // 
@@ -134,7 +142,6 @@
             this.dataGridViewUbicacion.Name = "dataGridViewUbicacion";
             this.dataGridViewUbicacion.Size = new System.Drawing.Size(447, 259);
             this.dataGridViewUbicacion.TabIndex = 5;
-            this.dataGridViewUbicacion.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewUbicacion_CellContentClick);
             // 
             // dataGridViewSeguimiento
             // 
@@ -143,13 +150,6 @@
             this.dataGridViewSeguimiento.Name = "dataGridViewSeguimiento";
             this.dataGridViewSeguimiento.Size = new System.Drawing.Size(569, 259);
             this.dataGridViewSeguimiento.TabIndex = 9;
-            // 
-            // cerrarSesiónToolStripMenuItem
-            // 
-            this.cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
-            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(108, 24);
-            this.cerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión";
-            this.cerrarSesiónToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesiónToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -181,7 +181,7 @@
 
         #endregion
         private System.Windows.Forms.ToolStripMenuItem registrarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem listadoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ModificarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem seguimientoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;

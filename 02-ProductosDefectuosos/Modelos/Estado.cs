@@ -11,8 +11,8 @@ namespace _02_ProductosDefectuosos.Modelos
     {
 
         private string estado;
-        private int costoManoObra;
-        private int costoPerdida;
+        private decimal costoManoObra;
+        private decimal costoPerdida;
 
 
         public string Estado
@@ -23,14 +23,14 @@ namespace _02_ProductosDefectuosos.Modelos
         }
 
 
-        public int CostoPerdida
+        public decimal CostoPerdida
         {
             get { return costoPerdida; }
             set { costoPerdida = value; }
         }
 
 
-        public int CostoManoObra
+        public decimal CostoManoObra
         {
             get { return costoManoObra; }
             set { costoManoObra = value; }
@@ -75,7 +75,22 @@ namespace _02_ProductosDefectuosos.Modelos
         }
         public override string ToString()
         {
-            return $"{Estado}";
+            if(Estado == "Desechado")
+            {
+                return $"{Estado};{CostoPerdida}";
+            }
+            else if (Estado == "Reacondicionable")
+            {
+               
+                {
+                    return $"{Estado};{CostoManoObra}";
+                }
+                
+            }
+            else
+            {
+                return $"No hay info";
+            }
         }
 
 

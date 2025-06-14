@@ -286,6 +286,7 @@
             // 
             // comboBoxDepositoAlmacenado
             // 
+            this.comboBoxDepositoAlmacenado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxDepositoAlmacenado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxDepositoAlmacenado.FormattingEnabled = true;
             this.comboBoxDepositoAlmacenado.Items.AddRange(new object[] {
@@ -378,6 +379,7 @@
             // comboBoxPersonaResponsable
             // 
             this.comboBoxPersonaResponsable.DataSource = this.bindingSource1;
+            this.comboBoxPersonaResponsable.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPersonaResponsable.FormattingEnabled = true;
             this.comboBoxPersonaResponsable.Location = new System.Drawing.Point(228, 30);
             this.comboBoxPersonaResponsable.Name = "comboBoxPersonaResponsable";
@@ -390,6 +392,7 @@
             // 
             // comboBoxProblemaEntrada
             // 
+            this.comboBoxProblemaEntrada.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxProblemaEntrada.FormattingEnabled = true;
             this.comboBoxProblemaEntrada.Items.AddRange(new object[] {
             "Manufactura",

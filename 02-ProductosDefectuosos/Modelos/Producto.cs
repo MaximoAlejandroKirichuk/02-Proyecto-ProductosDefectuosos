@@ -115,7 +115,11 @@ namespace _02_ProductosDefectuosos.Modelos
             this.GastoAdicionalAntesDefecto = gastoAdicionalAntesDefecto;
         }
 
-    
+        public Producto()
+        {
+            
+        }
+
 
         public override string ToString()
         {
