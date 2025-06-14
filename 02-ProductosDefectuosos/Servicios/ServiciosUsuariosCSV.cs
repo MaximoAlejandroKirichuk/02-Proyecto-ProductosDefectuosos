@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -193,8 +194,21 @@ namespace _02_ProductosDefectuosos.Servicios
            
 
         }
-       
+        public static string HashPassword(string password)
+        {
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                byte[] bytes = Encoding.UTF8.GetBytes(password);
+                byte[] hash = sha256.ComputeHash(bytes);
+                StringBuilder result = new StringBuilder();
+                foreach (byte b in hash)
+                {
+                    result.Append(b.ToString("x2")); // formato hexadecimal
+                }
+                return result.ToString();
+            }
+        }
 
-       
+
     }
 }

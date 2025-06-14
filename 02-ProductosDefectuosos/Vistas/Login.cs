@@ -27,27 +27,10 @@ namespace _02_ProductosDefectuosos.Vistas
             formSignup.ShowDialog();
         }
 
-
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Login_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             string nombreUsuario = txtUsername.Text.Trim();
-            string contrasenia = txtContrasenia.Text.Trim();
+            string contrasenia = ServiciosUsuariosCSV.HashPassword(txtContrasenia.Text.Trim());
 
             //esta funcion es media rara pero es facil. nada mas es para fijarse si esta vacio el txtbox.
             if (string.IsNullOrWhiteSpace(nombreUsuario) || string.IsNullOrWhiteSpace(contrasenia))

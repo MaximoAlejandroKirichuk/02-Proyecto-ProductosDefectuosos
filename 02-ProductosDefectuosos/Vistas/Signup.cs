@@ -26,20 +26,7 @@ namespace _02_ProductosDefectuosos.Vistas
         }
 
 
-        private string HashPassword(string password)
-        {
-            using (SHA256 sha256 = SHA256.Create())
-            {
-                byte[] bytes = Encoding.UTF8.GetBytes(password);
-                byte[] hash = sha256.ComputeHash(bytes);
-                StringBuilder result = new StringBuilder();
-                foreach (byte b in hash)
-                {
-                    result.Append(b.ToString("x2")); // formato hexadecimal
-                }
-                return result.ToString();
-            }
-        }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -52,7 +39,7 @@ namespace _02_ProductosDefectuosos.Vistas
             string nombreCompleto = txtFullName.Text.Trim();
             string usuario = txtUserName.Text.Trim();
             string mail = txtMail.Text.Trim();
-            string password = HashPassword(txtPassword.Text.Trim());
+            string password = ServiciosUsuariosCSV.HashPassword(txtPassword.Text.Trim());
             string rolTexto = "Empleado"; //el empleado puede crear una cuenta
 
             //manejar los errores por si no completan un txt.
@@ -80,9 +67,6 @@ namespace _02_ProductosDefectuosos.Vistas
             this.Hide();
         }
 
-        private void Signup_Load(object sender, EventArgs e)
-        {
 
-        }
     }
 }
