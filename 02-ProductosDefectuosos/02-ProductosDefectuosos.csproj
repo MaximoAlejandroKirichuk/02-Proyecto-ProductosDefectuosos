@@ -66,7 +66,8 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Modelos\actores\Usuario.cs" />
-    <Compile Include="Servicios\ServiciosCSV.cs" />
+    <Compile Include="Servicios\ServiciosProductosCSV.cs" />
+    <Compile Include="Servicios\ServiciosUsuariosCSV.cs" />
     <Compile Include="Vistas\FormAyuda.cs">
       <SubType>Form</SubType>
     </Compile>

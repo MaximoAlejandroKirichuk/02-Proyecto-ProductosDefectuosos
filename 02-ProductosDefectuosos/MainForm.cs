@@ -65,16 +65,16 @@ namespace _02_ProductosDefectuosos
                 ModificarToolStripMenuItem.Visible = false;
                 reportesToolStripMenuItem.Visible = false;
             }
-            Servicios.ServiciosCSV.CargarDatosDesdeArchivo();
+            Servicios.ServiciosProductosCSV.CargarDatosDesdeArchivo();
             actualizarLista();
-            Servicios.ServiciosCSV.EmpleadosActivos();
+            Servicios.ServiciosUsuariosCSV.EmpleadosActivos();
 
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            Servicios.ServiciosCSV.GuardarProducto();
-            Servicios.ServiciosCSV.GuardarSeguimientoProducto();
+            Servicios.ServiciosProductosCSV.GuardarProducto();
+            Servicios.ServiciosProductosCSV.GuardarSeguimientoProducto();
         }
        
 

@@ -47,17 +47,17 @@ namespace _02_ProductosDefectuosos.Modelos
             Desechado
         }
 
-        public EstadoProducto(int costo, TipoCosto tipo)
+        public EstadoProducto(decimal costo, TipoEstado tipo)
         {
             switch (tipo)
             {
-                case TipoCosto.Perdida:
-                    this.CostoPerdida = costo;
+                case TipoEstado.Desechado:
                     Estado = "Desechado";
+                    CostoPerdida = costo;
                     break;
-                case TipoCosto.ManoObra:
-                    this.CostoManoObra = costo;
-                    Estado = "ManoObra";
+                case TipoEstado.Reacondicionable:
+                    Estado = "Reacondicionable";
+                    CostoManoObra = costo;
                     break;
             }
         }

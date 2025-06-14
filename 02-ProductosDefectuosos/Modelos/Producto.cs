@@ -129,6 +129,22 @@ namespace _02_ProductosDefectuosos.Modelos
         {
             return new List<Ubicacion> { this.UbicacionProducto };
         }
+        public string ToCsv()
+        {
+            // Obtener el costo correcto según el tipo de estado
+            decimal costoEstado = 0;
+
+            if (EstadoProducto.Estado == "Desechado")
+            {
+                costoEstado = EstadoProducto.CostoPerdida;
+            }
+            else if (EstadoProducto.Estado == "Reacondicionable")
+            {
+                costoEstado = EstadoProducto.CostoManoObra;
+            }
+
+            return $"{CodigoProducto};{NombreProducto};{CostoProducto};{GastoAdicionalAntesDefecto};{CantidadDaniada};{ProblemaEntrada};{PersonaResponsable.Fullname};{UbicacionProducto.DepositoAlmacenado};{UbicacionProducto.NumeroEstante};{UbicacionProducto.NivelEstante};{UbicacionProducto.NumeroColumna};{EstadoProducto.Estado};{costoEstado}";
+        }
 
     }
 }

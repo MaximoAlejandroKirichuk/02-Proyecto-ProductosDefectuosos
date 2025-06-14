@@ -24,7 +24,7 @@ namespace _02_ProductosDefectuosos.Vistas
             actualizarLista();
             comboBoxPersonaResponsable.DataSource = ListadoEmpleados.Instancia.Empleados;
             comboBoxPersonaResponsable.DisplayMember = "NombreCompleto";
-            Servicios.ServiciosCSV.EmpleadosActivos();
+            Servicios.ServiciosUsuariosCSV.EmpleadosActivos();
         }
 
         private void actualizarLista()
@@ -120,12 +120,12 @@ namespace _02_ProductosDefectuosos.Vistas
                     {
                         // podés guardar este valor si lo necesitás después
                         decimal costoPerdida = Convert.ToDecimal(numericUpDownCostoPerdidaMateriaPrima.Value);
-                        estadoProducto = new EstadoProducto(EstadoProducto.TipoEstado.Desechado);
+                        estadoProducto = new EstadoProducto(costoPerdida,EstadoProducto.TipoEstado.Desechado);
                     }
                     else if (estado == "Reacondicionable")
                     {
                         decimal costoManoObra = Convert.ToDecimal(numericUpDownCostoManoObra.Value);
-                        estadoProducto = new EstadoProducto(EstadoProducto.TipoEstado.Reacondicionable);
+                        estadoProducto = new EstadoProducto(costoManoObra,EstadoProducto.TipoEstado.Reacondicionable);
                     }
                     else
                     {
@@ -150,6 +150,7 @@ namespace _02_ProductosDefectuosos.Vistas
                             Convert.ToInt16(numericUpDownColumna.Value)
                          ),
                         EstadoProducto = estadoProducto,
+                        
                         
                     };
 
