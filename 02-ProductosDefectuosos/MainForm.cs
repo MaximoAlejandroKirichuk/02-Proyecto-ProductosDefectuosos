@@ -68,7 +68,43 @@ namespace _02_ProductosDefectuosos
             Servicios.ServiciosProductosCSV.CargarDatosDesdeArchivo();
             actualizarLista();
             Servicios.ServiciosUsuariosCSV.EmpleadosActivos();
+        }
 
+        public void GetTextIngles()
+        {
+            registrarToolStripMenuItem.Text = Resource1.Register;
+            seguimientoToolStripMenuItem.Text = Resource1.Follow_up;
+            reportesToolStripMenuItem.Text = Resource1.Report;
+            ModificarToolStripMenuItem.Text = Resource1.Modify_Product;
+            ayudaToolStripMenuItem.Text = Resource1.Help;
+            cerrarSesiónToolStripMenuItem.Text = Resource1.Log_Out;
+            cambiarIdiomaToolStripMenuItem.Text = Resource1.Change_Lenguaje;
+
+
+            button1.Text = Resource1.Update;
+            btnGuardar.Text = Resource1.Save;
+
+            //esto hay que ponerlo cuando el toolstrip tiene submenus.
+            cambiarIdiomaToolStripMenuItem.DropDownItems[0].Text = "English";
+            cambiarIdiomaToolStripMenuItem.DropDownItems[1].Text = "Español";
+        }
+
+        public void GetTextPortugues()
+        {
+            registrarToolStripMenuItem.Text = Resource_portugues.Registrar;
+            seguimientoToolStripMenuItem.Text = Resource_portugues.Acompanhamento;
+            reportesToolStripMenuItem.Text = Resource_portugues.Relatórios;
+            ModificarToolStripMenuItem.Text = Resource_portugues._Modificar_produto;
+            ayudaToolStripMenuItem.Text = Resource_portugues.Ajuda;
+            cerrarSesiónToolStripMenuItem.Text = Resource_portugues.Sair;
+            cambiarIdiomaToolStripMenuItem.Text = Resource_portugues.Alterar_idioma;
+
+            button1.Text = Resource_portugues.Atualizar;
+            btnGuardar.Text = Resource_portugues.Salvar;
+
+            //esto hay que ponerlo cuando el toolstrip tiene submenus.
+            cambiarIdiomaToolStripMenuItem.DropDownItems[0].Text = "English";
+            cambiarIdiomaToolStripMenuItem.DropDownItems[1].Text = "Español";
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -152,6 +188,33 @@ namespace _02_ProductosDefectuosos
         }
 
         private void reportesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridViewListadoProductosDefectuosos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void cambiarIdiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void englishToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GetTextIngles();
+  
+
+        }
+
+        private void portugueToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GetTextPortugues();
+        }
+
+        private void cambiarIdiomaToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }

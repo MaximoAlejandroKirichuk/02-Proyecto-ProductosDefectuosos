@@ -66,6 +66,16 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Modelos\actores\Usuario.cs" />
+    <Compile Include="Resource.portugues.Designer.cs">
+      <DependentUpon>Resource.portugues.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resource1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource1.resx</DependentUpon>
+    </Compile>
     <Compile Include="Servicios\ServiciosProductosCSV.cs" />
     <Compile Include="Servicios\ServiciosUsuariosCSV.cs" />
     <Compile Include="Vistas\FormAyuda.cs">
@@ -110,6 +120,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Resource.portugues.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.portugues.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource1.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\FormAyuda.resx">
       <DependentUpon>FormAyuda.cs</DependentUpon>
     </EmbeddedResource>

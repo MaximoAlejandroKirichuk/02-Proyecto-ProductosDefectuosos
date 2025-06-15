@@ -40,6 +40,10 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.dataGridViewUbicacion = new System.Windows.Forms.DataGridView();
             this.dataGridViewSeguimiento = new System.Windows.Forms.DataGridView();
+            this.cambiarIdiomaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.englishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.españolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.portugueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListadoProductosDefectuosos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUbicacion)).BeginInit();
@@ -56,7 +60,8 @@
             this.reportesToolStripMenuItem,
             this.ModificarToolStripMenuItem,
             this.ayudaToolStripMenuItem,
-            this.cerrarSesiónToolStripMenuItem});
+            this.cerrarSesiónToolStripMenuItem,
+            this.cambiarIdiomaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1179, 28);
@@ -112,6 +117,7 @@
             this.dataGridViewListadoProductosDefectuosos.Size = new System.Drawing.Size(1031, 309);
             this.dataGridViewListadoProductosDefectuosos.TabIndex = 1;
             this.dataGridViewListadoProductosDefectuosos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewListadoProductosDefectuosos_CellClick);
+            this.dataGridViewListadoProductosDefectuosos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewListadoProductosDefectuosos_CellContentClick);
             // 
             // button1
             // 
@@ -150,6 +156,37 @@
             this.dataGridViewSeguimiento.Name = "dataGridViewSeguimiento";
             this.dataGridViewSeguimiento.Size = new System.Drawing.Size(569, 259);
             this.dataGridViewSeguimiento.TabIndex = 9;
+            // 
+            // cambiarIdiomaToolStripMenuItem
+            // 
+            this.cambiarIdiomaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.englishToolStripMenuItem,
+            this.españolToolStripMenuItem,
+            this.portugueToolStripMenuItem});
+            this.cambiarIdiomaToolStripMenuItem.Name = "cambiarIdiomaToolStripMenuItem";
+            this.cambiarIdiomaToolStripMenuItem.Size = new System.Drawing.Size(128, 24);
+            this.cambiarIdiomaToolStripMenuItem.Text = "Cambiar Idioma";
+            this.cambiarIdiomaToolStripMenuItem.Click += new System.EventHandler(this.cambiarIdiomaToolStripMenuItem_Click);
+            // 
+            // englishToolStripMenuItem
+            // 
+            this.englishToolStripMenuItem.Name = "englishToolStripMenuItem";
+            this.englishToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.englishToolStripMenuItem.Text = "English";
+            this.englishToolStripMenuItem.Click += new System.EventHandler(this.englishToolStripMenuItem_Click);
+            // 
+            // españolToolStripMenuItem
+            // 
+            this.españolToolStripMenuItem.Name = "españolToolStripMenuItem";
+            this.españolToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.españolToolStripMenuItem.Text = "Español";
+            // 
+            // portugueToolStripMenuItem
+            // 
+            this.portugueToolStripMenuItem.Name = "portugueToolStripMenuItem";
+            this.portugueToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.portugueToolStripMenuItem.Text = "Portugues";
+            this.portugueToolStripMenuItem.Click += new System.EventHandler(this.portugueToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -192,6 +229,10 @@
         private System.Windows.Forms.DataGridView dataGridViewUbicacion;
         private System.Windows.Forms.DataGridView dataGridViewSeguimiento;
         private System.Windows.Forms.ToolStripMenuItem cerrarSesiónToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cambiarIdiomaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem englishToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem españolToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem portugueToolStripMenuItem;
     }
 }
 
