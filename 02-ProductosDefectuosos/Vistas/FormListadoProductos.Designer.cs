@@ -367,6 +367,7 @@
             this.comboBoxEstadoProducto.Name = "comboBoxEstadoProducto";
             this.comboBoxEstadoProducto.Size = new System.Drawing.Size(161, 28);
             this.comboBoxEstadoProducto.TabIndex = 27;
+            this.comboBoxEstadoProducto.SelectedIndexChanged += new System.EventHandler(this.comboBoxEstadoProducto_SelectedIndexChanged);
             // 
             // comboBoxProblemaEntrada
             // 
