@@ -24,6 +24,7 @@ namespace _02_ProductosDefectuosos.Vistas
             actualizarLista();
             comboBoxPersonaResponsable.DataSource = ListadoEmpleados.Instancia.Empleados;
             comboBoxPersonaResponsable.DisplayMember = "NombreCompleto";
+            if (ListadoEmpleados.Instancia.Empleados.Count > 0) return;
             Servicios.ServiciosUsuariosCSV.EmpleadosActivos();
         }
 
@@ -171,6 +172,20 @@ namespace _02_ProductosDefectuosos.Vistas
             }
         }
 
-        
+        private void comboBoxEstadoProducto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string respuesta = comboBoxEstadoProducto.SelectedItem.ToString();
+
+            if (respuesta == "Desechado")
+            {
+                numericUpDownCostoPerdidaMateriaPrima.Enabled = true;
+                numericUpDownCostoManoObra.Enabled = false;
+            }
+            else
+            {
+                numericUpDownCostoManoObra.Enabled = true;
+                numericUpDownCostoPerdidaMateriaPrima.Enabled = false;
+            }
+        }
     }
 }

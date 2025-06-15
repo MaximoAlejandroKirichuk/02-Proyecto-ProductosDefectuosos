@@ -39,6 +39,7 @@ namespace _02_ProductosDefectuosos.Vistas
             string nombreCompleto = txtFullName.Text.Trim();
             string usuario = txtUserName.Text.Trim();
             string mail = txtMail.Text.Trim();
+            
             string password = ServiciosUsuariosCSV.HashPassword(txtPassword.Text.Trim());
             string rolTexto = "Empleado"; //el empleado puede crear una cuenta
 

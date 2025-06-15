@@ -43,19 +43,18 @@ namespace _02_ProductosDefectuosos.Vistas
             }
         }
 
-        
 
-        private void btnTerminarCarga_Click(object sender, EventArgs e)
+        public void ingresarDatos()
         {
             try
             {
                 //Generar producto
-                Usuario personaResponsable =(Usuario)comboBoxPersonaResponsable.SelectedItem;
+                Usuario personaResponsable = (Usuario)comboBoxPersonaResponsable.SelectedItem;
                 string codigoProducto = txtCodigoProducto.Text;
                 string nombreProducto = txtNombreProducto.Text;
                 decimal costoProducto = Convert.ToDecimal(txtCostoProducto.Text);
                 decimal gastoGeneradoAntesDefectuoso = Convert.ToDecimal(txtGastoGenerado.Text);
-                
+
                 int cantidadProductoDañada = Convert.ToInt32(txtCantidadProductosDañada.Text);
                 string problemaEntrada = comboBoxProblemaEntrada.SelectedItem.ToString();
 
@@ -78,9 +77,9 @@ namespace _02_ProductosDefectuosos.Vistas
                 if (estado == "Desechado")
                 {
                     decimal costoPerdida = Convert.ToDecimal(numericUpDownCostoPerdidaMateriaPrima.Value);
-                    estadoProducto = new EstadoProducto(costoPerdida,EstadoProducto.TipoEstado.Desechado);
+                    estadoProducto = new EstadoProducto(costoPerdida, EstadoProducto.TipoEstado.Desechado);
                 }
-                else if(estado == "Reacondicionable")
+                else if (estado == "Reacondicionable")
                 {
                     decimal costoManoObra = Convert.ToDecimal(numericUpDownCostoManoObra.Value);
                     estadoProducto = new EstadoProducto(costoManoObra, EstadoProducto.TipoEstado.Reacondicionable);
@@ -93,14 +92,19 @@ namespace _02_ProductosDefectuosos.Vistas
                 //Generar producto Defectuoso
                 Producto nuevoProductoDefectuoso = new Producto(codigoProducto, nombreProducto, costoProducto, gastoGeneradoAntesDefectuoso, cantidadProductoDañada, problemaEntrada, personaResponsable, ubicacionProducto, estadoProducto, seguimiento);
                 MessageBox.Show("Se creo un nuevo Producto Defectuoso con exito");
-               
+
                 ListadoProductoDefectuosos.Instancia.agregarProducto(nuevoProductoDefectuoso);
-                Close(); // Cierra el formulario 
+               
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Ocurrio un error al generar la carga" + ex.TargetSite);
             }
+        }
+        private void btnTerminarCarga_Click(object sender, EventArgs e)
+        {
+            ingresarDatos();
+            Close(); // Cierra el formulario 
         }
         
         private void btnAgregarPaso_Click(object sender, EventArgs e)

@@ -59,7 +59,7 @@
             this.cerrarSesiónToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1179, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1542, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -75,6 +75,7 @@
             this.seguimientoToolStripMenuItem.Name = "seguimientoToolStripMenuItem";
             this.seguimientoToolStripMenuItem.Size = new System.Drawing.Size(105, 24);
             this.seguimientoToolStripMenuItem.Text = "Seguimiento";
+            this.seguimientoToolStripMenuItem.Click += new System.EventHandler(this.seguimientoToolStripMenuItem_Click);
             // 
             // reportesToolStripMenuItem
             // 
@@ -157,7 +158,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
-            this.ClientSize = new System.Drawing.Size(1179, 719);
+            this.ClientSize = new System.Drawing.Size(1542, 719);
             this.Controls.Add(this.dataGridViewSeguimiento);
             this.Controls.Add(this.dataGridViewUbicacion);
             this.Controls.Add(this.btnGuardar);

@@ -67,6 +67,7 @@ namespace _02_ProductosDefectuosos
             }
             Servicios.ServiciosProductosCSV.CargarDatosDesdeArchivo();
             actualizarLista();
+            if (ListadoEmpleados.Instancia.Empleados.Count > 0) return;
             Servicios.ServiciosUsuariosCSV.EmpleadosActivos();
 
         }
@@ -99,7 +100,6 @@ namespace _02_ProductosDefectuosos
                 MessageBox.Show("Índice fuera de rango o lista vacía.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-
         public void CargarDatosArchivosSeguimiento(string codigoProducto)
         {
             string ruta = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\Datos\Seguimientos.csv");
@@ -138,10 +138,6 @@ namespace _02_ProductosDefectuosos
                 MessageBox.Show("No se encontró un seguimiento para el producto: " + codigoProducto);
             }
         }
-
-
-     
-
         private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SesionActiva.Instancia.CerrarSesion();
@@ -153,7 +149,14 @@ namespace _02_ProductosDefectuosos
 
         private void reportesToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            FormReportes f = new FormReportes();
+            f.ShowDialog();
+        }
 
+        private void seguimientoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormSeguimiento f = new FormSeguimiento();
+            f.ShowDialog();
         }
     }
 }
