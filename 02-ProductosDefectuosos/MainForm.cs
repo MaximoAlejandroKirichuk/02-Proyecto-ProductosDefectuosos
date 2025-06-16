@@ -147,15 +147,29 @@ namespace _02_ProductosDefectuosos
             form.Show();
         }
 
-        private void reportesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FormReportes f = new FormReportes();
-            f.ShowDialog();
-        }
+        
 
         private void seguimientoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormSeguimiento f = new FormSeguimiento();
+            f.ShowDialog();
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FormReporteResponsables r = new FormReporteResponsables();
+            r.ShowDialog();
+        }
+
+        private void reportePorUbicaciónGeográficaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormReportesUbicacion F = new FormReportesUbicacion();
+            F.ShowDialog();
+        }
+
+        private void reporteFinancieroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormReporteFinanciero f = new FormReporteFinanciero();
             f.ShowDialog();
         }
     }

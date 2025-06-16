@@ -19,11 +19,7 @@ namespace _02_ProductosDefectuosos.Modelos
             this.Password = password;
             this.Rol = rol;
         }
-        public override void MostrarPermisos()
-        {
-            MessageBox.Show($"Mis rol es el de: Admin. mi nombre es {Fullname} ");
-        }
-
+        
         
 
         public void AgregarProducto(Producto producto)
@@ -31,10 +27,19 @@ namespace _02_ProductosDefectuosos.Modelos
             throw new NotImplementedException();
         }
 
+        public override void AltaProductos(Producto nuevoProductoDefectuoso)
+        {
+            throw new NotImplementedException();
+        }
+
+        
+
         public void BorrarProducto(Producto borrarProducto)
         {
             ListadoProductoDefectuosos.Instancia.ProductosDefectuosos.Remove(borrarProducto);
         }
+
+       
 
         public void ModificarProducto(Producto productoModificado)
         {
@@ -51,6 +56,19 @@ namespace _02_ProductosDefectuosos.Modelos
                 productoExistente.UbicacionProducto = productoModificado.UbicacionProducto;
                 productoExistente.EstadoProducto = productoModificado.EstadoProducto;
             }
+        }
+        public override void ModificadorSeguimientoProducto(Seguimiento nuevoSeguimiento)
+        {
+            throw new NotImplementedException();
+        }
+        public override void AltaSeguimientoProducto(Seguimiento nuevoSeguimiento)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void BajaSeguimientoProducto(Seguimiento nuevoSeguimiento)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -32,6 +32,9 @@
             this.registrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.seguimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportePorUbicaciónGeográficaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteFinancieroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ModificarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -59,7 +62,7 @@
             this.cerrarSesiónToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1542, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1175, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -79,10 +82,34 @@
             // 
             // reportesToolStripMenuItem
             // 
+            this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.reportePorUbicaciónGeográficaToolStripMenuItem,
+            this.reporteFinancieroToolStripMenuItem});
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
             this.reportesToolStripMenuItem.Text = "Reportes";
-            this.reportesToolStripMenuItem.Click += new System.EventHandler(this.reportesToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(302, 24);
+            this.toolStripMenuItem1.Text = "Reportes por responsable";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            // 
+            // reportePorUbicaciónGeográficaToolStripMenuItem
+            // 
+            this.reportePorUbicaciónGeográficaToolStripMenuItem.Name = "reportePorUbicaciónGeográficaToolStripMenuItem";
+            this.reportePorUbicaciónGeográficaToolStripMenuItem.Size = new System.Drawing.Size(302, 24);
+            this.reportePorUbicaciónGeográficaToolStripMenuItem.Text = "Reporte por ubicación geográfica";
+            this.reportePorUbicaciónGeográficaToolStripMenuItem.Click += new System.EventHandler(this.reportePorUbicaciónGeográficaToolStripMenuItem_Click);
+            // 
+            // reporteFinancieroToolStripMenuItem
+            // 
+            this.reporteFinancieroToolStripMenuItem.Name = "reporteFinancieroToolStripMenuItem";
+            this.reporteFinancieroToolStripMenuItem.Size = new System.Drawing.Size(302, 24);
+            this.reporteFinancieroToolStripMenuItem.Text = "Reporte financiero";
+            this.reporteFinancieroToolStripMenuItem.Click += new System.EventHandler(this.reporteFinancieroToolStripMenuItem_Click);
             // 
             // ModificarToolStripMenuItem
             // 
@@ -158,7 +185,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
-            this.ClientSize = new System.Drawing.Size(1542, 719);
+            this.ClientSize = new System.Drawing.Size(1175, 719);
             this.Controls.Add(this.dataGridViewSeguimiento);
             this.Controls.Add(this.dataGridViewUbicacion);
             this.Controls.Add(this.btnGuardar);
@@ -193,6 +220,9 @@
         private System.Windows.Forms.DataGridView dataGridViewUbicacion;
         private System.Windows.Forms.DataGridView dataGridViewSeguimiento;
         private System.Windows.Forms.ToolStripMenuItem cerrarSesiónToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem reportePorUbicaciónGeográficaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reporteFinancieroToolStripMenuItem;
     }
 }
 

@@ -1,6 +1,6 @@
 ﻿namespace _02_ProductosDefectuosos.Vistas
 {
-    partial class FormReportes
+    partial class FormReporteResponsables
     {
         /// <summary>
         /// Required designer variable.
@@ -28,35 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridViewListadoProductosDefectuosos = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListadoProductosDefectuosos)).BeginInit();
+            this.flowLayoutPanelFacturas = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
-            // dataGridViewListadoProductosDefectuosos
+            // flowLayoutPanelFacturas
             // 
-            this.dataGridViewListadoProductosDefectuosos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewListadoProductosDefectuosos.Location = new System.Drawing.Point(11, 12);
-            this.dataGridViewListadoProductosDefectuosos.Name = "dataGridViewListadoProductosDefectuosos";
-            this.dataGridViewListadoProductosDefectuosos.Size = new System.Drawing.Size(1031, 309);
-            this.dataGridViewListadoProductosDefectuosos.TabIndex = 3;
+            this.flowLayoutPanelFacturas.AutoScroll = true;
+            this.flowLayoutPanelFacturas.BackColor = System.Drawing.Color.BurlyWood;
+            this.flowLayoutPanelFacturas.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanelFacturas.Location = new System.Drawing.Point(91, 101);
+            this.flowLayoutPanelFacturas.Name = "flowLayoutPanelFacturas";
+            this.flowLayoutPanelFacturas.Size = new System.Drawing.Size(326, 341);
+            this.flowLayoutPanelFacturas.TabIndex = 6;
+            this.flowLayoutPanelFacturas.WrapContents = false;
             // 
-            // FormReportes
+            // FormReporteResponsables
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1547, 719);
-            this.Controls.Add(this.dataGridViewListadoProductosDefectuosos);
-            this.Name = "FormReportes";
+            this.ClientSize = new System.Drawing.Size(516, 719);
+            this.Controls.Add(this.flowLayoutPanelFacturas);
+            this.Name = "FormReporteResponsables";
             this.Text = "FormReportes";
             this.Load += new System.EventHandler(this.FormReportes_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListadoProductosDefectuosos)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridViewListadoProductosDefectuosos;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelFacturas;
     }
 }

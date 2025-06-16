@@ -54,11 +54,12 @@ namespace _02_ProductosDefectuosos
 
 
         // Método abstracto (obligatorio de implementar en las clases hijas)
-        public abstract void MostrarPermisos();
-        public void Saludar()
-        {
-            MessageBox.Show($"Hola soy {Fullname}");
-        }
+        public abstract void AltaProductos(Producto nuevoProductoDefectuoso);
+        public abstract void AltaSeguimientoProducto(Seguimiento nuevoSeguimiento);
+        public abstract void BajaSeguimientoProducto(Seguimiento nuevoSeguimiento);
+        public abstract void ModificadorSeguimientoProducto(Seguimiento nuevoSeguimiento);
+        
+
 
         //sobreescribir el metodo para guardarlo correctamente
         public override string ToString()
@@ -70,6 +71,6 @@ namespace _02_ProductosDefectuosos
             //NombreCompleto; Email; Password; Rol; NombreCuenta
             return $"{Fullname};{Mail};{Password};{Rol};{Username}";
         }
-
+        
     }
 }

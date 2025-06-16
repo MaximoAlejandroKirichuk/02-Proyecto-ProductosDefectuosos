@@ -93,7 +93,8 @@ namespace _02_ProductosDefectuosos.Vistas
                 Producto nuevoProductoDefectuoso = new Producto(codigoProducto, nombreProducto, costoProducto, gastoGeneradoAntesDefectuoso, cantidadProductoDañada, problemaEntrada, personaResponsable, ubicacionProducto, estadoProducto, seguimiento);
                 MessageBox.Show("Se creo un nuevo Producto Defectuoso con exito");
 
-                ListadoProductoDefectuosos.Instancia.agregarProducto(nuevoProductoDefectuoso);
+                SesionActiva.Instancia.UsuarioActivo.AltaProductos(nuevoProductoDefectuoso);
+                
                
             }
             catch (Exception ex)

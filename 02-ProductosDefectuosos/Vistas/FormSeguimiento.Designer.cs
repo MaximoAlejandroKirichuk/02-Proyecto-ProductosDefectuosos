@@ -98,9 +98,9 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.txtNombreProducto);
             this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Location = new System.Drawing.Point(718, 239);
+            this.groupBox2.Location = new System.Drawing.Point(720, 228);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(691, 163);
+            this.groupBox2.Size = new System.Drawing.Size(416, 163);
             this.groupBox2.TabIndex = 36;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Información Producto";
@@ -228,6 +228,7 @@
             // comboBoxProblemaEntrada
             // 
             this.comboBoxProblemaEntrada.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxProblemaEntrada.Enabled = false;
             this.comboBoxProblemaEntrada.FormattingEnabled = true;
             this.comboBoxProblemaEntrada.Items.AddRange(new object[] {
             "Manufactura",

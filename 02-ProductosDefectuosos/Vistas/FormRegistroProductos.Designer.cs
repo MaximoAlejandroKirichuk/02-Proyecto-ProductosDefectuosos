@@ -633,7 +633,6 @@
         private System.Windows.Forms.ComboBox comboBoxProblemaEntrada;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ComboBox comboBoxPersonaResponsable;
-        private System.Windows.Forms.BindingSource listadoEmpleadosBindingSource;
         private System.Windows.Forms.BindingSource empleadosBindingSource;
         private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.DateTimePicker dateTimePickerFecha;
