@@ -32,12 +32,16 @@
             this.registrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.seguimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportePorResponsalbeGeográficaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportePorUbicaciónGeográficaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteFinancieroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ModificarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cambiarIdiomaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.españolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inglesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.portuguesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridViewListadoProductosDefectuosos = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
@@ -59,7 +63,8 @@
             this.reportesToolStripMenuItem,
             this.ModificarToolStripMenuItem,
             this.ayudaToolStripMenuItem,
-            this.cerrarSesiónToolStripMenuItem});
+            this.cerrarSesiónToolStripMenuItem,
+            this.cambiarIdiomaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1175, 28);
@@ -83,19 +88,19 @@
             // reportesToolStripMenuItem
             // 
             this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
+            this.reportePorResponsalbeGeográficaToolStripMenuItem,
             this.reportePorUbicaciónGeográficaToolStripMenuItem,
             this.reporteFinancieroToolStripMenuItem});
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
             this.reportesToolStripMenuItem.Text = "Reportes";
             // 
-            // toolStripMenuItem1
+            // reportePorResponsalbeGeográficaToolStripMenuItem
             // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(302, 24);
-            this.toolStripMenuItem1.Text = "Reportes por responsable";
-            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            this.reportePorResponsalbeGeográficaToolStripMenuItem.Name = "reportePorResponsalbeGeográficaToolStripMenuItem";
+            this.reportePorResponsalbeGeográficaToolStripMenuItem.Size = new System.Drawing.Size(302, 24);
+            this.reportePorResponsalbeGeográficaToolStripMenuItem.Text = "Reportes por responsable";
+            this.reportePorResponsalbeGeográficaToolStripMenuItem.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // reportePorUbicaciónGeográficaToolStripMenuItem
             // 
@@ -131,6 +136,37 @@
             this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(108, 24);
             this.cerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión";
             this.cerrarSesiónToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesiónToolStripMenuItem_Click);
+            // 
+            // cambiarIdiomaToolStripMenuItem
+            // 
+            this.cambiarIdiomaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.españolToolStripMenuItem,
+            this.inglesToolStripMenuItem,
+            this.portuguesToolStripMenuItem});
+            this.cambiarIdiomaToolStripMenuItem.Name = "cambiarIdiomaToolStripMenuItem";
+            this.cambiarIdiomaToolStripMenuItem.Size = new System.Drawing.Size(128, 24);
+            this.cambiarIdiomaToolStripMenuItem.Text = "Cambiar Idioma";
+            // 
+            // españolToolStripMenuItem
+            // 
+            this.españolToolStripMenuItem.Name = "españolToolStripMenuItem";
+            this.españolToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.españolToolStripMenuItem.Text = "Español";
+            this.españolToolStripMenuItem.Click += new System.EventHandler(this.españolToolStripMenuItem_Click);
+            // 
+            // inglesToolStripMenuItem
+            // 
+            this.inglesToolStripMenuItem.Name = "inglesToolStripMenuItem";
+            this.inglesToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.inglesToolStripMenuItem.Text = "Ingles";
+            this.inglesToolStripMenuItem.Click += new System.EventHandler(this.inglesToolStripMenuItem_Click);
+            // 
+            // portuguesToolStripMenuItem
+            // 
+            this.portuguesToolStripMenuItem.Name = "portuguesToolStripMenuItem";
+            this.portuguesToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.portuguesToolStripMenuItem.Text = "Portugues";
+            this.portuguesToolStripMenuItem.Click += new System.EventHandler(this.portuguesToolStripMenuItem_Click);
             // 
             // dataGridViewListadoProductosDefectuosos
             // 
@@ -220,9 +256,13 @@
         private System.Windows.Forms.DataGridView dataGridViewUbicacion;
         private System.Windows.Forms.DataGridView dataGridViewSeguimiento;
         private System.Windows.Forms.ToolStripMenuItem cerrarSesiónToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem reportePorResponsalbeGeográficaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportePorUbicaciónGeográficaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reporteFinancieroToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cambiarIdiomaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem españolToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inglesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem portuguesToolStripMenuItem;
     }
 }
 

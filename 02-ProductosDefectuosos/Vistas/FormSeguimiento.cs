@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,10 +15,68 @@ namespace _02_ProductosDefectuosos.Vistas
 {
     public partial class FormSeguimiento : Form
     {
-        public FormSeguimiento()
+        public FormSeguimiento(int idioma)
         {
             InitializeComponent();
+
+            AplicarIdioma(idioma);
+
         }
+
+        public void AplicarIdioma(int idiomanuevo)
+        {
+            if (idiomanuevo == 1)
+                gettextespañol();
+            else if (idiomanuevo == 2)
+                gettextingles();
+            else if (idiomanuevo == 3)
+                gettextportugues();
+        }
+
+
+        public void gettextespañol()
+        {
+            groupBox1.Text = Res_español.Seguimiento;
+            groupBox2.Text = Res_español.informacion_producto;
+
+            btnAgregarPaso.Text = Res_español.Agregar;
+            btnModificar.Text = Res_español.Modificar;
+            btnBorrar.Text = Res_español.Borrar;
+            label1.Text = Res_español.codigo_producto;
+            label2.Text = Res_español.nombre_producto;
+            label10.Text = Res_español.problema_de_entrada;
+            label9.Text = Res_español.persona_responsable;
+
+        }
+        public void gettextingles()
+        {
+            groupBox1.Text = Res_ingles.Follow_up;
+            groupBox2.Text = Res_ingles.Product_information;
+
+            btnAgregarPaso.Text = Res_ingles.Add;
+            btnModificar.Text = Res_ingles.Modify;
+            btnBorrar.Text = Res_ingles.Delete;
+            label1.Text = Res_ingles.Product_code;
+            label2.Text = Res_ingles.Product_name;
+            label10.Text = Res_ingles.Reported_Issue_;
+            label9.Text = Res_ingles.Responsible_person;
+        }
+        public void gettextportugues()
+        {
+            groupBox1.Text = Res_portugues.Acompanhamento;
+            groupBox2.Text = Res_portugues.Informações_do_produto;
+
+            btnAgregarPaso.Text = Res_portugues.Adicionar;
+            btnModificar.Text = Res_portugues.Modificar;
+            btnBorrar.Text = Res_portugues.Deletar;
+            label1.Text = Res_portugues.Condição_do_produto;
+            label2.Text = Res_portugues.Nome_do_Produto;
+            label10.Text = Res_portugues.Problema_de_entrada;
+            label9.Text = Res_portugues.Pessoa_Responsável;
+        }
+
+
+
         private void actualizarLista()
         {
             dataGridViewListadoProductosDefectuosos.DataSource = null;
