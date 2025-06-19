@@ -272,5 +272,18 @@ namespace _02_ProductosDefectuosos
             FormRegistroProductos formRegistro = new FormRegistroProductos(idioma);
             formRegistro.ShowDialog();
         }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show("¿Estás seguro de que querés cerrar este formulario?", "Confirmar salida",
+             MessageBoxButtons.YesNo,
+             MessageBoxIcon.Warning
+            );
+
+            if (resultado == DialogResult.No)
+            {
+                e.Cancel = true; // esto cancela el cierre del formulario
+            }
+        }
     }
 }

@@ -45,6 +45,7 @@ namespace _02_ProductosDefectuosos.Vistas
             label1.Text = Res_español.codigo_producto;
             label2.Text = Res_español.nombre_producto;
             label10.Text = Res_español.problema_de_entrada;
+            label13.Text = Res_español.Paso_al_seguimiento; 
             label9.Text = Res_español.persona_responsable;
 
         }
@@ -59,6 +60,7 @@ namespace _02_ProductosDefectuosos.Vistas
             label1.Text = Res_ingles.Product_code;
             label2.Text = Res_ingles.Product_name;
             label10.Text = Res_ingles.Reported_Issue_;
+            label13.Text = Res_ingles.Steps_of_Follow_up;
             label9.Text = Res_ingles.Responsible_person;
         }
         public void gettextportugues()
@@ -72,9 +74,9 @@ namespace _02_ProductosDefectuosos.Vistas
             label1.Text = Res_portugues.Condição_do_produto;
             label2.Text = Res_portugues.Nome_do_Produto;
             label10.Text = Res_portugues.Problema_de_entrada;
+            label13.Text = Res_portugues.steps_Acompanhamento;
             label9.Text = Res_portugues.Pessoa_Responsável;
         }
-
 
 
         private void actualizarLista()

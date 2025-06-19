@@ -32,6 +32,9 @@
             this.dataGridViewSeguimiento = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.comboBoxProblemaEntrada = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtPersonaResponsable = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtCodigoProducto = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -44,9 +47,6 @@
             this.txtAgregarPaso = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.btnAgregarPaso = new System.Windows.Forms.Button();
-            this.txtPersonaResponsable = new System.Windows.Forms.TextBox();
-            this.comboBoxProblemaEntrada = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListadoProductosDefectuosos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSeguimiento)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -104,6 +104,36 @@
             this.groupBox2.TabIndex = 36;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Información Producto";
+            // 
+            // comboBoxProblemaEntrada
+            // 
+            this.comboBoxProblemaEntrada.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxProblemaEntrada.Enabled = false;
+            this.comboBoxProblemaEntrada.FormattingEnabled = true;
+            this.comboBoxProblemaEntrada.Items.AddRange(new object[] {
+            "Manufactura",
+            "Deteriodo de almacen",
+            "Accidente de tránsito"});
+            this.comboBoxProblemaEntrada.Location = new System.Drawing.Point(186, 52);
+            this.comboBoxProblemaEntrada.Name = "comboBoxProblemaEntrada";
+            this.comboBoxProblemaEntrada.Size = new System.Drawing.Size(147, 21);
+            this.comboBoxProblemaEntrada.TabIndex = 36;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(199, 35);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(106, 13);
+            this.label10.TabIndex = 35;
+            this.label10.Text = "Problema de Entrada";
+            // 
+            // txtPersonaResponsable
+            // 
+            this.txtPersonaResponsable.Location = new System.Drawing.Point(186, 111);
+            this.txtPersonaResponsable.Name = "txtPersonaResponsable";
+            this.txtPersonaResponsable.Size = new System.Drawing.Size(142, 20);
+            this.txtPersonaResponsable.TabIndex = 34;
             // 
             // label1
             // 
@@ -204,9 +234,9 @@
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(6, 216);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(174, 20);
+            this.label13.Size = new System.Drawing.Size(180, 20);
             this.label13.TabIndex = 7;
-            this.label13.Text = "Paso al siguiemiento";
+            this.label13.Text = "Paso al seguiemiento";
             // 
             // btnAgregarPaso
             // 
@@ -217,36 +247,6 @@
             this.btnAgregarPaso.Text = "Agregar";
             this.btnAgregarPaso.UseVisualStyleBackColor = true;
             this.btnAgregarPaso.Click += new System.EventHandler(this.btnAgregarPaso_Click);
-            // 
-            // txtPersonaResponsable
-            // 
-            this.txtPersonaResponsable.Location = new System.Drawing.Point(186, 111);
-            this.txtPersonaResponsable.Name = "txtPersonaResponsable";
-            this.txtPersonaResponsable.Size = new System.Drawing.Size(142, 20);
-            this.txtPersonaResponsable.TabIndex = 34;
-            // 
-            // comboBoxProblemaEntrada
-            // 
-            this.comboBoxProblemaEntrada.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxProblemaEntrada.Enabled = false;
-            this.comboBoxProblemaEntrada.FormattingEnabled = true;
-            this.comboBoxProblemaEntrada.Items.AddRange(new object[] {
-            "Manufactura",
-            "Deteriodo de almacen",
-            "Accidente de tránsito"});
-            this.comboBoxProblemaEntrada.Location = new System.Drawing.Point(186, 52);
-            this.comboBoxProblemaEntrada.Name = "comboBoxProblemaEntrada";
-            this.comboBoxProblemaEntrada.Size = new System.Drawing.Size(147, 21);
-            this.comboBoxProblemaEntrada.TabIndex = 36;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(199, 35);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(106, 13);
-            this.label10.TabIndex = 35;
-            this.label10.Text = "Problema de Entrada";
             // 
             // FormSeguimiento
             // 
