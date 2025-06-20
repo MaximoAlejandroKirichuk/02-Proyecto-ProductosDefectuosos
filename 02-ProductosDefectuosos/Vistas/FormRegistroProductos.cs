@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static _02_ProductosDefectuosos.Modelos.AreaResponsable;
 
 namespace _02_ProductosDefectuosos.Vistas
 {
@@ -139,12 +140,14 @@ namespace _02_ProductosDefectuosos.Vistas
 
             if(respuesta == "Desechado")
             {
-               numericUpDownCostoPerdidaMateriaPrima.Enabled = true;
+                numericUpDownCostoPerdidaMateriaPrima.Enabled = true;
                 numericUpDownCostoManoObra.Enabled = false;
+                numericUpDownCostoManoObra.Value = 0;
             }
             else{
                 numericUpDownCostoManoObra.Enabled = true;
                 numericUpDownCostoPerdidaMateriaPrima.Enabled = false;
+                numericUpDownCostoPerdidaMateriaPrima.Value = 0;
             }
         }
 
@@ -194,23 +197,39 @@ namespace _02_ProductosDefectuosos.Vistas
                     MessageBox.Show("Ocurrio un error con el estado del producto");
                 }
 
+                //Generar el area responsable 
+                AreaPosibles areaEnum;
+                AreaResponsable area = null;
+
+                if (comboBoxAreaResponsable.SelectedItem != null &&
+                    Enum.TryParse(comboBoxAreaResponsable.SelectedItem.ToString(), out areaEnum))
+                {
+                    area = new AreaResponsable(areaEnum);
+                }
+                else
+                {
+                    MessageBox.Show("El valor seleccionado para el área responsable no es válido.");
+                    return;
+                }
+                
+                
                 //Generar producto Defectuoso
-                Producto nuevoProductoDefectuoso = new Producto(codigoProducto, nombreProducto, costoProducto, gastoGeneradoAntesDefectuoso, cantidadProductoDañada, problemaEntrada, personaResponsable, ubicacionProducto, estadoProducto, seguimiento);
+                Producto nuevoProductoDefectuoso = new Producto(codigoProducto, nombreProducto, costoProducto, gastoGeneradoAntesDefectuoso, cantidadProductoDañada, problemaEntrada, personaResponsable, ubicacionProducto, estadoProducto, seguimiento, area);
                 MessageBox.Show("Se creo un nuevo Producto Defectuoso con exito");
 
-                SesionActiva.Instancia.UsuarioActivo.AltaProductos(nuevoProductoDefectuoso);
+                ListadoProductoDefectuosos.Instancia.agregarProducto(nuevoProductoDefectuoso);
                 
                
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ocurrio un error al generar la carga" + ex.TargetSite);
+                MessageBox.Show("Ocurrio un error al generar la carga     " + ex.Message + "   " + ex.Source );
             }
         }
         private void btnTerminarCarga_Click(object sender, EventArgs e)
         {
             ingresarDatos();
-            Close(); // Cierra el formulario 
+            
         }
         
         private void btnAgregarPaso_Click(object sender, EventArgs e)
@@ -228,11 +247,8 @@ namespace _02_ProductosDefectuosos.Vistas
 
         }
 
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-            
-            
+       
 
-        }
+       
     }
 }

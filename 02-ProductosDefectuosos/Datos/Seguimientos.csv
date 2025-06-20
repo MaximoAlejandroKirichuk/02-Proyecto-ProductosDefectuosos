@@ -1,15 +1,1 @@
 Codigo Producto;Fecha;Mensaje;Responsable
-P001;2025-06-10;Producto verificado y clasificado como reacondicionable;Lucas Molinari
-P001;2025-06-11;Se inició el proceso de reacondicionamiento;Lucas Molinari
-P001;2025-06-13;Reacondicionamiento completo y listo para reubicación;Lucas Molinari
-P002;2025-06-09;Producto dañado irreparablemente tras accidente;Lucas Molinari
-P002;2025-06-10;Producto marcado como desechado y retirado del inventario;Lucas Molinari
-P003;2025-06-10;Producto dañado pero en condiciones de recuperación;Lucas Molinari
-P003;2025-06-12;En proceso de limpieza y evaluación técnica;Lucas Molinari
-P003;2025-06-13;Listo para reacondicionamiento;Lucas Molinari
-P004;2025-06-11;Se detectó deterioro por condiciones del almacén;alan mili
-P004;2025-06-12;Producto en evaluación para reacondicionamiento;alan mili
-P004;2025-06-14;Reacondicionamiento en curso;alan mili
-P005;2025-06-08;Accidente detectado en zona de descarga;Lucas Molinari
-P005;2025-06-09;Daños menores, producto clasificado como reacondicionable;Lucas Molinari
-P005;2025-06-10;Se reacondicionaron 3 de 4 unidades, 1 descartada;Lucas Molinari

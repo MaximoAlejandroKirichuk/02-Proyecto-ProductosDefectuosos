@@ -1,6 +1,6 @@
-Codigo Producto;Nombre Producto;Costo Producto;Gasto Adicional;Cantidad Dañada;Problema de entrada;Personal responsable;Deposito;Estante;Nivel;Columna;Estado Producto;Costo Estado
-P001;arroz marolio;9000;5000;1;Manufactura;Lucas Molinari;Deposito1;1;3;4;Reacondicionable;30000
-P002;Caja gomitas;23000;0;1;Accidente de tránsito;Lucas Molinari;Deposito2;1;3;3;Desechado;2220
-P003;Caja de cintas;44999.99;30000;1;Accidente de tránsito;Lucas Molinari;Deposito3;2;2;6;Reacondicionable;10
-P004;Caja de fideos;55000;30000;1;Deteriodo de almacen;alan mili;Deposito3;3;3;4;Reacondicionable;10
-P005;Sobre de jugo tang;1000;100;4;Accidente de tránsito;Lucas Molinari;Deposito2;4;1;1;Reacondicionable;0
+Codigo Producto;Nombre Producto;Costo Producto;Gasto Adicional;Cantidad Dañada;Problema de entrada;Personal responsable;Deposito;Estante;Nivel;Columna;Estado Producto;Costo Estado;Area Responsable
+P001;Ordenador de escritorio;120000;10000;2;Manufactura;Lucas Molinari;Deposito1;1;3;4;Reacondicionable;30000;Sistemas
+P002;Kit de folletos publicitarios;35000;5000;3;Accidente de tránsito;Lucas Molinari;Deposito2;1;3;3;Desechado;2220;Ventas
+P003;Router empresarial;87000;12000;1;Accidente de tránsito;Lucas Molinari;Deposito3;2;2;6;Reacondicionable;10;Sistemas
+P004;Archivo de carpetas;25000;8000;2;Deteriodo de almacen;alan mili;Deposito3;3;3;4;Reacondicionable;10;Administracion
+P005;Caja de repuestos industriales;150000;30000;1;Accidente de tránsito;Lucas Molinari;Deposito2;4;1;1;Reacondicionable;0;Producción

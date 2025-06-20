@@ -20,8 +20,8 @@ namespace _02_ProductosDefectuosos.Modelos
         private Usuario personaResponsable;
         private Ubicacion ubicacionProducto;
         private EstadoProducto estadoProducto;
+        public AreaResponsable AreaDevolver { get; set; }
 
-        
 
         //Es una lista del tipo string => se anota cada paso del producto
         public List<Seguimiento> Seguimiento { get; set; } = new List<Seguimiento>();
@@ -100,7 +100,8 @@ namespace _02_ProductosDefectuosos.Modelos
             Ubicacion ubicacionProducto,
             EstadoProducto estadoProducto,
             // QUE HAGO CON ESTO
-            List<Seguimiento> seguimiento
+            List<Seguimiento> seguimiento,
+            AreaResponsable areaDevolver
             )
         {
             this.CodigoProducto = codigoProducto;
@@ -113,6 +114,7 @@ namespace _02_ProductosDefectuosos.Modelos
             this.EstadoProducto = estadoProducto;
             this.Seguimiento = seguimiento;
             this.GastoAdicionalAntesDefecto = gastoAdicionalAntesDefecto;
+            AreaDevolver = areaDevolver;
         }
 
         public Producto()
@@ -123,7 +125,7 @@ namespace _02_ProductosDefectuosos.Modelos
 
         public override string ToString()
         {
-            return $"{CodigoProducto};{NombreProducto};{CostoProducto};{GastoAdicionalAntesDefecto};{CantidadDaniada};{ProblemaEntrada};{PersonaResponsable.Fullname}";
+            return $"{CodigoProducto};{NombreProducto};{CostoProducto};{GastoAdicionalAntesDefecto};{CantidadDaniada};{ProblemaEntrada};{PersonaResponsable.Fullname};{AreaDevolver.Area}";
         }
         public List<Ubicacion> DevolverUbicacionProductos()
         {
@@ -143,7 +145,7 @@ namespace _02_ProductosDefectuosos.Modelos
                 costoEstado = EstadoProducto.CostoManoObra;
             }
 
-            return $"{CodigoProducto};{NombreProducto};{CostoProducto};{GastoAdicionalAntesDefecto};{CantidadDaniada};{ProblemaEntrada};{PersonaResponsable.Fullname};{UbicacionProducto.DepositoAlmacenado};{UbicacionProducto.NumeroEstante};{UbicacionProducto.NivelEstante};{UbicacionProducto.NumeroColumna};{EstadoProducto.Estado};{costoEstado}";
+            return $"{CodigoProducto};{NombreProducto};{CostoProducto};{GastoAdicionalAntesDefecto};{CantidadDaniada};{ProblemaEntrada};{PersonaResponsable.Fullname};{UbicacionProducto.DepositoAlmacenado};{UbicacionProducto.NumeroEstante};{UbicacionProducto.NivelEstante};{UbicacionProducto.NumeroColumna};{EstadoProducto.Estado};{costoEstado};{AreaDevolver.Area}";
         }
 
     }

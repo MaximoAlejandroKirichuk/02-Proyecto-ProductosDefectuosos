@@ -71,6 +71,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.empleadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.label18 = new System.Windows.Forms.Label();
+            this.comboBoxAreaResponsable = new System.Windows.Forms.ComboBox();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.btnTerminarCarga = new System.Windows.Forms.Button();
             this.tabPage4.SuspendLayout();
@@ -87,6 +90,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.empleadosBindingSource)).BeginInit();
             this.tabControl1.SuspendLayout();
+            this.tabPage6.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -352,7 +356,6 @@
             this.tabPage1.Size = new System.Drawing.Size(768, 382);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Datos del Producto";
-            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // panel1
             // 
@@ -524,6 +527,7 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -533,6 +537,43 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(776, 411);
             this.tabControl1.TabIndex = 11;
+            // 
+            // tabPage6
+            // 
+            this.tabPage6.BackColor = System.Drawing.Color.DimGray;
+            this.tabPage6.Controls.Add(this.label18);
+            this.tabPage6.Controls.Add(this.comboBoxAreaResponsable);
+            this.tabPage6.Location = new System.Drawing.Point(4, 25);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Size = new System.Drawing.Size(768, 382);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "Area responsable";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.White;
+            this.label18.Location = new System.Drawing.Point(133, 109);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(226, 20);
+            this.label18.TabIndex = 7;
+            this.label18.Text = "Area responsable producto";
+            // 
+            // comboBoxAreaResponsable
+            // 
+            this.comboBoxAreaResponsable.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxAreaResponsable.FormattingEnabled = true;
+            this.comboBoxAreaResponsable.Items.AddRange(new object[] {
+            "Administracion",
+            "Ventas",
+            "Sistemas",
+            "Distribución",
+            "Producción"});
+            this.comboBoxAreaResponsable.Location = new System.Drawing.Point(475, 109);
+            this.comboBoxAreaResponsable.Name = "comboBoxAreaResponsable";
+            this.comboBoxAreaResponsable.Size = new System.Drawing.Size(161, 28);
+            this.comboBoxAreaResponsable.TabIndex = 6;
             // 
             // tabPage5
             // 
@@ -585,6 +626,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.empleadosBindingSource)).EndInit();
             this.tabControl1.ResumeLayout(false);
+            this.tabPage6.ResumeLayout(false);
+            this.tabPage6.PerformLayout();
             this.tabPage5.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -636,5 +679,8 @@
         private System.Windows.Forms.BindingSource empleadosBindingSource;
         private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.DateTimePicker dateTimePickerFecha;
+        private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.ComboBox comboBoxAreaResponsable;
     }
 }

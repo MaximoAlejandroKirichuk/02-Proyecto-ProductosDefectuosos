@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
+using static _02_ProductosDefectuosos.Modelos.AreaResponsable;
 
 namespace _02_ProductosDefectuosos.Servicios
 {
@@ -16,7 +17,7 @@ namespace _02_ProductosDefectuosos.Servicios
 
             List<Producto> listaGuardar = ListadoProductoDefectuosos.Instancia.ProductosDefectuosos;
 
-            sw.WriteLine("Codigo Producto;Nombre Producto;Costo Producto;Gasto Adicional;Cantidad Dañada;Problema de entrada;Personal responsable;Deposito;Estante;Nivel;Columna;Estado Producto;Costo Estado");
+            sw.WriteLine("Codigo Producto;Nombre Producto;Costo Producto;Gasto Adicional;Cantidad Dañada;Problema de entrada;Personal responsable;Deposito;Estante;Nivel;Columna;Estado Producto;Costo Estado;Area Responsable");
 
             foreach (var producto in ListadoProductoDefectuosos.Instancia.ProductosDefectuosos)
             {
@@ -61,9 +62,10 @@ namespace _02_ProductosDefectuosos.Servicios
                     EstadoProducto.TipoEstado tipoEstado = (EstadoProducto.TipoEstado)Enum.Parse(typeof(EstadoProducto.TipoEstado), estadoTexto, true);
                     EstadoProducto estado = new EstadoProducto(costoEstado, tipoEstado);
                     List<Seguimiento> seguimiento = new List<Seguimiento>();
-
+                    AreaPosibles areaEnum = (AreaPosibles)Enum.Parse(typeof(AreaPosibles), vLinea[13]);
+                    AreaResponsable area = new AreaResponsable(areaEnum);
                     //TODO: tengo que crear el nuevo producto aca
-                    Producto nuevoProducto = new Producto(codigo, nombreProducto, costoProducto, gastoAdicional, cantidadDaniada, problemaEntrada, empleadoResponsable, ubicacion, estado, seguimiento);
+                    Producto nuevoProducto = new Producto(codigo, nombreProducto, costoProducto, gastoAdicional, cantidadDaniada, problemaEntrada, empleadoResponsable, ubicacion, estado, seguimiento, area);
                     ListadoProductoDefectuosos.Instancia.ProductosDefectuosos.Add(nuevoProducto);
                 }
             }
