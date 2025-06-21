@@ -44,7 +44,8 @@ namespace _02_ProductosDefectuosos.Modelos
         public enum TipoEstado
         {
             Reacondicionable,
-            Desechado
+            Desechado,
+            Reacondicionado
         }
 
         public EstadoProducto(decimal costo, TipoEstado tipo)
@@ -57,6 +58,10 @@ namespace _02_ProductosDefectuosos.Modelos
                     break;
                 case TipoEstado.Reacondicionable:
                     Estado = "Reacondicionable";
+                    CostoManoObra = costo;
+                    break;
+                case TipoEstado.Reacondicionado:
+                    Estado = "Reacondicionado";
                     CostoManoObra = costo;
                     break;
             }

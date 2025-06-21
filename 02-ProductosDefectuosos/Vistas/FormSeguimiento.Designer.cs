@@ -32,6 +32,8 @@
             this.dataGridViewSeguimiento = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.comboBoxEstadoProducto = new System.Windows.Forms.ComboBox();
             this.comboBoxProblemaEntrada = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtPersonaResponsable = new System.Windows.Forms.TextBox();
@@ -47,6 +49,8 @@
             this.txtAgregarPaso = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.btnAgregarPaso = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtAreaRespoonsable = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListadoProductosDefectuosos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSeguimiento)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -87,9 +91,14 @@
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Seguimiento ";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.txtAreaRespoonsable);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.comboBoxEstadoProducto);
             this.groupBox2.Controls.Add(this.comboBoxProblemaEntrada);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.txtPersonaResponsable);
@@ -100,10 +109,33 @@
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Location = new System.Drawing.Point(720, 228);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(416, 163);
+            this.groupBox2.Size = new System.Drawing.Size(603, 163);
             this.groupBox2.TabIndex = 36;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Información Producto";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(373, 31);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(102, 13);
+            this.label3.TabIndex = 38;
+            this.label3.Text = "Estado del producto";
+            // 
+            // comboBoxEstadoProducto
+            // 
+            this.comboBoxEstadoProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxEstadoProducto.FormattingEnabled = true;
+            this.comboBoxEstadoProducto.Items.AddRange(new object[] {
+            "Reacondicionable",
+            "Desechado",
+            "Reacondicionado"});
+            this.comboBoxEstadoProducto.Location = new System.Drawing.Point(376, 47);
+            this.comboBoxEstadoProducto.Name = "comboBoxEstadoProducto";
+            this.comboBoxEstadoProducto.Size = new System.Drawing.Size(161, 28);
+            this.comboBoxEstadoProducto.TabIndex = 37;
             // 
             // comboBoxProblemaEntrada
             // 
@@ -248,6 +280,23 @@
             this.btnAgregarPaso.UseVisualStyleBackColor = true;
             this.btnAgregarPaso.Click += new System.EventHandler(this.btnAgregarPaso_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(373, 94);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(89, 13);
+            this.label4.TabIndex = 39;
+            this.label4.Text = "Area responsable";
+            // 
+            // txtAreaRespoonsable
+            // 
+            this.txtAreaRespoonsable.Enabled = false;
+            this.txtAreaRespoonsable.Location = new System.Drawing.Point(376, 111);
+            this.txtAreaRespoonsable.Name = "txtAreaRespoonsable";
+            this.txtAreaRespoonsable.Size = new System.Drawing.Size(136, 20);
+            this.txtAreaRespoonsable.TabIndex = 40;
+            // 
             // FormSeguimiento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -291,5 +340,9 @@
         private System.Windows.Forms.TextBox txtPersonaResponsable;
         private System.Windows.Forms.ComboBox comboBoxProblemaEntrada;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox comboBoxEstadoProducto;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtAreaRespoonsable;
     }
 }

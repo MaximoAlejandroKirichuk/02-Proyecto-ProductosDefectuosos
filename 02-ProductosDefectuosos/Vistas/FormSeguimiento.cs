@@ -90,6 +90,9 @@ namespace _02_ProductosDefectuosos.Vistas
             actualizarLista();
         }
 
+
+        //Servicios.ServiciosProductosCSV.GuardarSeguimientoProducto();
+
         public void CargarDatosArchivosSeguimiento(string codigoProducto)
         {
             string ruta = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\Datos\Seguimientos.csv");
@@ -146,7 +149,9 @@ namespace _02_ProductosDefectuosos.Vistas
                 txtCodigoProducto.Text = p.CodigoProducto;
                 txtNombreProducto.Text = p.NombreProducto;
                 txtPersonaResponsable.Text = p.PersonaResponsable.Fullname;
+                txtAreaRespoonsable.Text = p.AreaDevolver.ToString();
                 comboBoxProblemaEntrada.Text = p.ProblemaEntrada.ToString();
+                comboBoxEstadoProducto.Text = p.EstadoProducto.Estado;
                 CargarDatosArchivosSeguimiento(p.CodigoProducto);
             }
             else
@@ -205,6 +210,14 @@ namespace _02_ProductosDefectuosos.Vistas
 
         }
 
-      
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
