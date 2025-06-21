@@ -188,6 +188,11 @@ namespace _02_ProductosDefectuosos.Vistas
         }
         private void btnAgregarPaso_Click(object sender, EventArgs e)
         {
+            AgregarSeguimiento();
+        }
+
+        public void AgregarSeguimiento()
+        {
 
         }
         private void btnModificar_Click(object sender, EventArgs e)

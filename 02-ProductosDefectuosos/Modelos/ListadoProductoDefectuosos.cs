@@ -33,5 +33,12 @@ namespace _02_ProductosDefectuosos.Modelos
         {
             ProductosDefectuosos.Add(nuevoProducto);
         }
+        public List<Producto> FiltrarPorArea(AreaResponsable area)
+        {
+            return ProductosDefectuosos
+                   .Where(p => p.AreaDevolver?.Area == area.Area)
+                   .ToList();
+        }
+
     }
 }

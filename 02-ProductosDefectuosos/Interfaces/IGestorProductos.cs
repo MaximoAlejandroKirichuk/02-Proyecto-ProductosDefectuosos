@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace _02_ProductosDefectuosos.Interfaces
 {
-    public interface IProductoABM
+    public interface IGestorProductos
     {
         void AgregarProducto(Producto producto);
         void BorrarProducto(Producto borrarProducto);

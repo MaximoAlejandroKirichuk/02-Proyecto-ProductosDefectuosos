@@ -1,4 +1,5 @@
-﻿using _02_ProductosDefectuosos.Modelos;
+﻿using _02_ProductosDefectuosos.Exepciones;
+using _02_ProductosDefectuosos.Modelos;
 using _02_ProductosDefectuosos.Properties;
 using _02_ProductosDefectuosos.Vistas;
 using System;
@@ -12,6 +13,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static _02_ProductosDefectuosos.Modelos.AreaResponsable;
 using static System.Windows.Forms.AxHost;
 
 namespace _02_ProductosDefectuosos
@@ -285,5 +287,45 @@ namespace _02_ProductosDefectuosos
                 e.Cancel = true; // esto cancela el cierre del formulario
             }
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if (comboBoxAreaResponsable.SelectedItem == null)
+            {
+                MessageBox.Show("Seleccione un área para buscar.");
+                return;
+            }
+
+            try
+            {
+                // Intentar convertir el valor seleccionado en un valor del enum
+                AreaResponsable.AreaPosibles areaEnum = (AreaResponsable.AreaPosibles)Enum.Parse(
+                    typeof(AreaResponsable.AreaPosibles),
+                    comboBoxAreaResponsable.SelectedItem.ToString()
+                );
+
+                // Validación personalizada (opcional)
+                if (!Enum.IsDefined(typeof(AreaResponsable.AreaPosibles), areaEnum))
+                {
+                    throw new AreaResponsableInexistenteExpeption(comboBoxAreaResponsable.SelectedItem.ToString());
+                }
+
+                // Crear objeto AreaResponsable a partir del enum
+                AreaResponsable area = new AreaResponsable(areaEnum);
+
+                // Mostrar productos filtrados
+                dataGridViewListadoProductosDefectuosos.DataSource = null;
+                dataGridViewListadoProductosDefectuosos.DataSource = ListadoProductoDefectuosos.Instancia.FiltrarPorArea(area);
+            }
+            catch (AreaResponsableInexistenteExpeption ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error: " + ex.Message);
+            }
+        }
+
     }
 }

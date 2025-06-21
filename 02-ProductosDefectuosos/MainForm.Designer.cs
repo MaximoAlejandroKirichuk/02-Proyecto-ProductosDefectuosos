@@ -47,6 +47,8 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.dataGridViewUbicacion = new System.Windows.Forms.DataGridView();
             this.dataGridViewSeguimiento = new System.Windows.Forms.DataGridView();
+            this.comboBoxAreaResponsable = new System.Windows.Forms.ComboBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListadoProductosDefectuosos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUbicacion)).BeginInit();
@@ -215,6 +217,31 @@
             this.dataGridViewSeguimiento.Size = new System.Drawing.Size(569, 259);
             this.dataGridViewSeguimiento.TabIndex = 9;
             // 
+            // comboBoxAreaResponsable
+            // 
+            this.comboBoxAreaResponsable.FormattingEnabled = true;
+            this.comboBoxAreaResponsable.Items.AddRange(new object[] {
+            "Administracion",
+            "Ventas",
+            "Sistemas",
+            "Distribución",
+            "Producción"});
+            this.comboBoxAreaResponsable.Location = new System.Drawing.Point(1049, 79);
+            this.comboBoxAreaResponsable.Name = "comboBoxAreaResponsable";
+            this.comboBoxAreaResponsable.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxAreaResponsable.TabIndex = 11;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.Location = new System.Drawing.Point(1049, 351);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(98, 43);
+            this.btnBuscar.TabIndex = 13;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
             // MainForm
             // 
             this.AcceptButton = this.btnGuardar;
@@ -222,6 +249,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(1175, 719);
+            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.comboBoxAreaResponsable);
             this.Controls.Add(this.dataGridViewSeguimiento);
             this.Controls.Add(this.dataGridViewUbicacion);
             this.Controls.Add(this.btnGuardar);
@@ -264,6 +293,8 @@
         private System.Windows.Forms.ToolStripMenuItem españolToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inglesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem portuguesToolStripMenuItem;
+        private System.Windows.Forms.ComboBox comboBoxAreaResponsable;
+        private System.Windows.Forms.Button btnBuscar;
     }
 }
 

@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace _02_ProductosDefectuosos.Modelos
 {
-    internal class Administrador : Usuario, IProductoABM
+    internal class Administrador : Usuario, IGestorProductos
     {
         
         public Administrador(string nombreCompleto, string usuarioNombreCuenta, string mail, string password, string rol)
