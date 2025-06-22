@@ -20,6 +20,9 @@ namespace _02_ProductosDefectuosos.Vistas
             InitializeComponent();
 
             AplicarIdioma(idioma);
+
+            //entonces aca cuando se use el delegado utiliza la messagebox 
+            Notificador = mensaje => { MessageBox.Show(mensaje); this.Close(); };
         }
 
 
@@ -122,7 +125,10 @@ namespace _02_ProductosDefectuosos.Vistas
             btnTerminarCarga.Text = Res_portugues.Finalizar_Formulário;
         }
 
-
+        //declaramos el delegado 
+        //declaramos un objeto notificarproductocreado
+        public delegate void NotificarProductoCreado(string mensaje);
+        public NotificarProductoCreado Notificador;
 
 
         private void FormRegistroProductos_Load(object sender, EventArgs e)
@@ -215,7 +221,8 @@ namespace _02_ProductosDefectuosos.Vistas
                 
                 //Generar producto Defectuoso
                 Producto nuevoProductoDefectuoso = new Producto(codigoProducto, nombreProducto, costoProducto, gastoGeneradoAntesDefectuoso, cantidadProductoDañada, problemaEntrada, personaResponsable, ubicacionProducto, estadoProducto, seguimiento, area);
-                MessageBox.Show("Se creo un nuevo Producto Defectuoso con exito");
+                //utilizamos el objeto delegado.
+                Notificador?.Invoke("Se creó un nuevo Producto Defectuoso con éxito");
 
                 ListadoProductoDefectuosos.Instancia.agregarProducto(nuevoProductoDefectuoso);
                 
