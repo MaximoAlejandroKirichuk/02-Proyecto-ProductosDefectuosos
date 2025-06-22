@@ -32,6 +32,8 @@
             this.dataGridViewSeguimiento = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtAreaRespoonsable = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBoxEstadoProducto = new System.Windows.Forms.ComboBox();
             this.comboBoxProblemaEntrada = new System.Windows.Forms.ComboBox();
@@ -49,8 +51,7 @@
             this.txtAgregarPaso = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.btnAgregarPaso = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtAreaRespoonsable = new System.Windows.Forms.TextBox();
+            this.btnModificarEstado = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListadoProductosDefectuosos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSeguimiento)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -77,6 +78,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnModificarEstado);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.btnModificar);
             this.groupBox1.Controls.Add(this.btnBorrar);
@@ -114,6 +116,23 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Información Producto";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(373, 94);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(89, 13);
+            this.label4.TabIndex = 39;
+            this.label4.Text = "Area responsable";
+            // 
+            // txtAreaRespoonsable
+            // 
+            this.txtAreaRespoonsable.Enabled = false;
+            this.txtAreaRespoonsable.Location = new System.Drawing.Point(376, 111);
+            this.txtAreaRespoonsable.Name = "txtAreaRespoonsable";
+            this.txtAreaRespoonsable.Size = new System.Drawing.Size(136, 20);
+            this.txtAreaRespoonsable.TabIndex = 40;
             // 
             // label3
             // 
@@ -280,22 +299,15 @@
             this.btnAgregarPaso.UseVisualStyleBackColor = true;
             this.btnAgregarPaso.Click += new System.EventHandler(this.btnAgregarPaso_Click);
             // 
-            // label4
+            // btnModificarEstado
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(373, 94);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 13);
-            this.label4.TabIndex = 39;
-            this.label4.Text = "Area responsable";
-            // 
-            // txtAreaRespoonsable
-            // 
-            this.txtAreaRespoonsable.Enabled = false;
-            this.txtAreaRespoonsable.Location = new System.Drawing.Point(376, 111);
-            this.txtAreaRespoonsable.Name = "txtAreaRespoonsable";
-            this.txtAreaRespoonsable.Size = new System.Drawing.Size(136, 20);
-            this.txtAreaRespoonsable.TabIndex = 40;
+            this.btnModificarEstado.Location = new System.Drawing.Point(399, 372);
+            this.btnModificarEstado.Name = "btnModificarEstado";
+            this.btnModificarEstado.Size = new System.Drawing.Size(237, 30);
+            this.btnModificarEstado.TabIndex = 37;
+            this.btnModificarEstado.Text = "Modificar Estado";
+            this.btnModificarEstado.UseVisualStyleBackColor = true;
+            this.btnModificarEstado.Click += new System.EventHandler(this.btnModificarSeguimiento_Click);
             // 
             // FormSeguimiento
             // 
@@ -308,6 +320,7 @@
             this.Controls.Add(this.dataGridViewListadoProductosDefectuosos);
             this.Name = "FormSeguimiento";
             this.Text = "FormSeguimiento";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormSeguimiento_FormClosing);
             this.Load += new System.EventHandler(this.FormSeguimiento_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListadoProductosDefectuosos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSeguimiento)).EndInit();
@@ -344,5 +357,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtAreaRespoonsable;
+        private System.Windows.Forms.Button btnModificarEstado;
     }
 }

@@ -40,5 +40,10 @@ namespace _02_ProductosDefectuosos.Modelos
                    .ToList();
         }
 
+        public Producto filtarProductoId(string codigoProducto)
+        {
+            return ProductosDefectuosos.First(p => p.CodigoProducto == codigoProducto);
+        }
+
     }
 }

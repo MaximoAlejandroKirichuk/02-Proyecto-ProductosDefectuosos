@@ -213,7 +213,7 @@ namespace _02_ProductosDefectuosos
         {
             SesionActiva.Instancia.CerrarSesion();
             MessageBox.Show("Se cerro sesión");
-            Close();
+            this.Close();
             Form form = new Login();
             form.Show();
         }
@@ -222,6 +222,7 @@ namespace _02_ProductosDefectuosos
 
         private void seguimientoToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.Close();
             FormSeguimiento f = new FormSeguimiento(idioma);
             f.ShowDialog();
         }
@@ -256,7 +257,6 @@ namespace _02_ProductosDefectuosos
         {
 
             GetTextIngles();
-
             idioma = 2;
 
             
@@ -278,15 +278,7 @@ namespace _02_ProductosDefectuosos
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult resultado = MessageBox.Show("¿Estás seguro de que querés cerrar este formulario?", "Confirmar salida",
-             MessageBoxButtons.YesNo,
-             MessageBoxIcon.Warning
-            );
-
-            if (resultado == DialogResult.No)
-            {
-                e.Cancel = true; // esto cancela el cierre del formulario
-            }
+            
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)

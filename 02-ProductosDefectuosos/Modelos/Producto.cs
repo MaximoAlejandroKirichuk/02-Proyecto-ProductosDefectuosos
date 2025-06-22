@@ -91,18 +91,31 @@ namespace _02_ProductosDefectuosos.Modelos
             get { return estadoProducto; }
             set
             {
-                // Comparamos por el campo "Estado" interno de la clase EstadoProducto
+                if (estadoProducto != null)
+                {
+                    estadoProducto.EstadoInternoCambiado -= ManejarCambioInterno;
+                }
+
                 if (estadoProducto == null || estadoProducto.Estado != value.Estado)
                 {
                     string anterior = estadoProducto?.Estado;
                     estadoProducto = value;
+
+                    estadoProducto.EstadoInternoCambiado += ManejarCambioInterno;
+
                     EstadoProductoCambiado?.Invoke(this, anterior, estadoProducto.Estado);
                 }
                 else
                 {
-                    estadoProducto = value; // si cambia otra propiedad, no se dispara el evento
+                    estadoProducto = value;
+                    estadoProducto.EstadoInternoCambiado += ManejarCambioInterno;
                 }
             }
+        }
+
+        private void ManejarCambioInterno(string anterior, string nuevo)
+        {
+            EstadoProductoCambiado?.Invoke(this, anterior, nuevo);
         }
 
 

@@ -15,12 +15,22 @@ namespace _02_ProductosDefectuosos.Modelos
         private decimal costoPerdida;
 
 
-        public string Estado
+        public event Action<string, string> EstadoInternoCambiado;
 
+        public string Estado
         {
             get { return estado; }
-            set { estado = value; }
+            set
+            {
+                if (estado != value)
+                {
+                    string anterior = estado;
+                    estado = value;
+                    EstadoInternoCambiado?.Invoke(anterior, estado);
+                }
+            }
         }
+
 
 
         public decimal CostoPerdida
@@ -80,21 +90,17 @@ namespace _02_ProductosDefectuosos.Modelos
         }
         public override string ToString()
         {
-            if(Estado == "Desechado")
+            switch (Estado)
             {
-                return $"{Estado};{CostoPerdida}";
-            }
-            else if (Estado == "Reacondicionable")
-            {
-               
-                {
+                case "Desechado":
+                    return $"{Estado};{CostoPerdida}";
+
+                case "Reacondicionable":
+                case "Reacondicionado":
                     return $"{Estado};{CostoManoObra}";
-                }
-                
-            }
-            else
-            {
-                return $"No hay info";
+
+                default:
+                    return "No hay info";
             }
         }
 

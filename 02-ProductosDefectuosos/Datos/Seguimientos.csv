@@ -1,21 +1,21 @@
-Codigo Producto;Fecha;Mensaje;Responsable
-P001;2025-06-15;Se detectó daño de manufactura en el producto. Se retira del área de uso y se deriva a evaluación técnica.;Lucas Molinari
-P001;2025-06-17;Evaluación completada. Producto clasificado como reacondicionable. Se estima costo de reparación en $30000.;Lucas Molinari
+ï»¿Codigo Producto;Fecha;Mensaje;Responsable
+P001;2025-06-15;Se detectï¿½ daï¿½o de manufactura en el producto. Se retira del ï¿½rea de uso y se deriva a evaluaciï¿½n tï¿½cnica.;Lucas Molinari
+P001;2025-06-17;Evaluaciï¿½n completada. Producto clasificado como reacondicionable. Se estima costo de reparaciï¿½n en $30000.;Lucas Molinari
 P001;2025-06-18;Producto trasladado al Deposito1, Estante 1, Nivel 3, Columna 4, a la espera de repuestos.;Lucas Molinari
 P001;2025-06-21;Repuestos disponibles. Se agenda reacondicionamiento para el 25/06.;Lucas Molinari
-P002;2025-06-12;Producto dañado en accidente de tránsito durante traslado. Presenta roturas visibles.;Lucas Molinari
-P002;2025-06-13;Evaluación técnica realizada. Producto no reutilizable. Clasificado como desechado.;Lucas Molinari
+P002;2025-06-12;Producto daï¿½ado en accidente de trï¿½nsito durante traslado. Presenta roturas visibles.;Lucas Molinari
+P002;2025-06-13;Evaluaciï¿½n tï¿½cnica realizada. Producto no reutilizable. Clasificado como desechado.;Lucas Molinari
 P002;2025-06-14;Se traslada a zona de descarte en Deposito2, Estante 1, Nivel 3, Columna 3.;Lucas Molinari
-P002;2025-06-16;Se registran gastos asociados al descarte por $2220. Producto fuera de circulación.;Lucas Molinari
-P003;2025-06-10;Router empresarial presenta daños tras impacto en transporte. Se realiza informe de siniestro.;Lucas Molinari
-P003;2025-06-11;Diagnóstico técnico: daños menores. Producto apto para reacondicionamiento.;Lucas Molinari
+P002;2025-06-16;Se registran gastos asociados al descarte por $2220. Producto fuera de circulaciï¿½n.;Lucas Molinari
+P003;2025-06-10;Router empresarial presenta daï¿½os tras impacto en transporte. Se realiza informe de siniestro.;Lucas Molinari
+P003;2025-06-11;Diagnï¿½stico tï¿½cnico: daï¿½os menores. Producto apto para reacondicionamiento.;Lucas Molinari
 P003;2025-06-13;Costo estimado de reacondicionamiento: $10. Producto colocado en Deposito3, Estante 2, Nivel 2, Columna 6.;Lucas Molinari
 P003;2025-06-21;Se aprueba compra de repuesto. Reacondicionamiento programado para la semana siguiente.;Lucas Molinari
-P004;2025-06-08;Se detecta deterioro por humedad en archivo de carpetas del área de administración.;Alan Mili
-P004;2025-06-09;Evaluación indica posible recuperación. Clasificado como reacondicionable.;Alan Mili
+P004;2025-06-08;Se detecta deterioro por humedad en archivo de carpetas del ï¿½rea de administraciï¿½n.;Alan Mili
+P004;2025-06-09;Evaluaciï¿½n indica posible recuperaciï¿½n. Clasificado como reacondicionable.;Alan Mili
 P004;2025-06-10;Producto ubicado en Deposito3, Estante 3, Nivel 3, Columna 4.;Alan Mili
 P004;2025-06-20;Se realiza prueba de reacondicionamiento con materiales reciclables. Se mantiene en monitoreo.;Alan Mili
-P005;2025-06-13;Producto afectado en accidente de tránsito. Caja de repuestos con daño superficial.;Lucas Molinari
-P005;2025-06-14;Análisis técnico: componentes internos no afectados. Clasificado como reacondicionable sin costo adicional.;Lucas Molinari
+P005;2025-06-13;Producto afectado en accidente de trï¿½nsito. Caja de repuestos con daï¿½o superficial.;Lucas Molinari
+P005;2025-06-14;Anï¿½lisis tï¿½cnico: componentes internos no afectados. Clasificado como reacondicionable sin costo adicional.;Lucas Molinari
 P005;2025-06-16;Producto colocado en Deposito2, Estante 4, Nivel 1, Columna 1.;Lucas Molinari
-P005;2025-06-21;Revisión final confirma funcionalidad. Listo para reutilización.;Lucas Molinari
+P005;2025-06-21;Revisiï¿½n final confirma funcionalidad. Listo para reutilizaciï¿½n.;Lucas Molinari

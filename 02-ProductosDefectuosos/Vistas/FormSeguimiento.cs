@@ -10,6 +10,7 @@ using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static _02_ProductosDefectuosos.Modelos.EstadoProducto;
 
 namespace _02_ProductosDefectuosos.Vistas
 {
@@ -194,18 +195,129 @@ namespace _02_ProductosDefectuosos.Vistas
         private void btnAgregarPaso_Click(object sender, EventArgs e)
         {
             //GESTOR CLASE
+
+            try
+            {
+                string codigoProducto = txtCodigoProducto.Text;
+
+                if (string.IsNullOrEmpty(codigoProducto))
+                {
+                    MessageBox.Show("Primero seleccioná un producto.");
+                    return;
+                }
+
+                Producto producto = ListadoProductoDefectuosos.Instancia.filtarProductoId(codigoProducto);
+
+                Seguimiento nuevo = new Seguimiento(
+                    dateTimePickerFecha.Value,
+                    txtAgregarPaso.Text,
+                    txtPersonaResponsable.Text
+                );
+
+                producto.Seguimiento.Add(nuevo);
+                CargarDatosArchivosSeguimiento(producto.CodigoProducto);
+
+                MessageBox.Show("Paso agregado correctamente.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al agregar paso: " + ex.Message);
+            }
         }
+    
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            //GESTOR CLASE
+            try
+            {
+                if (dataGridViewSeguimiento.CurrentRow?.DataBoundItem is Seguimiento paso)
+                {
+                    paso.Fecha = dateTimePickerFecha.Value;
+                    paso.Mensaje = txtAgregarPaso.Text;
+                    paso.Responsable = txtPersonaResponsable.Text;
+
+                    dataGridViewSeguimiento.Refresh(); // Refresca visualmente
+                    MessageBox.Show("Paso modificado correctamente.");
+                }
+                else
+                {
+                    MessageBox.Show("Seleccioná un paso para modificar.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al modificar paso: " + ex.Message);
+            }
         }
 
         private void btnBorrar_Click(object sender, EventArgs e)
         {
-            //GESTOR CLASE
+            try
+            {
+                string codigoProducto = txtCodigoProducto.Text;
+                Producto producto = ListadoProductoDefectuosos.Instancia.filtarProductoId(codigoProducto);
+
+                if (dataGridViewSeguimiento.CurrentRow?.DataBoundItem is Seguimiento pasoSeleccionado)
+                {
+                    DialogResult resultado = MessageBox.Show("¿Estás seguro de eliminar este paso?", "Confirmar", MessageBoxButtons.YesNo);
+
+                    if (resultado == DialogResult.Yes)
+                    {
+                        var pasoEncontrado = producto.Seguimiento.FirstOrDefault(p =>
+                            p.Fecha == pasoSeleccionado.Fecha &&
+                            p.Mensaje == pasoSeleccionado.Mensaje &&
+                            p.Responsable == pasoSeleccionado.Responsable
+                        );
+
+                        if (pasoEncontrado != null)
+                        {
+                            producto.Seguimiento.Remove(pasoEncontrado);
+                            dataGridViewSeguimiento.DataSource = null;
+                            dataGridViewSeguimiento.DataSource = producto.Seguimiento;
+                            MessageBox.Show("Paso eliminado correctamente.");
+                        }
+                        else
+                        {
+                            MessageBox.Show("No se encontró el paso en la lista del producto.");
+                        }
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al borrar paso: " + ex.Message);
+            }
+        }
+        private void btnModificarSeguimiento_Click(object sender, EventArgs e)
+        {
+            string codigoProducto = txtCodigoProducto.Text;
+            Producto p = ListadoProductoDefectuosos.Instancia.filtarProductoId(codigoProducto);
+
+            //  SUSCRIPCIÓN AL EVENTO (solo si no está ya suscripto)
+            p.EstadoProductoCambiado -= Producto_EstadoProductoCambiado; // para evitar suscripciones duplicadas
+            p.EstadoProductoCambiado += Producto_EstadoProductoCambiado;
+
+            string valorSeleccionado = comboBoxEstadoProducto.SelectedItem.ToString();
+
+            if (Enum.TryParse(valorSeleccionado, out EstadoProducto.TipoEstado estadoActual))
+            {
+                // si ya tenés un objeto y solo cambiás el estado interno
+                p.EstadoProducto.Estado = estadoActual.ToString();
+                p.EstadoProducto.CostoPerdida = p.EstadoProducto.CostoPerdida;
+                p.EstadoProducto.CostoManoObra = p.EstadoProducto.CostoManoObra;
+                MessageBox.Show($"Estado modificado a: {p.EstadoProducto.Estado}");
+            }
+            else
+            {
+                MessageBox.Show("El estado seleccionado no es válido.");
+            }
         }
 
+        private void Producto_EstadoProductoCambiado(Producto producto, string estadoAnterior, string estadoNuevo)
+        {
+            MessageBox.Show($"El estado del producto {producto.CodigoProducto} cambió de {estadoAnterior} a {estadoNuevo}");
+        }
         private void groupBox2_Enter(object sender, EventArgs e)
         {
 
@@ -215,5 +327,25 @@ namespace _02_ProductosDefectuosos.Vistas
         {
 
         }
+        
+        private void FormSeguimiento_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show("¿Estás seguro de que querés cerrar este formulario?", "Confirmar salida",
+             MessageBoxButtons.YesNo,
+             MessageBoxIcon.Warning
+            );
+
+            if (resultado == DialogResult.No)
+            {
+                e.Cancel = true; // esto cancela el cierre del formulario
+            }
+            if(resultado == DialogResult.Yes)
+            {
+                MainForm mainForm = new MainForm();
+                mainForm.Show();
+            }
+        }
+
+        
     }
 }

@@ -182,7 +182,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(1049, 181);
+            this.button1.Location = new System.Drawing.Point(1049, 321);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(98, 43);
             this.button1.TabIndex = 2;
@@ -193,7 +193,7 @@
             // btnGuardar
             // 
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(1049, 252);
+            this.btnGuardar.Location = new System.Drawing.Point(1049, 407);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(98, 43);
             this.btnGuardar.TabIndex = 3;

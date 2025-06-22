@@ -74,9 +74,16 @@ namespace _02_ProductosDefectuosos.Servicios
         {
             string pathSeguimiento = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"../../Datos/Seguimientos.csv");
             List<Producto> listaGuardar = ListadoProductoDefectuosos.Instancia.ProductosDefectuosos;
-            using (StreamWriter swSeguimiento = new StreamWriter(pathSeguimiento))
+            bool archivoExiste = File.Exists(pathSeguimiento);
+
+            using (StreamWriter swSeguimiento = new StreamWriter(pathSeguimiento, append: true))
             {
-                swSeguimiento.WriteLine("Codigo Producto;Fecha;Mensaje;Responsable;Fecha Modificacion");
+                // Si el archivo no existe, escribimos el encabezado
+                if (!archivoExiste)
+                {
+                    swSeguimiento.WriteLine("Codigo Producto;Fecha;Mensaje;Responsable;Fecha Modificacion");
+                }
+
                 foreach (var p in listaGuardar)
                 {
                     foreach (var paso in p.Seguimiento)
@@ -85,8 +92,8 @@ namespace _02_ProductosDefectuosos.Servicios
                     }
                 }
             }
-
         }
+
 
     }
 }
