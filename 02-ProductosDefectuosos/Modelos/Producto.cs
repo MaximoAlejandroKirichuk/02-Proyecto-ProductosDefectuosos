@@ -99,7 +99,6 @@ namespace _02_ProductosDefectuosos.Modelos
             Usuario personaResponsable,
             Ubicacion ubicacionProducto,
             EstadoProducto estadoProducto,
-            // QUE HAGO CON ESTO
             List<Seguimiento> seguimiento,
             AreaResponsable areaDevolver
             )
@@ -121,7 +120,6 @@ namespace _02_ProductosDefectuosos.Modelos
         {
             
         }
-
 
         public override string ToString()
         {

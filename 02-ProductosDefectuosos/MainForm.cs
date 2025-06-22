@@ -236,6 +236,7 @@ namespace _02_ProductosDefectuosos
         {
             FormReportesUbicacion F = new FormReportesUbicacion();
             F.ShowDialog();
+
         }
 
         private void reporteFinancieroToolStripMenuItem_Click(object sender, EventArgs e)
@@ -329,3 +330,4 @@ namespace _02_ProductosDefectuosos
 
     }
 }
+ 
