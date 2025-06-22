@@ -83,11 +83,28 @@ namespace _02_ProductosDefectuosos.Modelos
             set { ubicacionProducto = value; }
         }
 
+        public delegate void EstadoProductoCambiadoHandler(Producto producto, string estadoAnterior, string estadoNuevo);
+        public event EstadoProductoCambiadoHandler EstadoProductoCambiado;
+
         public EstadoProducto EstadoProducto
         {
             get { return estadoProducto; }
-            set { estadoProducto = value; }
+            set
+            {
+                // Comparamos por el campo "Estado" interno de la clase EstadoProducto
+                if (estadoProducto == null || estadoProducto.Estado != value.Estado)
+                {
+                    string anterior = estadoProducto?.Estado;
+                    estadoProducto = value;
+                    EstadoProductoCambiado?.Invoke(this, anterior, estadoProducto.Estado);
+                }
+                else
+                {
+                    estadoProducto = value; // si cambia otra propiedad, no se dispara el evento
+                }
+            }
         }
+
 
         public Producto(
             string codigoProducto,

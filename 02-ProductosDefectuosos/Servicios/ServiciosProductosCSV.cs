@@ -76,12 +76,12 @@ namespace _02_ProductosDefectuosos.Servicios
             List<Producto> listaGuardar = ListadoProductoDefectuosos.Instancia.ProductosDefectuosos;
             using (StreamWriter swSeguimiento = new StreamWriter(pathSeguimiento))
             {
-                swSeguimiento.WriteLine("Codigo Producto;Fecha;Mensaje;Responsable");
+                swSeguimiento.WriteLine("Codigo Producto;Fecha;Mensaje;Responsable;Fecha Modificacion");
                 foreach (var p in listaGuardar)
                 {
                     foreach (var paso in p.Seguimiento)
                     {
-                        swSeguimiento.WriteLine($"{p.CodigoProducto};{paso.Fecha:yyyy-MM-dd};{paso.Mensaje};{paso.Responsable}");
+                        swSeguimiento.WriteLine($"{p.CodigoProducto};{paso.Fecha:yyyy-MM-dd};{paso.Mensaje};{paso.Responsable};{paso.FechaModificiacion}");
                     }
                 }
             }

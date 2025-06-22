@@ -193,21 +193,17 @@ namespace _02_ProductosDefectuosos.Vistas
         }
         private void btnAgregarPaso_Click(object sender, EventArgs e)
         {
-            AgregarSeguimiento();
+            //GESTOR CLASE
         }
 
-        public void AgregarSeguimiento()
-        {
-
-        }
         private void btnModificar_Click(object sender, EventArgs e)
         {
-
+            //GESTOR CLASE
         }
 
         private void btnBorrar_Click(object sender, EventArgs e)
         {
-
+            //GESTOR CLASE
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)

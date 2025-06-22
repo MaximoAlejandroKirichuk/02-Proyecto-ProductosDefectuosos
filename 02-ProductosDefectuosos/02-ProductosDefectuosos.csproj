@@ -58,6 +58,7 @@
     <Compile Include="Modelos\actores\Administrador.cs" />
     <Compile Include="Modelos\actores\Empleado.cs" />
     <Compile Include="Modelos\AreaResponsable.cs" />
+    <Compile Include="Modelos\GestorSeguimiento.cs" />
     <Compile Include="Modelos\ListadoEmpleados.cs" />
     <Compile Include="Modelos\ListadoProductoDefectuosos.cs" />
     <Compile Include="Modelos\Estado.cs" />
