@@ -92,13 +92,13 @@ namespace _02_ProductosDefectuosos.Vistas
         }
 
 
-        //Servicios.ServiciosProductosCSV.GuardarSeguimientoProducto();
-
+        
         public void CargarDatosArchivosSeguimiento(string codigoProducto)
         {
             string ruta = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\Datos\Seguimientos.csv");
-
+            //Servicios.ServiciosProductosCSV.GuardarSeguimientoProducto();
             List<Seguimiento> listaSeguimientos = new List<Seguimiento>();
+
 
             using (FileStream fs = new FileStream(ruta, FileMode.Open, FileAccess.Read))
             using (StreamReader sr = new StreamReader(fs))
@@ -116,7 +116,7 @@ namespace _02_ProductosDefectuosos.Vistas
                         DateTime fecha = Convert.ToDateTime(vLinea[1]);
                         string mensaje = vLinea[2];
                         Usuario responsable = new Empleado(vLinea[3]);
-                        Seguimiento seguimiento = new Seguimiento(fecha, mensaje, responsable.Fullname);
+                        Seguimiento seguimiento = new Seguimiento(fecha, mensaje, responsable.Fullname, codigoProductoGuardado);
                         listaSeguimientos.Add(seguimiento);
                     }
                 }
@@ -191,52 +191,103 @@ namespace _02_ProductosDefectuosos.Vistas
             {
                 MessageBox.Show("Ocurrio un error al mostrar los datos: " + ex.Message);
             }
+       
         }
         private void btnAgregarPaso_Click(object sender, EventArgs e)
         {
             //GESTOR CLASE
 
-            try
             {
-                string codigoProducto = txtCodigoProducto.Text;
-
-                if (string.IsNullOrEmpty(codigoProducto))
+                try
                 {
-                    MessageBox.Show("Primero seleccioná un producto.");
-                    return;
+                    string codigoProducto = txtCodigoProducto.Text;
+
+                    if (string.IsNullOrEmpty(codigoProducto))
+                    {
+                        MessageBox.Show("Primero seleccioná un producto.");
+                        return;
+                    }
+
+                    Producto producto = ListadoProductoDefectuosos.Instancia.filtarProductoId(codigoProducto);
+
+                    Seguimiento nuevo = new Seguimiento(
+                        dateTimePickerFecha.Value,
+                        txtAgregarPaso.Text,
+                        txtPersonaResponsable.Text,
+                        codigoProducto
+                    );
+
+                    CargarSeguimientosEnProducto(producto);
+                    // Agrega el paso a la lista en memoria
+                    producto.Seguimiento.Add(nuevo);
+
+                    // Guarda la lista actualizada en el CSV
+                    GuardarSeguimientosDeProducto(producto.CodigoProducto, producto.Seguimiento);
+
+                    // Refresca el DataGridView
+                    CargarDatosArchivosSeguimiento(producto.CodigoProducto);
+
+                    actualizarLista();
+                    MessageBox.Show("Paso agregado correctamente.");
                 }
-
-                Producto producto = ListadoProductoDefectuosos.Instancia.filtarProductoId(codigoProducto);
-
-                Seguimiento nuevo = new Seguimiento(
-                    dateTimePickerFecha.Value,
-                    txtAgregarPaso.Text,
-                    txtPersonaResponsable.Text
-                );
-
-                producto.Seguimiento.Add(nuevo);
-                CargarDatosArchivosSeguimiento(producto.CodigoProducto);
-
-                MessageBox.Show("Paso agregado correctamente.");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al agregar paso: " + ex.Message);
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al agregar paso: " + ex.Message);
+                }
             }
         }
-    
 
+        public void GuardarSeguimientosDeProducto(string codigoProducto, List<Seguimiento> lista)
+        {
+            string pathSeguimiento = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\Datos\Seguimientos.csv");
+
+            // Leer todas las líneas existentes
+            List<string> lineasExistentes = File.Exists(pathSeguimiento)
+                ? File.ReadAllLines(pathSeguimiento).ToList()
+                : new List<string>();
+
+            // Filtrar las líneas que NO son del producto actual (deja todo lo demás intacto)
+            var nuevasLineas = lineasExistentes
+                .Where(linea => !linea.StartsWith(codigoProducto + ";") || linea.StartsWith("Codigo Producto"))
+                .ToList();
+
+            // Agregar los pasos actualizados del producto
+            foreach (var paso in lista)
+            {
+                string nuevaLinea = $"{codigoProducto};{paso.Fecha:yyyy-MM-dd};{paso.Mensaje};{paso.Responsable}";
+                nuevasLineas.Add(nuevaLinea);
+            }
+
+            // Escribir todo de nuevo
+            File.WriteAllLines(pathSeguimiento, nuevasLineas);
+        }
         private void btnModificar_Click(object sender, EventArgs e)
         {
             try
             {
+                string codigoProducto = txtCodigoProducto.Text;
+                if (string.IsNullOrEmpty(codigoProducto))
+                {
+                    MessageBox.Show("Seleccioná un producto.");
+                    return;
+                }
+
+                Producto producto = ListadoProductoDefectuosos.Instancia.filtarProductoId(codigoProducto);
+                CargarSeguimientosEnProducto(producto);
                 if (dataGridViewSeguimiento.CurrentRow?.DataBoundItem is Seguimiento paso)
                 {
                     paso.Fecha = dateTimePickerFecha.Value;
                     paso.Mensaje = txtAgregarPaso.Text;
                     paso.Responsable = txtPersonaResponsable.Text;
 
-                    dataGridViewSeguimiento.Refresh(); // Refresca visualmente
+                    // Guardar cambios en archivo CSV
+                    producto.Seguimiento.Add(paso);
+                    GuardarSeguimientosDeProducto(codigoProducto, producto.Seguimiento);
+
+                    // Refrescar visualmente el DataGridView
+                    CargarDatosArchivosSeguimiento(codigoProducto);
+                    actualizarLista();
+
                     MessageBox.Show("Paso modificado correctamente.");
                 }
                 else
@@ -255,39 +306,74 @@ namespace _02_ProductosDefectuosos.Vistas
             try
             {
                 string codigoProducto = txtCodigoProducto.Text;
-                Producto producto = ListadoProductoDefectuosos.Instancia.filtarProductoId(codigoProducto);
 
-                if (dataGridViewSeguimiento.CurrentRow?.DataBoundItem is Seguimiento pasoSeleccionado)
+                if (string.IsNullOrEmpty(codigoProducto))
+                {
+                    MessageBox.Show("Seleccioná un producto.");
+                    return;
+                }
+
+                Producto producto = ListadoProductoDefectuosos.Instancia.filtarProductoId(codigoProducto);
+                
+                CargarSeguimientosEnProducto(producto);
+                int index = dataGridViewSeguimiento.CurrentRow?.Index ?? -1;
+
+                if (index >= 0 && index < producto.Seguimiento.Count)
                 {
                     DialogResult resultado = MessageBox.Show("¿Estás seguro de eliminar este paso?", "Confirmar", MessageBoxButtons.YesNo);
 
                     if (resultado == DialogResult.Yes)
                     {
-                        var pasoEncontrado = producto.Seguimiento.FirstOrDefault(p =>
-                            p.Fecha == pasoSeleccionado.Fecha &&
-                            p.Mensaje == pasoSeleccionado.Mensaje &&
-                            p.Responsable == pasoSeleccionado.Responsable
-                        );
+                        producto.Seguimiento.RemoveAt(index);
 
-                        if (pasoEncontrado != null)
-                        {
-                            producto.Seguimiento.Remove(pasoEncontrado);
-                            dataGridViewSeguimiento.DataSource = null;
-                            dataGridViewSeguimiento.DataSource = producto.Seguimiento;
-                            MessageBox.Show("Paso eliminado correctamente.");
-                        }
-                        else
-                        {
-                            MessageBox.Show("No se encontró el paso en la lista del producto.");
-                        }
+                        // Guardar cambios
+                        GuardarSeguimientosDeProducto(codigoProducto, producto.Seguimiento);
+
+                        // Refrescar grilla
+                        CargarDatosArchivosSeguimiento(codigoProducto);
+                        actualizarLista();
+
+                        MessageBox.Show("Paso eliminado correctamente.");
                     }
                 }
-
+                else
+                {
+                    MessageBox.Show("Seleccioná un paso válido.");
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error al borrar paso: " + ex.Message);
             }
+        }
+        public void CargarSeguimientosEnProducto(Producto producto)
+        {
+            string ruta = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\Datos\Seguimientos.csv");
+
+            if (!File.Exists(ruta))
+                return;
+
+            List<Seguimiento> listaSeguimientos = new List<Seguimiento>();
+
+            using (StreamReader sr = new StreamReader(ruta))
+            {
+                string linea = sr.ReadLine(); // Saltar encabezado
+
+                while ((linea = sr.ReadLine()) != null)
+                {
+                    string[] partes = linea.Split(';');
+                    if (partes.Length >= 4 && partes[0] == producto.CodigoProducto)
+                    {
+                        DateTime fecha = DateTime.Parse(partes[1]);
+                        string mensaje = partes[2];
+                        string responsable = partes[3];
+                        Seguimiento paso = new Seguimiento(fecha, mensaje, responsable, producto.CodigoProducto);
+                        listaSeguimientos.Add(paso);
+                    }
+                }
+            }
+
+            producto.Seguimiento = listaSeguimientos;
         }
         private void btnModificarSeguimiento_Click(object sender, EventArgs e)
         {
@@ -348,4 +434,7 @@ namespace _02_ProductosDefectuosos.Vistas
 
         
     }
+
 }
+
+

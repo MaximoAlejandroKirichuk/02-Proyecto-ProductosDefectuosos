@@ -1,8 +1,4 @@
-﻿Codigo Producto;Fecha;Mensaje;Responsable
-P001;2025-06-15;Se detect� da�o de manufactura en el producto. Se retira del �rea de uso y se deriva a evaluaci�n t�cnica.;Lucas Molinari
-P001;2025-06-17;Evaluaci�n completada. Producto clasificado como reacondicionable. Se estima costo de reparaci�n en $30000.;Lucas Molinari
-P001;2025-06-18;Producto trasladado al Deposito1, Estante 1, Nivel 3, Columna 4, a la espera de repuestos.;Lucas Molinari
-P001;2025-06-21;Repuestos disponibles. Se agenda reacondicionamiento para el 25/06.;Lucas Molinari
+Codigo Producto;Fecha;Mensaje;Responsable
 P002;2025-06-12;Producto da�ado en accidente de tr�nsito durante traslado. Presenta roturas visibles.;Lucas Molinari
 P002;2025-06-13;Evaluaci�n t�cnica realizada. Producto no reutilizable. Clasificado como desechado.;Lucas Molinari
 P002;2025-06-14;Se traslada a zona de descarte en Deposito2, Estante 1, Nivel 3, Columna 3.;Lucas Molinari
@@ -19,3 +15,9 @@ P005;2025-06-13;Producto afectado en accidente de tr�nsito. Caja de repuestos 
 P005;2025-06-14;An�lisis t�cnico: componentes internos no afectados. Clasificado como reacondicionable sin costo adicional.;Lucas Molinari
 P005;2025-06-16;Producto colocado en Deposito2, Estante 4, Nivel 1, Columna 1.;Lucas Molinari
 P005;2025-06-21;Revisi�n final confirma funcionalidad. Listo para reutilizaci�n.;Lucas Molinari
+P001;2025-06-15;Se detect� da�o de manufactura en el producto. Se retira del �rea de uso y se deriva a evaluaci�n t�cnica.;Lucas Molinari
+P001;2025-06-17;Evaluaci�n completada. Producto clasificado como reacondicionable. Se estima costo de reparaci�n en $30000.;Lucas Molinari
+P001;2025-06-18;Producto trasladado al Deposito1, Estante 1, Nivel 3, Columna 4, a la espera de repuestos.;Lucas Molinari
+P001;2025-06-21;Repuestos disponibles. Se agenda reacondicionamiento para el 25/06.;Lucas Molinari
+P001;2025-06-23;ffafascsafsfafsa;Lucas Molinari
+P001;2025-06-16;Pasaron cosas;Lucas Molinari

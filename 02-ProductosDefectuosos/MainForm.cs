@@ -193,7 +193,7 @@ namespace _02_ProductosDefectuosos
                         DateTime fecha = Convert.ToDateTime(vLinea[1]);
                         string mensaje = vLinea[2];
                         Usuario responsable = new Empleado(vLinea[3]);
-                        Seguimiento seguimiento = new Seguimiento(fecha, mensaje, responsable.Fullname);
+                        Seguimiento seguimiento = new Seguimiento(fecha, mensaje, responsable.Fullname, codigoProductoGuardado);
                         listaSeguimientos.Add(seguimiento);
                     }
                 }

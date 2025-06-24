@@ -197,6 +197,7 @@
     </EmbeddedResource>
     <None Include="Datos\Productos.csv" />
     <None Include="Datos\Usuario.csv" />
+    <None Include="DiagramaClase\ClassDiagram1.cd" />
     <None Include="Properties\DataSources\_02_ProductosDefectuosos.Modelos.ListadoEmpleados.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

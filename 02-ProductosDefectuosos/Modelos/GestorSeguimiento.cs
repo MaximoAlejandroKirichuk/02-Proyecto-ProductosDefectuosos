@@ -9,6 +9,7 @@ namespace _02_ProductosDefectuosos.Modelos
 {
     public class GestorSeguimiento : IGestorSeguimiento
     {
+        // Lista general de seguimientos para todos los productos
         private List<Seguimiento> listaSeguimientos;
 
         public GestorSeguimiento()
@@ -16,26 +17,77 @@ namespace _02_ProductosDefectuosos.Modelos
             listaSeguimientos = new List<Seguimiento>();
         }
 
-        public void AgregarSeguimiento()
+        // Agrega un nuevo seguimiento a la lista
+        public void AgregarSeguimiento(string codigoProducto, Seguimiento nuevoSeguimiento)
         {
-            // Implementar agregar seguimiento
+            if (nuevoSeguimiento == null)
+                throw new ArgumentNullException(nameof(nuevoSeguimiento));
+
+            nuevoSeguimiento.CodigoProducto = codigoProducto; // Asegurar código asignado
+
+            listaSeguimientos.Add(nuevoSeguimiento);
         }
 
-        public void BorrarSeguimiento()
+        // Borra un seguimiento dado el código de producto y las propiedades del seguimiento
+        public bool BorrarSeguimiento(string codigoProducto, Seguimiento seguimientoABorrar)
         {
-            // Implementar borrar seguimiento
+            var seguimientoExistente = listaSeguimientos.FirstOrDefault(s =>
+                s.CodigoProducto == codigoProducto &&
+                s.Fecha == seguimientoABorrar.Fecha &&
+                s.Mensaje == seguimientoABorrar.Mensaje &&
+                s.Responsable == seguimientoABorrar.Responsable);
+
+            if (seguimientoExistente != null)
+            {
+                listaSeguimientos.Remove(seguimientoExistente);
+                return true;
+            }
+            return false;
         }
 
-        public void ModificarSeguimiento()
+        // Modifica un seguimiento buscando por código y fecha (asumiendo fecha como identificador único)
+        public bool ModificarSeguimiento(string codigoProducto, DateTime fechaOriginal, Seguimiento seguimientoModificado)
         {
-            // Implementar modificar seguimiento
+            var seguimientoExistente = listaSeguimientos.FirstOrDefault(s =>
+                s.CodigoProducto == codigoProducto &&
+                s.Fecha == fechaOriginal);
+
+            if (seguimientoExistente != null)
+            {
+                seguimientoExistente.Fecha = seguimientoModificado.Fecha;
+                seguimientoExistente.Mensaje = seguimientoModificado.Mensaje;
+                seguimientoExistente.Responsable = seguimientoModificado.Responsable;
+                return true;
+            }
+            return false;
         }
 
+        // Método para modificar un estado (si aplica) - ejemplo genérico, adaptar según modelo
         public void ModificarEstadoSeguimiento()
         {
-            // Implementar modificar estado seguimiento
+            // Implementar si la entidad Seguimiento tiene estado
+            // O eliminar este método si no corresponde
         }
 
-        // Métodos adicionales con parámetros para trabajar con listaSeguimientos, etc.
+        // Retorna los seguimientos para un producto específico
+        public List<Seguimiento> ObtenerSeguimientosPorProducto(string codigoProducto)
+        {
+            return listaSeguimientos
+                .Where(s => s.CodigoProducto == codigoProducto)
+                .OrderBy(s => s.Fecha)
+                .ToList();
+        }
+
+        // Método para cargar lista de seguimientos desde archivo, si hace falta
+        public void CargarSeguimientosDesdeArchivo(List<Seguimiento> seguimientos)
+        {
+            listaSeguimientos = seguimientos ?? new List<Seguimiento>();
+        }
+
+        // Método para obtener la lista completa (por si la necesitas)
+        public List<Seguimiento> ObtenerTodosLosSeguimientos()
+        {
+            return listaSeguimientos;
+        }
     }
 }

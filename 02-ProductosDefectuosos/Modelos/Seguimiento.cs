@@ -12,16 +12,18 @@ namespace _02_ProductosDefectuosos.Modelos
         public string Mensaje { get; set;}
         public string Responsable { get; set;}
         public DateTime FechaModificiacion { get; set; }
+        public string CodigoProducto { get; set; }
         public override string ToString()
         {
-            return $"Fecha: {Fecha: yyyy-MM-dd};{Mensaje};{Responsable};Fecha modificacion: {FechaModificiacion: yyyy-MM-dd}";
+            return $"Fecha: {Fecha: yyyy-MM-dd};{Mensaje};{Responsable};Fecha modificacion: {FechaModificiacion: yyyy-MM-dd} Codigo Producto:{this.CodigoProducto} ";
         }
-        public Seguimiento(DateTime fecha ,string mensaje, string responsbale)
+        public Seguimiento(DateTime fecha ,string mensaje, string responsbale,string cod)
         {
             this.Fecha = fecha;
             this.Mensaje = mensaje;
             this.Responsable = responsbale;
             this.FechaModificiacion = DateTime.Now;
+            this.CodigoProducto = cod;
         }
     }
 }
