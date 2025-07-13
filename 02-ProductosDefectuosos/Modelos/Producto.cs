@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _02_ProductosDefectuosos.Modelos
 {
-    public class Producto
+    public class Producto: ICloneable, IComparable<Producto>
     {
         private string codigoProducto;
         private string nombreProducto;
@@ -149,6 +149,46 @@ namespace _02_ProductosDefectuosos.Modelos
         public Producto()
         {
             
+        }
+
+        public int CompareTo(Producto other)
+        {
+            if (other == null) return 1;
+
+            decimal thisTotal = this.CostoProducto + this.GastoAdicionalAntesDefecto;
+            decimal otherTotal = other.CostoProducto + other.GastoAdicionalAntesDefecto;
+
+            return otherTotal.CompareTo(thisTotal); // Orden descendente
+        }
+
+        public object Clone()
+        {
+            return new Producto
+            {
+                CodigoProducto = this.CodigoProducto,
+                NombreProducto = this.NombreProducto,
+                CostoProducto = this.CostoProducto,
+                GastoAdicionalAntesDefecto = this.GastoAdicionalAntesDefecto,
+                CantidadDaniada = this.CantidadDaniada,
+                ProblemaEntrada = this.ProblemaEntrada,
+                PersonaResponsable = new Empleado(this.personaResponsable.Fullname),
+                UbicacionProducto = new Ubicacion
+                {
+                    DepositoAlmacenado = this.UbicacionProducto.DepositoAlmacenado,
+                    NumeroEstante = this.UbicacionProducto.NumeroEstante,
+                    NivelEstante = this.UbicacionProducto.NivelEstante,
+                    NumeroColumna = this.UbicacionProducto.NumeroColumna
+                },
+                EstadoProducto = new EstadoProducto
+                {
+                    Estado = this.EstadoProducto.Estado,
+                    CostoManoObra = this.EstadoProducto.CostoManoObra,
+                    CostoPerdida = this.EstadoProducto.CostoPerdida
+                },
+                Seguimiento = new List<Seguimiento>(this.Seguimiento), // Clona referencias, pero no profundo
+                AreaDevolver = new AreaResponsable(this.AreaDevolver.Area)
+                
+            };
         }
 
         public override string ToString()

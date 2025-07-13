@@ -22,10 +22,17 @@ namespace _02_ProductosDefectuosos.Vistas
         {
             MostrarReportePorUbicacion(ListadoProductoDefectuosos.Instancia.ProductosDefectuosos);
         }
-        private void MostrarReportePorUbicacion(List<Producto> productos)
+        private void MostrarReportePorUbicacion(List<Producto> productosOriginal)
         {
             flowLayoutPanelUbicaciones.Controls.Clear();
 
+            // Clonar productos para no modificar los originales
+            var productos = productosOriginal.Select(p => (Producto)p.Clone()).ToList();
+
+            // Ordenar usando IComparable<Producto> (por costo total descendente)
+            productos.Sort();
+
+            // Agrupar productos por depósito y calcular métricas
             var reporte = productos
                 .GroupBy(p => p.UbicacionProducto.DepositoAlmacenado)
                 .Select(g => new
@@ -43,6 +50,7 @@ namespace _02_ProductosDefectuosos.Vistas
                 .OrderByDescending(r => r.CantidadProductos)
                 .ToList();
 
+            // Mostrar reporte en el FlowLayoutPanel
             foreach (var r in reporte)
             {
                 GroupBox gb = new GroupBox();
@@ -110,7 +118,6 @@ namespace _02_ProductosDefectuosos.Vistas
                 else if (r.ProblemaMasComun == "Manufactura")
                     lblProblema.Text += " 🏭";
 
-                // Agregar todos los labels al GroupBox
                 gb.Controls.Add(lblCantidad);
                 gb.Controls.Add(lblDaniados);
                 gb.Controls.Add(lblCosto);
@@ -121,5 +128,6 @@ namespace _02_ProductosDefectuosos.Vistas
                 flowLayoutPanelUbicaciones.Controls.Add(gb);
             }
         }
+
     }
 }

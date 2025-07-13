@@ -48,7 +48,10 @@ namespace _02_ProductosDefectuosos.Modelos
 			this.NivelEstante = nivelEstante;
 			this.numeroEstante = nroEstante;
         }
-
+        public Ubicacion()
+        {
+            
+        }
         public override string ToString()
         {
             return $"{DepositoAlmacenado};{NumeroColumna};{NivelEstante};{NumeroEstante}";

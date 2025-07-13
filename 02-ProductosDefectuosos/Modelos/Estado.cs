@@ -88,6 +88,11 @@ namespace _02_ProductosDefectuosos.Modelos
                     break;
             }
         }
+
+        public EstadoProducto()
+        {
+                
+        }
         public override string ToString()
         {
             switch (Estado)
