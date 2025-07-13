@@ -277,5 +277,29 @@ namespace _02_ProductosDefectuosos.Vistas
                 numericUpDownCostoPerdidaMateriaPrima.Enabled = false;
             }
         }
+        
+
+        private void FormListadoProductos_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+        }
+
+        private void FormListadoProductos_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show("¿Estás seguro de que querés cerrar este formulario?", "Confirmar salida",
+            MessageBoxButtons.YesNo,
+            MessageBoxIcon.Warning
+            );
+
+            if (resultado == DialogResult.No)
+            {
+                e.Cancel = true; // esto cancela el cierre del formulario
+            }
+            if (resultado == DialogResult.Yes)
+            {
+                MainForm mainForm = new MainForm();
+                mainForm.Show();
+            }
+        }
     }
 }

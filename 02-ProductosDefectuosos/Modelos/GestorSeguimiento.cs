@@ -62,11 +62,9 @@ namespace _02_ProductosDefectuosos.Modelos
             return false;
         }
 
-        // Método para modificar un estado (si aplica) - ejemplo genérico, adaptar según modelo
+        
         public void ModificarEstadoSeguimiento()
         {
-            // Implementar si la entidad Seguimiento tiene estado
-            // O eliminar este método si no corresponde
         }
 
         // Retorna los seguimientos para un producto específico
@@ -84,7 +82,7 @@ namespace _02_ProductosDefectuosos.Modelos
             listaSeguimientos = seguimientos ?? new List<Seguimiento>();
         }
 
-        // Método para obtener la lista completa (por si la necesitas)
+        // Método para obtener la lista completa 
         public List<Seguimiento> ObtenerTodosLosSeguimientos()
         {
             return listaSeguimientos;

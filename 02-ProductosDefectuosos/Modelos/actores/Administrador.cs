@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace _02_ProductosDefectuosos.Modelos
 {
-    internal class Administrador : Usuario, IGestorProductos
+    internal class Administrador : Usuario
     {
         
         public Administrador(string nombreCompleto, string usuarioNombreCuenta, string mail, string password, string rol)
@@ -22,10 +22,6 @@ namespace _02_ProductosDefectuosos.Modelos
         
         
 
-        public void AgregarProducto(Producto producto)
-        {
-            throw new NotImplementedException();
-        }
 
         public override void AltaProductos(Producto nuevoProductoDefectuoso)
         {

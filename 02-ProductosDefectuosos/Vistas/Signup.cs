@@ -49,7 +49,7 @@ namespace _02_ProductosDefectuosos.Vistas
                 MessageBox.Show("Todos los campos son obligatorios.");
                 return;
             }
-
+ 
             try
             {
                 Empleado nuevoEmpleado = new Empleado(nombreCompleto, usuario, mail, password, rolTexto);

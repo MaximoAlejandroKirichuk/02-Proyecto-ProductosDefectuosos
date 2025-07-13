@@ -78,7 +78,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1355, 159);
+            this.button1.Location = new System.Drawing.Point(250, 667);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 1;
@@ -88,7 +88,7 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(1158, 159);
+            this.btnModificar.Location = new System.Drawing.Point(53, 667);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
             this.btnModificar.TabIndex = 2;
@@ -98,7 +98,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(1255, 159);
+            this.btnEliminar.Location = new System.Drawing.Point(150, 667);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 3;
@@ -392,7 +392,7 @@
             this.groupBox1.Controls.Add(this.numericUpDownCostoPerdidaMateriaPrima);
             this.groupBox1.Location = new System.Drawing.Point(835, 340);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(595, 293);
+            this.groupBox1.Size = new System.Drawing.Size(556, 293);
             this.groupBox1.TabIndex = 34;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Estado Producto";
@@ -460,7 +460,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1617, 762);
+            this.ClientSize = new System.Drawing.Size(1417, 762);
             this.Controls.Add(this.dataGridViewListadoProductosDefectuosos);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -469,6 +469,8 @@
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.button1);
             this.Name = "FormListadoProductos";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormListadoProductos_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormListadoProductos_FormClosed);
             this.Load += new System.EventHandler(this.FormListadoProductos_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

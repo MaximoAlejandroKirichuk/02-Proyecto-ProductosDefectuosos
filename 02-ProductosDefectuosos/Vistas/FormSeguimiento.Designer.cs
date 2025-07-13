@@ -31,6 +31,7 @@
             this.dataGridViewListadoProductosDefectuosos = new System.Windows.Forms.DataGridView();
             this.dataGridViewSeguimiento = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnModificarEstado = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtAreaRespoonsable = new System.Windows.Forms.TextBox();
@@ -51,7 +52,6 @@
             this.txtAgregarPaso = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.btnAgregarPaso = new System.Windows.Forms.Button();
-            this.btnModificarEstado = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListadoProductosDefectuosos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSeguimiento)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -63,14 +63,14 @@
             this.dataGridViewListadoProductosDefectuosos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewListadoProductosDefectuosos.Location = new System.Drawing.Point(12, 12);
             this.dataGridViewListadoProductosDefectuosos.Name = "dataGridViewListadoProductosDefectuosos";
-            this.dataGridViewListadoProductosDefectuosos.Size = new System.Drawing.Size(915, 309);
+            this.dataGridViewListadoProductosDefectuosos.Size = new System.Drawing.Size(713, 309);
             this.dataGridViewListadoProductosDefectuosos.TabIndex = 2;
             this.dataGridViewListadoProductosDefectuosos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewListadoProductosDefectuosos_CellClick_1);
             // 
             // dataGridViewSeguimiento
             // 
             this.dataGridViewSeguimiento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewSeguimiento.Location = new System.Drawing.Point(933, 12);
+            this.dataGridViewSeguimiento.Location = new System.Drawing.Point(762, 12);
             this.dataGridViewSeguimiento.Name = "dataGridViewSeguimiento";
             this.dataGridViewSeguimiento.Size = new System.Drawing.Size(573, 309);
             this.dataGridViewSeguimiento.TabIndex = 10;
@@ -89,11 +89,21 @@
             this.groupBox1.Controls.Add(this.btnAgregarPaso);
             this.groupBox1.Location = new System.Drawing.Point(12, 341);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1494, 444);
+            this.groupBox1.Size = new System.Drawing.Size(1340, 396);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Seguimiento ";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // btnModificarEstado
+            // 
+            this.btnModificarEstado.Location = new System.Drawing.Point(403, 345);
+            this.btnModificarEstado.Name = "btnModificarEstado";
+            this.btnModificarEstado.Size = new System.Drawing.Size(237, 30);
+            this.btnModificarEstado.TabIndex = 37;
+            this.btnModificarEstado.Text = "Modificar Estado";
+            this.btnModificarEstado.UseVisualStyleBackColor = true;
+            this.btnModificarEstado.Click += new System.EventHandler(this.btnModificarSeguimiento_Click);
             // 
             // groupBox2
             // 
@@ -231,7 +241,7 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(480, 336);
+            this.btnModificar.Location = new System.Drawing.Point(484, 309);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 30);
             this.btnModificar.TabIndex = 12;
@@ -241,7 +251,7 @@
             // 
             // btnBorrar
             // 
-            this.btnBorrar.Location = new System.Drawing.Point(561, 336);
+            this.btnBorrar.Location = new System.Drawing.Point(565, 309);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(75, 30);
             this.btnBorrar.TabIndex = 11;
@@ -256,9 +266,9 @@
             this.listBox1.ForeColor = System.Drawing.Color.White;
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 20;
-            this.listBox1.Location = new System.Drawing.Point(6, 19);
+            this.listBox1.Location = new System.Drawing.Point(10, 19);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(1482, 184);
+            this.listBox1.Size = new System.Drawing.Size(1313, 184);
             this.listBox1.TabIndex = 9;
             // 
             // dateTimePickerFecha
@@ -291,7 +301,7 @@
             // 
             // btnAgregarPaso
             // 
-            this.btnAgregarPaso.Location = new System.Drawing.Point(399, 336);
+            this.btnAgregarPaso.Location = new System.Drawing.Point(403, 309);
             this.btnAgregarPaso.Name = "btnAgregarPaso";
             this.btnAgregarPaso.Size = new System.Drawing.Size(75, 30);
             this.btnAgregarPaso.TabIndex = 8;
@@ -299,22 +309,12 @@
             this.btnAgregarPaso.UseVisualStyleBackColor = true;
             this.btnAgregarPaso.Click += new System.EventHandler(this.btnAgregarPaso_Click);
             // 
-            // btnModificarEstado
-            // 
-            this.btnModificarEstado.Location = new System.Drawing.Point(399, 372);
-            this.btnModificarEstado.Name = "btnModificarEstado";
-            this.btnModificarEstado.Size = new System.Drawing.Size(237, 30);
-            this.btnModificarEstado.TabIndex = 37;
-            this.btnModificarEstado.Text = "Modificar Estado";
-            this.btnModificarEstado.UseVisualStyleBackColor = true;
-            this.btnModificarEstado.Click += new System.EventHandler(this.btnModificarSeguimiento_Click);
-            // 
             // FormSeguimiento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1742, 791);
+            this.ClientSize = new System.Drawing.Size(1363, 749);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridViewSeguimiento);
             this.Controls.Add(this.dataGridViewListadoProductosDefectuosos);

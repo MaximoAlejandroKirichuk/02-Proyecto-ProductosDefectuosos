@@ -149,7 +149,7 @@ namespace _02_ProductosDefectuosos.Servicios
 
             string ruta = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\Datos\Usuario.csv");
             bool archivoExiste = File.Exists(ruta);
-
+            
             using (StreamWriter sw = new StreamWriter(ruta, true))
             {
                 if (!archivoExiste)
@@ -157,7 +157,7 @@ namespace _02_ProductosDefectuosos.Servicios
                     //esto escribe el encabezado si el archivo no existe
                     sw.WriteLine("NombreCompleto;Email;Password;Rol;NombreCuenta");
                 }
-
+                sw.WriteLine();
                 sw.WriteLine(usuario.DameUsuarioString());
             }
         }

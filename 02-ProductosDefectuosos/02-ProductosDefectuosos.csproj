@@ -49,6 +49,7 @@
     <Compile Include="Exepciones\AreaResponsableInexistenteExpeption.cs" />
     <Compile Include="Interfaces\IGestorProductos.cs" />
     <Compile Include="Interfaces\IGestorSeguimiento.cs" />
+    <Compile Include="Interfaces\IReportes.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -36,6 +36,7 @@ namespace _02_ProductosDefectuosos
 
         private void listadoToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Close();
             FormListadoProductos formListado = new FormListadoProductos(idioma);
             formListado.ShowDialog();
         }

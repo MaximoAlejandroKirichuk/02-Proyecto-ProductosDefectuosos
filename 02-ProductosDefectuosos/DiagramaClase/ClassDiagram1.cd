@@ -1,54 +1,42 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="_02_ProductosDefectuosos.Exepciones.AreaResponsableInexistenteExpeption" Collapsed="true">
+  <Class Name="_02_ProductosDefectuosos.Exepciones.AreaResponsableInexistenteExpeption">
     <Position X="11.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIQAAAAA=</HashCode>
       <FileName>Exepciones\AreaResponsableInexistenteExpeption.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="_02_ProductosDefectuosos.Usuario" Collapsed="true">
-    <Position X="6" Y="0.5" Width="1.5" />
+  <Class Name="_02_ProductosDefectuosos.Usuario">
+    <Position X="5.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAoQAAAAAAAAAAAEAQAAAAECAAAAAgACAAAAIwBCAAE=</HashCode>
       <FileName>Modelos\actores\Usuario.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="_02_ProductosDefectuosos.Res_español" Collapsed="true">
-    <Position X="9.5" Y="3.5" Width="1.5" />
+  <Class Name="_02_ProductosDefectuosos.Modelos.Administrador">
+    <Position X="3.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ASCZIAhQAAABEAABGAABkAAAiWAAAGQbGBAABBLAIIQ=</HashCode>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="_02_ProductosDefectuosos.Res_ingles" Collapsed="true">
-    <Position X="11.25" Y="3.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>BAZkoIiEAjIIIAYAIgBhEQEIBSsBAAAAApAAAABABIo=</HashCode>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="_02_ProductosDefectuosos.Res_portugues" Collapsed="true">
-    <Position X="13" Y="3.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>IhAAARIRAAqAgAQXSABBUBAAAwBAAAAUQAYgACNQAIQ=</HashCode>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="_02_ProductosDefectuosos.Modelos.Administrador" Collapsed="true">
-    <Position X="4.75" Y="1.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIiBAABE=</HashCode>
+      <HashCode>AAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIiBAABA=</HashCode>
       <FileName>Modelos\actores\Administrador.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
   </Class>
-  <Class Name="_02_ProductosDefectuosos.Modelos.Empleado" Collapsed="true">
-    <Position X="7" Y="1.75" Width="1.5" />
+  <Class Name="_02_ProductosDefectuosos.Modelos.Empleado">
+    <Position X="7.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIgBAAAA=</HashCode>
       <FileName>Modelos\actores\Empleado.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="_02_ProductosDefectuosos.Modelos.AreaResponsable" Collapsed="true">
+  <Class Name="_02_ProductosDefectuosos.Modelos.AreaResponsable">
     <Position X="9.5" Y="0.5" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="_02_ProductosDefectuosos.Modelos.AreaResponsable.AreaPosibles" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Modelos\AreaResponsable.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
       <FileName>Modelos\AreaResponsable.cs</FileName>
@@ -56,35 +44,54 @@
   </Class>
   <Class Name="_02_ProductosDefectuosos.Modelos.EstadoProducto" Collapsed="true">
     <Position X="13" Y="0.5" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="_02_ProductosDefectuosos.Modelos.EstadoProducto.TipoCosto" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Modelos\Estado.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="_02_ProductosDefectuosos.Modelos.EstadoProducto.TipoEstado" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Modelos\Estado.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
     <TypeIdentifier>
       <HashCode>AAAACAAEAAAAAAAkAAAAIAAAAAgAAAAAAAQAAAAAAAg=</HashCode>
       <FileName>Modelos\Estado.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="_02_ProductosDefectuosos.Modelos.GestorSeguimiento" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="16.5" Y="1.5" Width="1.5" />
+  <Class Name="_02_ProductosDefectuosos.Modelos.GestorSeguimiento" BaseTypeListCollapsed="true">
+    <Position X="16.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAACAAAAAAAgAAAIAAAAAAAEAAAAAIAAAAAAIwA=</HashCode>
       <FileName>Modelos\GestorSeguimiento.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Class Name="_02_ProductosDefectuosos.Modelos.ListadoEmpleados" Collapsed="true">
-    <Position X="18.25" Y="1.5" Width="1.5" />
+  <Class Name="_02_ProductosDefectuosos.Modelos.ListadoEmpleados">
+    <Position X="18.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
       <FileName>Modelos\ListadoEmpleados.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="_02_ProductosDefectuosos.Modelos.ListadoProductoDefectuosos" Collapsed="true">
-    <Position X="9.5" Y="2.5" Width="1.5" />
+  <Class Name="_02_ProductosDefectuosos.Modelos.ListadoProductoDefectuosos">
+    <Position X="7.25" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AIQAAAAAAAAAAAAAACAAAAAAAAEAAAAAAAAAAQAQAAA=</HashCode>
       <FileName>Modelos\ListadoProductoDefectuosos.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="_02_ProductosDefectuosos.Modelos.Producto" Collapsed="true">
-    <Position X="14.75" Y="2.5" Width="1.5" />
+    <Position X="14.75" Y="0.5" Width="1.5" />
+    <NestedTypes>
+      <Delegate Name="_02_ProductosDefectuosos.Modelos.Producto.EstadoProductoCambiadoHandler" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Modelos\Producto.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
     <TypeIdentifier>
       <HashCode>gAAAAIIAADAIQAAEAEAAgQAQCCEQAAACAAAAQhQAAEM=</HashCode>
       <FileName>Modelos\Producto.cs</FileName>
@@ -97,41 +104,35 @@
       <FileName>Modelos\ReporteResponsable.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="_02_ProductosDefectuosos.Modelos.Seguimiento" Collapsed="true">
-    <Position X="16.5" Y="3.5" Width="1.5" />
+  <Class Name="_02_ProductosDefectuosos.Modelos.Seguimiento">
+    <Position X="16.5" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAACAAAAAABEEAAAAAAAAAAEAAAAAAAAAIAAAAAA=</HashCode>
       <FileName>Modelos\Seguimiento.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="_02_ProductosDefectuosos.Modelos.SesionActiva" Collapsed="true">
-    <Position X="11.25" Y="4.5" Width="1.5" />
+  <Class Name="_02_ProductosDefectuosos.Modelos.SesionActiva">
+    <Position X="13" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAAAABACAAAAAAAAAAAAAAAAAAiAAAAAA=</HashCode>
       <FileName>Modelos\SesionActiva.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="_02_ProductosDefectuosos.Modelos.Ubicacion" Collapsed="true">
-    <Position X="16.5" Y="4.5" Width="1.5" />
+  <Class Name="_02_ProductosDefectuosos.Modelos.Ubicacion">
+    <Position X="18.25" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAQAAAAAAEgCAAAAAgQAAAAAAAgAAAEAAAABA=</HashCode>
       <FileName>Modelos\Ubicacion.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="_02_ProductosDefectuosos.Properties.Resources" Collapsed="true">
-    <Position X="14.75" Y="3.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AgAAAAAAAAAAAAAAAAABEAAAAQAABAAAAAAAAgAAAIA=</HashCode>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="_02_ProductosDefectuosos.Properties.Settings" Collapsed="true">
-    <Position X="13" Y="4.5" Width="1.5" />
+  <Class Name="_02_ProductosDefectuosos.Properties.Settings">
+    <Position X="14.75" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="_02_ProductosDefectuosos.Servicios.ServiciosProductosCSV" Collapsed="true">
-    <Position X="18.25" Y="3.5" Width="1.5" />
+  <Class Name="_02_ProductosDefectuosos.Servicios.ServiciosProductosCSV">
+    <Position X="20" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAIEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Servicios\ServiciosProductosCSV.cs</FileName>
